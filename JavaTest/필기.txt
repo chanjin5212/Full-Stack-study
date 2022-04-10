@@ -1,0 +1,68 @@
+
+JavaTest > "필기.txt"
+
+
+
+Hello World!!
+
+1. 메모장
+	- 코드 작성
+	- 산출물(결과물) > "Hello.java" > Source Code File
+	- 소스 파일은 프로그램이 아니다. > 텍스트 파일이다.
+	- 프로그래밍 코드를 작성 > 프로그램 완성 > CPU에게 명령어 전달!!
+	- 어떤 언어로 구성? > 자바(X) > 사람이 쓰는 언어로 구성(인간)
+	- 소스 파일의 명령어의 실행 주체 > 컴퓨터(CPU) > 이진데이터(1,0)
+
+2. javac.exe Hello.java
+	- 1차 컴파일
+	- javac.exe 파일명
+	- javac.exe > Java Compiler > 사람이 작성한 코드를 컴퓨터 이해하는 코드를 번역하는 프로그램	
+	- 번역 작업 실행 > Compile
+	- 산출물 > "Hello.class" > 실행 파일(클래스 파일)
+	- Hello.class > 컴퓨터 실행(바이너리 코드, 이진 데이터, 기계어, Machine Code)
+	- 중간언어(IL) 산출물 > 실행 파일(=프로그램)
+
+3. java.exe Hello
+	- 2차 컴파일, 인터프리터, JIT(Just in time) 컴파일러
+	- java.exe > Java Compiler, Java Interpreter, 실행기
+	- java.exe 클래스명 > 최종 실행
+	- 최종적으로 운영체제에 적합한 기계어로 바꿔주는 번역 작업
+	
+	
+
+소스 -> 번역 -> 기계어
+1. 컴파일 > 컴파일러 > 산출물 발생 > 초기 실행 비쌈 + 반복 실행 쌈
+	- 자바
+	- SQL
+	
+2. 인터프리트 > 인터프리터 > 산출물 없음 > 초기 실행 중간 + 반복 실행 중간
+	- SQL
+	- HTML
+	- CSS
+	- JavaScript
+
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	

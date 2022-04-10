@@ -1,0 +1,9 @@
+Name: summary
+Context: Java
+Description: 수업용
+Pattern: //[SUMMARY] ${title} (${date} ${time})
+
+Name: todo
+Context: Java
+Description: 수업용
+Pattern: //${todo} ${title} (${date} ${time})
