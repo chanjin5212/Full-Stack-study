@@ -6,6 +6,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import com.test.data.Data;
+import com.test.data.User;
 
 public class Ex76_Stream {
 	
@@ -48,12 +49,86 @@ public class Ex76_Stream {
 		
 		//m1();
 		//m2();
-		m3();
+		//m3();
+		m4();
 		
 		
 		
 		
 		
+		
+		
+		
+	}
+
+	private static void m4() {
+		
+		//매핑
+		//- map(), mapXXX()
+		//- 중간처리 파이프
+		//- 변환 작업에 사용한다.(*******)
+		//- map() >				   앞의 스트림을 처리 후 다른 타입의 스트림을 반환
+		//- distinct(), filter() > 앞의 스트림 처리 후 동일한 타입의 스트림을 반환
+		
+		List<String> list = Data.getStringList(10);
+		System.out.println(list);
+		
+		list.stream().filter(word -> word.length() <= 3).forEach(word -> System.out.println(word));
+		System.out.println();
+		
+		list.stream()						//Stream<String>: 단어 스트림
+				.map(word -> {				//Stream<Integer>: 단어 길이 스트림
+					return word.length();
+				}).forEach(num -> System.out.println(num));
+		
+		list.stream()
+				//.filter(word -> word.length() >= 5)
+				.map(word -> word.length())
+				.forEach(length -> System.out.println(length));
+		System.out.println();
+		
+		
+		
+		String[] names = { "홍길동", "홍재석", "테스트", "아무개", "하하하", "호호호", "후후후", "유재석", "박명수" };
+		
+		
+		//mapping
+		Arrays.stream(names)
+				.map(name -> name.substring(1))
+				.forEach(name -> System.out.println(name));
+		System.out.println();
+		
+		
+		List<User> ulist = Data.getUserList();
+		
+		//map() > 의도? > 원본 데이터를 다른 형태로 가공!!
+		ulist.stream()
+				//.map(user -> user.getName())
+				.map(user -> user.getAge())
+				.forEach(user -> System.out.println(user));
+		
+		System.out.println();
+		
+		List<Student> slist = new ArrayList<Student>();
+		
+		slist.add(new Student("가가가", 100, 90, 80));
+		slist.add(new Student("나나나", 77, 88, 66));
+		slist.add(new Student("다다다", 92, 82, 84));
+		slist.add(new Student("라라라", 100, 92, 88));
+		slist.add(new Student("마마마", 56, 47, 35));
+		
+		slist.stream()
+				.map(s -> {
+					int total = s.getKor() + s.getEng() + s.getMath();
+					
+					if (total >= 180) {
+						return "합격";
+					} else {
+						return "불합격";
+					}
+				}) //Stream<Student> -> Stream<String>
+				.forEach(result -> System.out.println(result));
+		System.out.println();
 		
 		
 		
@@ -250,7 +325,62 @@ class Cup {
 
 
 
+class Student {
+	
+	private String name;
+	private int kor;
+	private int eng;
+	private int math;
+	
+	//생성자, Getter/Setter, toString
+	
+	public Student(String name, int kor, int eng, int math) {
+		this.name = name;
+		this.kor = kor;
+		this.eng = eng;
+		this.math = math;
+	}
 
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getKor() {
+		return kor;
+	}
+
+	public void setKor(int kor) {
+		this.kor = kor;
+	}
+
+	public int getEng() {
+		return eng;
+	}
+
+	public void setEng(int eng) {
+		this.eng = eng;
+	}
+
+	public int getMath() {
+		return math;
+	}
+
+	public void setMath(int math) {
+		this.math = math;
+	}
+
+	@Override
+	public String toString() {
+		return String.format("Student [name=%s, kor=%s, eng=%s, math=%s]", name, kor, eng, math);
+	}
+	
+	
+	
+}
 
 
 
