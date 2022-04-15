@@ -15,6 +15,8 @@ public class Q02 {
 			BufferedWriter writer = new BufferedWriter(new FileWriter("C:\\quiz\\파일_입출력_문제\\숫자_변환.dat"));
 			String line = null;
 			
+			//0 과 함께 1 과 함께 2
+			//-> 영 과 함께 1 과 함께 2
 			String[] number = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 			String[] korean = { "영", "일", "이", "삼", "사", "오", "육", "칠", "팔", "구" };
 			
