@@ -5,5 +5,5 @@ public class Data {
 	
 	final public static String EDIT = "data\\data.txt";
 	final public static String MEMBER = "data\\member.txt";
-
+  
 }
