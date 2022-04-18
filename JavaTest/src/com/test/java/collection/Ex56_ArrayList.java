@@ -7,7 +7,7 @@ public class Ex56_ArrayList {
 	public static void main(String[] args) {
 		
 		//"com.test.java.collection" > "Ex56_ArrayList.java"
-		
+		 
 		/*
 		
 			컬렉션, Collection
