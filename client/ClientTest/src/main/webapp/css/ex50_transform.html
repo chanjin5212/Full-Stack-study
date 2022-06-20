@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <style>
+
+      /* 
+      
+         transform, 변형
+         - 위치, 크기(배율), 회전, 왜곡
+      
+         1. translate(): 위치 변형(이동)
+         2. scale(): 배율 변형(확대, 축소)
+         3. rotate(): 회전 변형
+         ---
+         4. skew(): 왜곡(비틀기)
+         5. matrix(): 1~4번 포함. 사용자 정의형 > 행렬
+
+         
+         Report, Chart
+
+      */
+
+      body { margin-bottom: 200px; }
+
+      .box {
+         border: 1px solid black;
+         width: 200px;
+         height: 200px;
+         margin: 20px;
+         margin-top: 200px;
+         margin-left: 200px;
+      }
+
+      #box1 {
+         background-color: tomato;
+
+         /* transform: translate(100px, 100px); */
+         /* transform: scale(-1, -1); */
+         /* transform: rotate(-45deg); */
+         transform: skew(5deg, 5deg);
+      }
+
+      #box1:hover {
+         /* transform: translate(100px, 100px); */
+         /* transform: scale(1.2, 1.2); */
+         /* transform: rotate(370deg); */
+      }
+
+      #box2 {
+         background-color: gold;
+         width: 400px;
+      }
+
+      #cat > img:hover {
+         /* transform: translate(0px, -10px); */
+         /* transform: scale(1.2, 1.2); */
+         /* transform: translate(0px, -30px) scale(1.2, 1.2); */
+         transform: rotate(15deg);
+      }
+
+      input[type=text] {
+         font-size: 2em;
+         padding: 5px;
+         outline: none;
+         margin: 100px;
+         /* transform: scale(-1, 1); */
+         /* transform: rotate(45deg); */
+      }
+
+   </style>
+</head>
+<body>
+   <!-- ex50_transform.html -->
+   <!--  
+      Ctrl + Shift + L
+      Ctrl + D (***) > Ctrl + K(선택 )
+   -->
+   <div id="box1" class="box">상자1</div>
+   <div id="box2" class="box">상자2</div>
+   <div id="box3" class="box">상자3</div>
+
+   <hr>
+
+   <h1>고양이</h1>
+   <div id="cat">
+      <img src="images/catty01.png">
+      <img src="images/catty02.png">
+      <img src="images/catty03.png">
+      <img src="images/catty04.png">
+      <img src="images/catty05.png">
+   </div>
+
+   <hr>
+
+   <input type="text">
+
+</body>
+</html>

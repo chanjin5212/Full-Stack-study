@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- ex12_font.html -->
+	
+	<!-- 이 예제의 대부분 기능은 CSS로 작성한다. -->
+	
+	<!-- 
+	
+		글꼴(서체) 적용 주의점!!!
+	
+	 -->
+	
+	<font size="1">안녕하세요. 홍길동입니다.</font><br>
+	<font size="3">안녕하세요. 홍길동입니다.</font><br>
+	<font
+		 size="7"
+		 color="blue"
+		 face="궁서체">안녕하세요. 홍길동입니다.</font>
+	
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex40_variable.html -->
+
+    <script>
+
+        //~ 지금 > 대부분 ES5 이전의 문법
+        //이후 ~ > ES6 문법 포함
+
+        /*
+        
+            변수 선언하기
+            1. var
+                - BOM ~ DOM ~ ES6
+                - function-scoped
+                - 중복 선언 가능
+                - 상수 선언 불가능
+
+            2. let
+                - ES6
+                - block-scoped
+                - 중복 선언 불가능
+                - 변수 선언
+
+            3. const
+                - ES6
+                - block-scoped
+                - 중복 선언 불가능
+                - 상수 선언(final 변수)
+        
+        */
+
+        var a = 10;
+        var a = 20;
+
+        //alert(a);
+
+        let b = 10;
+        //let b = 20; //Identifier 'b' has already been declared
+        console.log(b);
+
+        var i = 20;
+
+        for (var i=0; i<10; i++) {
+
+        }
+
+        console.log('루프 밖', i);
+
+
+        let j = 20; //전역(자바의 클래스 멤버 변수)
+
+        for (let j=0; j<10; j++) {
+            console.log(j); //지역
+        }
+
+        console.log('루프 밖', j); //j is not defined
+
+        // function m1() {
+        //     let k = 0;
+        //     for (let k=0; k<10; k++) {
+
+        //     }
+        // }
+
+
+
+        const c = 30;
+        c = 40; //불가능. Assignment to constant variable.
+
+        console.log(c);
+
+    </script>
+
+</body>
+</html>

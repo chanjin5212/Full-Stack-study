@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #clock {
+            border: 30px dashed #999;
+            width: 700px;
+            height: 700px;
+            position: relative;
+            left: 0px;
+            top: 0px;
+        }
+
+        #hour, #min, #sec {
+            border: 16px solid #555;
+            width: 50px;
+            position: absolute;
+            border-radius: 50px;
+        }
+
+        #hour>div, #min>div, #sec>div {
+            font-variant: small-caps;
+            font-weight: bold;
+            color: white;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #hour {
+            background-color: tomato;
+            height: 150px;
+            left: 309px;
+            top: 168px;
+            transition-property: all;
+            transition-duration: 21600s;
+            transition-timing-function: linear;
+            transform-origin: center bottom;
+        }
+
+        #min {
+            background-color: cornflowerblue;
+            height: 220px;
+            left: 309px;
+            top: 98px;
+            transition-property: all;
+            transition-duration: 360s;
+            transition-timing-function: linear;
+            transform-origin: center bottom;
+        }
+
+        #sec {
+            background-color: gold;
+            height: 290px;
+            left: 309px;
+            top: 28px;
+            transition-property: all;
+            transition-duration: 60s;
+            transition-timing-function: linear;
+            transform-origin: center bottom;
+        }
+
+        #clock:hover #sec {
+            transform: rotate(36000deg);
+        }
+
+        #clock:hover #min {
+            transform: rotate(36000deg);
+        }
+
+        #clock:hover #hour {
+            transform: rotate(36000deg);
+        }
+    </style>
+</head>
+<body>
+    <div id="clock">
+        <div id="hour">
+            <div>Hour</div>
+        </div>
+        <div id="min">
+            <div>Min</div>
+        </div>
+        <div id="sec">
+            <div>Sec</div>
+        </div>
+    </div>
+</body>
+</html>

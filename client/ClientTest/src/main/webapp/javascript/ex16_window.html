@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex16_window.html -->
+
+    <h1>window 객체</h1>
+
+    <form name="form1">
+        <fieldset>
+            <legend>창제어</legend>
+            <input type="button" name="pbtn1" value="자식창 띄우기">
+            <input type="button" name="pbtn2" value="자식창 닫기">
+        </fieldset>   
+        <fieldset>
+            <legend>창내 자원 접근</legend>
+            <input type="button" name="pbtn3" value="자식창에 있는 텍스트박스에 접근하기">
+            <input type="text" name="ptxt1">
+        </fieldset>        
+        <fieldset>
+            <legend>새창 용도</legend>
+            <input type="text" name="txtid">
+            <input type="button" name="pbtn4" value="아이디 중복검사">
+            <input type="button" name="pbtn5" value="우편번호 검색">
+        </fieldset>
+    </form>
+
+    <script>
+
+        var pbtn1 = window.document.form1.pbtn1;
+        var pbtn2 = window.document.form1.pbtn2;
+        var pbtn3 = window.document.form1.pbtn3;
+        var pbtn4 = window.document.form1.pbtn4;
+
+        pbtn1.onclick = m1;
+        pbtn2.onclick = m2;
+        pbtn3.onclick = m3;
+        pbtn4.onclick = m4;
+
+        //window 객체
+        //- 최상위 객체
+        //- 창을 제어
+
+        var child;
+
+        function m1() {
+            //window.open(URL, Name, Option);
+            //1. URL: 새창의 URL
+            //2. Name: 새창 이름 > 중복창 제어
+            //3. Option: 새창 옵션들..
+
+            //window.open('https://naver.com', 'child', '');
+            child = window.open('ex16_child.html', 'child', 'width=500 height=300 left=' + (window.screen.availWidth - 500) + ' top=0');
+        }
+
+        function m2() {
+
+            //자식창 닫기
+            //window.close()
+
+            //자식페이지의 window > close() 호출
+
+            //child == 자식페이지의 window 객체
+            child.close();
+
+        }
+
+        //
+        //window.open('ex16_child.html', 'child', 'width=500 height=300 left=1200 top=300');
+
+
+        function m3() {
+            //부모페이지 -> 자식페이지의 자원(텍스트박스)
+
+            child.document.form1.ctxt1.value = '부모창에서 왔습니다.';
+            child.document.form1.ctxt1.size = 50;
+
+        }
+
+        function m4() {
+
+            window.open('ex16_child.html', 'idcheck', 'width=500 height=600');
+
+        }
+
+    </script>
+
+
+</body>
+</html>

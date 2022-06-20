@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="버튼" name="btn1">
+    <input type="button" value="버튼" name="btn2" onclick="m2();">
+
+    <script>
+
+        document.all.btn1.onclick = m1;
+
+        function m1(evt) {
+            alert(evt.target);
+            alert(evt.srcElement);
+        }
+        
+        function m2(evt) {
+            // alert(evt.target);
+            // alert(evt.srcElement);
+            alert(event.target);
+            alert(event.srcElement);
+        }
+
+    </script>
+</body>
+</html>

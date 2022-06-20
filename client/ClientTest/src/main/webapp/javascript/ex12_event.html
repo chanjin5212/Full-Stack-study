@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form > input {
+            display: block;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- ex12_event.html -->
+
+    <h1>Event</h1>
+
+    <form name="form1">
+        <input type="text" name="txt1">
+        <input type="button" value="버튼1" name="btn1" onclick="//m1();">
+    </form>
+
+    <script>
+
+        //JavaScript Event
+        //- 사건
+        //- 객체(태그포함)에서 발생하는 사건
+        //- 언제 발생할지 예측 불가능
+
+        //JavaScrip Event Handling
+        //- 이벤트 등록
+        //- 사건 처리
+        //- 언제 발생할지 예측 불가능한 사건에 대해서 미리 코드를 준비 > 언젠가 사건이 발생하면 준비해 놓은 코드를 자동으로 실행한다. > 이벤트 처리
+
+        //이벤트 등록
+        //- onXXX 속성(프로퍼티) 제공
+        //1. 정적
+        // - HTML 태그에 적용
+        //2. 동적
+        // - 자바스크립트 사용
+
+        
+        //1. 대상(버튼) 검색
+        //2. 이벤트 등록
+        //window.document.form1.btn1.onclick = m1;
+        //window.document.form1.btn1.onmouseover = m1;
+
+        if ((new Date()).getSeconds() % 2 == 0) {
+            window.document.form1.btn1.onmouseover = m1;
+        }
+
+        function m1() {
+            alert('클릭');
+        }
+
+
+
+    </script>
+
+</body>
+</html>

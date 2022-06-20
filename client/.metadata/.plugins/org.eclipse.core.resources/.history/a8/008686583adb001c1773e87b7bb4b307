@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<table border width="800">
+	<tr>
+		<td align="center">
+			<h1>교 육 훈 련 일 지</h1>
+		</td>
+	</tr>
+</table>
+<br>
+<table border width="800">
+	<tr>
+		<td>교육기관 : 서울 고용 노동부 / 쌍용 교육 센터</td>
+	</tr>
+	<tr>
+		<td>교육과정 : Java 기반 임베디드 플랫폼 연동 융합 개발자 양성 과정</td>
+	</tr>
+	<tr>
+		<td>교육일자 : 2022년       월       일      요일</td>
+	</tr>
+</table>
+
+
+</body>
+</html>

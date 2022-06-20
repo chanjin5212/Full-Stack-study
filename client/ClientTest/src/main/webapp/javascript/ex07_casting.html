@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex07_casting.html -->
+
+    <script>
+
+        //내장 함수, Built-in Function
+        //- parseInt()
+        //- parseFloat()
+        //- isNaN()
+        //- ..
+
+        //형변환, Type Casting
+        //1. number parseInt(value)
+        //2. number parseFloat(value)
+
+        var n1 = 3.99;
+        console.log(parseInt(n1)); //실수 -> 정수
+
+        console.log(typeof n1);
+        console.log(typeof parseInt(n1));
+
+        var n2 = '300';
+        console.log(parseInt(n2)); //문자열 -> 정수
+        console.log('300');
+
+        console.log(typeof parseInt(n2));
+        console.log(typeof '300');
+
+        var n3 = '100점'; //(int)n3
+        console.log(parseInt(n3));
+
+        var n4 = '스코어90'; //NaN > Not a Number
+        console.log(parseInt(n4));
+
+        var n5 = '100점이 아니라 50점입니다.';
+        console.log(parseInt(n5));
+
+
+        //JavaScript -> CSS 조작
+        var width = '200px';
+        console.log(width + 100);
+        console.log(parseInt(width) + 100);
+
+        var size = '1.5em';
+        console.log(parseInt(size));
+        console.log(parseFloat(size));
+ 
+
+
+        //boolean isNaN(value)
+        //- value가 숫자가 아닙니까?
+        //  1. 네: 숫자 아님
+        //  2. 아니오: 숫자임
+
+        //사용자 나이 입력 <input type="number">
+        var age = '20';
+
+        console.log(isNaN(age));
+
+        if (isNaN(age)) {
+            console.log('나이가 올바르지 않습니다.');
+        } else {
+            console.log('올바른 나이!!');
+        }
+
+
+
+
+
+    </script>
+
+</body>
+</html>

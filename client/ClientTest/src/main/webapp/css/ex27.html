@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <style>
+
+      /* 
+      html {
+         font-size: 16px;
+      }
+       
+      body {
+         font-size: 50px;
+      }  
+      */
+      
+
+      /*  
+         1. em : element
+            - 부모 요소 글꼴 크기에 대한 상대 단위
+            - 부모 태그를 기준(100%)으로 하는 상대 단위
+         2. rem : root element
+            - 루트 요소(<html>) 글꼴 크기에 대한 상대 단위
+            - <html>을 기준(100%)으로 하는 상대 단위
+      */
+
+      #box1 {
+         /* em: 상대단위(상대값, %) */
+         font-size: 1em;
+      }
+
+      #box2 {
+         /* rem: 상대단위(상대값, %) */
+         font-size: 1rem;
+      }
+
+      #box3 {
+         /* px: 절대단위(절대값) */
+         font-size: 16px;
+      }
+
+      #b1, #b2, #b3 {
+         border: 1px solid black;
+         padding: 20px;
+         margin: 10px;
+      }
+
+      #b1 {
+         /* 텍스트와 관련된 속성은 자식 태그에게 상속된다. */
+         /* font-size: 30px; */
+      }
+
+      #b3 {
+         /*  
+            부모 글꼴 크기? #b2 > #b1 > body > html(16px)
+            부모 글꼴 크기의 x 2 = ?
+         */
+         /* font-size: 2em; */
+         /* font-size: 2rem; */
+      }
+
+      #b1, #b2, #b3 {
+         /* font-size: 2em; */
+         font-size: 2rem;
+      }
+
+   </style>
+</head>
+<body>
+   <!-- ex27.html -->
+   <div id="box1">Box1</div>
+   <div id="box2">Box2</div>
+   <div id="box3">Box3</div>
+
+   <hr>
+
+   <div id="b1">
+      상자입니다.1
+      <div id="b2">
+         상자입니다.2
+         <div id="b3">
+            상자입니다.3
+         </div>
+      </div>
+   </div>
+
+
+</body>
+</html>

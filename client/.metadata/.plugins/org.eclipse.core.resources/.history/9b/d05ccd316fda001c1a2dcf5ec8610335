@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<!-- 
+	
+	<head>
+	- 브라우저가 보는 정보
+	- 문서의 내부 정보를 관리
+	
+	<head> 자식 태그
+	1. <meta>
+		- 페이지에 대한 여러가지(부수적인) 정보를 기술
+	2. <title>
+	
+	
+ -->
+	<head>
+		<meta charset="UTF-8">
+		<meta name="author" content="홍길동"><!-- 개발자 -->
+		<meta name="generator" content="Eclipse 2022.03"><!-- 개발도구 -->
+		<meta name="keywords" content="HTML,수업예제,head태그"><!-- 키워드 -->
+		<meta name="description" content="HTML 수업예제입니다."><!-- 설명 -->
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<!-- ex04_head.html -->
+
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <style>
+      
+      /* 
+      
+         transition, 전환
+         - 객체의 속성(상태)값이 변화되는 과정을 시간 순서대로 보여주는 소성
+         - 수치형 속성에만 적용 가능(숫자, 색상)
+      
+      */
+
+      #box {
+         border: 10px solid black;
+         width: 200px;
+         height: 200px;
+         background-color: gold;
+
+         margin: 100px;
+
+         /* transition-property: width, height, background-color; */
+         transition-property: all;
+         transition-duration: 1s;
+         overflow: hidden;
+
+         /* position: relative;
+         left: 0px;
+         top: 0px; */
+
+         /* 원근감 */
+         /* perspective: 300px; */
+         /* transform-origin: 400px center; */
+
+      }
+
+      #box:hover {
+         /* width: 400px; */
+         /* height: 400px; */
+         /* background-color: cornflowerblue; */
+         /* font-size: 10em; */
+         /* font-family: '궁서체'; */
+         /* opacity: 0; */
+         /* border-radius: 50%; */
+         /* box-shadow: 10px 10px 5px #555; */
+         /* margin-left: 100px; */
+         /* padding: 100px; */
+         /* border-width: 50px; */
+         /* border-color: tomato; */
+
+         /* left: 300px; */
+         /* top: 100px; */
+
+         /* transform: translate(500px, 0px); */
+         /* transform: scale(-1, 1); */
+         /* transform: rotate(360deg); */
+
+
+      }
+
+      #cat img {
+         transition: .5s all;
+      }
+
+      #cat img:hover {
+         /* transform: translate(0px, -15px); */
+         /* transform: rotate(360deg); */
+         /* Dock > Fish Eye */
+         transform: translate(0px, -50px) scale(-1.4, 1.4);
+      }
+
+   </style>
+</head>
+<body>
+   <!-- ex53_transition.html -->
+
+   <div id="box">상자</div>
+
+   <h1>고양이</h1>
+
+   <div id="cat">
+      <img src="images/catty01.png">
+      <img src="images/catty02.png">
+      <img src="images/catty03.png">
+      <img src="images/catty04.png">
+      <img src="images/catty05.png">
+   </div>
+
+</body>
+</html>

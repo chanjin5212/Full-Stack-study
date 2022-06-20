@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="form1">
+        <div>
+            <img src="/ClientTest/src/main/webapp/javascript/images/cat01.jpg" name="cat1">
+            <img src="/ClientTest/src/main/webapp/javascript/images/cat02.jpg" name="cat2">
+            <img src="/ClientTest/src/main/webapp/javascript/images/cat03.jpg" name="cat3">
+            <img src="/ClientTest/src/main/webapp/javascript/images/cat04.jpg" name="cat4">
+            <img src="/ClientTest/src/main/webapp/javascript/images/cat05.jpg" name="cat5">
+        </div>
+    </form>
+
+    <script>
+
+        var list = document.images;
+
+        for (var i=0; i<list.length; i++) {
+            list[i].onmouseover = function () {
+                event.srcElement.src = "/ClientTest/src/main/webapp/javascript/images/dog0" + num(event.srcElement.src) + ".jpg"; 
+            }
+        }
+
+        for (var i=0; i<list.length; i++) {
+            list[i].onmouseout = function () {
+                event.srcElement.src = "/ClientTest/src/main/webapp/javascript/images/cat0" + num(event.srcElement.src) + ".jpg"; 
+            }
+        }
+
+        function num(url) {
+            var index = url.lastIndexOf(".");
+            return url.substr(index - 1, 1);
+        }
+
+        
+
+    </script>
+</body>
+</html>

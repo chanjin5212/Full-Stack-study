@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #box {
+            width: 200px;
+            height: 200px;
+            background-color: cornflowerblue;
+            margin: 100px;
+            transition: 1s all;
+        }
+        /* #box:hover {
+            transform: rotate(360deg);
+        } */
+    </style>
+</head>
+<body>
+    <!-- ex55_css.html -->
+
+    <div id="box">상자</div>
+
+    <script>
+
+        const box = document.getElementById('box');
+
+        let degree = 360;
+        let timer = 0;
+
+        box.addEventListener('click', function() {
+
+        //    if (!timer) {
+        //        timer = setInterval(action, 10);
+        //    } else {
+        //        clearInterval(timer);
+        //        timer = 0;
+        //    }
+
+           box.style.transform = `rotate(${degree}deg)`;
+        
+        });
+
+
+    </script>
+
+</body>
+</html>

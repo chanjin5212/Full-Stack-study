@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- ex06_p.html -->
+	
+	<!-- 
+		
+		<p>, paragraph
+		- 문단 태그
+		- 텍스트 집합
+		- 쌍태그
+		- 혼합형
+		
+		
+	 -->
+	
+	<p>첫번째 문단입니다.</p>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

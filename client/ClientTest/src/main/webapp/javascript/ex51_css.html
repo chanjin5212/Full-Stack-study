@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .box { 
+            width: 150px; height: 150px;
+            position: absolute; left: 0; top: 0;
+            cursor: default; 
+            background-color: gold;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- ex51_css.html -->
+    <div id="box" class="box"></div>
+
+    <script>
+
+        const box = document.getElementById('box');
+        let isDown = false;
+        let x = 0;
+        let y = 0;
+
+        //Drag & Drop > 개체 이동 인터페이스
+        window.onmousedown = function(event) {
+            if (event.target.id == 'box') {
+                
+                //마우스를 누르고 있는지 확인용
+                isDown = true;
+
+                //상자의 어느 부위를 눌렀는지?
+                x = event.offsetX;
+                y = event.offsetY;
+            }
+        };
+
+        window.onmousemove = function(event) {
+            if (isDown) {
+                box.style.left = event.clientX - x + 'px';
+                box.style.top  = event.clientY - y + 'px';
+            }
+        };
+
+        window.onmouseup = function(event) {
+            isDown = false;
+        };
+
+    </script>
+</body>
+</html>

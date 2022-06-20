@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex45_closure.html -->
+
+    <input type="button" value="버튼1" id="btn1">
+    <input type="button" value="버튼2" id="btn2">
+
+    <script>
+
+        /*
+
+            클로저, Closure
+
+        */
+
+        //전역 함수
+        // function outer() {
+
+        //     //지역 변수(outer)
+        //     let a = 10; 
+        //     console.log('a', a);
+
+
+        //     //지역 함수(outer)
+        //     function inner() {
+
+        //         let b = 20; //지역 변수(inner)
+        //         console.log('b', b);
+
+        //     }
+
+        //     inner();
+
+        //     console.log('b', b); //b is not defined
+
+        // }
+
+        // outer();
+        //inner(); //inner is not defined
+
+
+
+
+
+        
+
+
+
+
+        const btn1 = document.getElementById('btn1');
+        const btn2 = document.getElementById('btn2');
+
+        let num1 = 100; //전역 변수 > 페이지가 닫히기 전까지 계속 살아있음.
+
+        btn1.onclick = function() {
+
+            let num2 = 200; //지역 변수(btn1.onclick)
+
+            btn2.onclick = function() {
+
+                //alert(num1); //전역 변수
+                alert(num2);   //지역 변수(btn1.onclick) > 이상함?????????  > num2의 생명주기?
+
+                //외부 함수 지역 자원을(num2) 내부 함수에서 사용할 때
+                // -> 시간차에 따른 외부 지역 리소스가 소멸 후 시점에 내부 함수에 의해 호출되는 경우
+                // -> 외부 지역 리소스를 임시 공간에 저장 > 나중에 호출 + 사용
+
+            };
+
+        };//제어 벗어남 > 지역 변수 소멸(num2)
+
+
+    </script>
+</body>
+</html>

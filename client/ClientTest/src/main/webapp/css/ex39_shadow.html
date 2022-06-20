@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <style>
+
+      /*  
+
+         그림자, shadow
+         1. text-shadow: x y blur color
+         2. box-shadow: x y blur color
+
+      */
+
+      .box {
+         margin: 20px;
+      }
+
+      #box1 {
+         text-shadow: 2px 2px 2px #999;
+      }
+
+      #box2 {
+         box-shadow: 2px 2px 2px #999;
+         background-color: yellow;
+      }
+
+      #box3 {
+         -webkit-box-shadow: -6px 1px 36px 7px rgba(0,0,0,0.42); 
+         box-shadow: -6px 1px 36px 7px rgba(0,0,0,0.42);
+      }
+
+      p:hover > span {
+         /* text-shadow: 2px 2px 2px #999; */
+         /* color: tomato; */
+         border-bottom: 1px dashed tomato;
+      }
+
+   </style>
+</head>
+<body>
+   <!-- ex39_shadow.html -->
+   <div id="box1" class="box">상자1입니다.</div>
+   <div id="box2" class="box">상자2입니다.</div>
+   <div id="box3" class="box">상자3입니다.</div>
+
+   <hr>
+
+   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, doloremque. Iure <span>laboriosam</span> veniam officiis maxime suscipit. <span>Commodi</span>, maiores <span>deleniti</span>. Nemo suscipit eaque odit! Impedit nesciunt laboriosam rerum nisi deserunt itaque.</p>
+
+</body>
+</html>

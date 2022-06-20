@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>    
+    <script src="js/jquery-1.12.4.js"></script>
+
+    <script src="js/scroll.js"></script>
+    
+    <style>
+        div {
+            border: 1px solid black;
+            padding: 15px;
+            margin: 15px;
+        }
+
+        #me {
+            border-width: 10px;
+        }
+
+        .check {
+            background-color: gold;
+        }
+    </style>
+</head>
+<body>
+    <!-- ex70_traversing.html -->
+    <h1>Axis</h1>
+
+    <input type="button" value="버튼" id="btn">
+    <hr>
+
+    <div>
+        할아버지
+        <div>
+            큰아버지
+            <div>
+                사촌
+            </div>
+        </div>
+        <div>
+            아버지
+            <div>
+                형
+            </div>
+            <div>
+                형
+            </div>
+            <div id="me">
+                나
+                <div>자식</div>
+                <span>추가</span>
+                <div>
+                    자식
+                    <div>손자</div>
+                    <span class="one">추가</span>
+                </div>
+                <div class="one">자식</div>
+            </div>
+            <div>
+                동생
+            </div>
+        </div>
+        <div>
+            작은아버지
+            <div>
+                사촌
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+
+        $('#btn').click(function() {
+
+            //자식
+            //- childNodes, children
+
+            //$('#me').children().addClass('check');
+            //$('#me').children().css('border-width', '10px');
+            
+            //$('#me').children().first().addClass('check');
+            //$('#me').children().last().addClass('check');
+
+            //$('#me').children().eq(0).addClass('check');
+            //$('#me').children().eq(-1).addClass('check');
+
+            //$('#me').children().children().addClass('check');
+            //$('#me > div > div').addClass('check');
+            //$('#me > * > *').addClass('check');
+
+            //$('table').children().children()
+            //$('table td')
+
+            //나 > span 검색
+            //나 > .one 검색
+
+            //children() > for > if (질문) > children() > for > if (질문) > .. 반복
+
+            //$('#me').find('span').css('border', '20px solid tomato');
+            //$('#me').find('.one').css('border', '20px solid tomato');
+
+            //$('#me').children().css('border', '20px solid tomato');
+
+
+
+
+            //조상 탐색
+            //- parentNode, parentElement
+
+            //$('#me').parent().css('border', '20px solid tomato');
+            //$('#me').parents().css('border', '20px solid tomato');
+            //$('#me').parentsUntil('body > div').css('border', '20px solid tomato');
+
+
+
+
+
+
+            //형제 탐색
+            //- previousSibling, nextSibling
+            //$('#me').prev().css('border', '20px solid tomato');
+            //$('#me').next().css('border', '20px solid tomato');
+
+            //$('#me').prev().prev().css('border', '20px solid tomato');
+
+            //$('#me').prevAll().css('border', '20px solid tomato');
+            //$('#me').nextAll().css('border', '20px solid tomato');
+
+            //$('#me').prevUntil('조건').css('border', '20px solid tomato');
+            //$('#me').nextUntil('조건').css('border', '20px solid tomato');
+
+            $('#me').siblings().css('border', '20px solid tomato');
+
+
+
+        });
+
+    </script>
+
+</body>
+</html>

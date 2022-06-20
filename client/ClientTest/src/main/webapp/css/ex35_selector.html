@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <style>
+
+      .list a {
+         display: block;
+         color: black;
+      }
+
+      /* 
+      
+         속성 선택자
+         1. 선택자[속성명]: 해당 속성명을 명시하고 있는 태그를 선택
+         2. 선택자[속성명=값]
+         3. 선택자[속성명^=값]: startsWith()
+         4. 선택자[속성명$=값]: endsWith()
+         5. 선택자[속성명*=값]: like '%값%'
+      
+      */
+
+      /* .list a[target] { color: red; } */
+      /* .list a[target=_blank] { color: red; } */
+      /* .list a[href^=https] { color: red; } */
+      /* .list a[href$=com] { color: red; } */
+      .list a[href*=m] { color: red; }
+
+   </style>
+</head>
+<body>
+   <!-- ex35_selector.html -->
+
+   <div class="list">
+      <a href="http://naver.com" target="_self">네이버</a>
+      <a href="http://yes24.com" target="_blank">예스24</a>
+      <a href="https://daum.net">다음</a>
+      <a href="https://11st.co.kr">11번가</a>
+      <a href="https://kma.go.kr" target="_blank">기상청</a>
+   </div>
+
+</body>
+</html>

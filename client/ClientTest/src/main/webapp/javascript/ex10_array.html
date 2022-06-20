@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex10_array.html -->
+    <script>
+
+        //자바스크립트 배열
+        //- Array(외형) + ArrayList(길이 가변, 자료형 자유)
+        //- Array(내장 객체) 제공
+
+        //int[] nums = new int[3];
+        var nums = new Array();
+
+        nums[0] = 100;
+        nums[1] = 200;
+        nums[2] = 300;
+
+        //nums[5] = 500; //사용하지 말것!!!
+
+        for (var i=0; i<nums.length; i++) {
+            console.log(nums[i]);
+        }
+
+        console.clear();
+
+
+        //초기화 리스트
+        //int[] nums = new int[] { 100, 200, 300 };
+        //int[] nums = { 100, 200, 300 };
+
+        var num2 = new Array(100, 200, 300);
+        var num3 = [ 100, 200, 300 ]; //****** 주로 사용
+
+
+        //빈배열
+        var num4 = new Array();
+        var num5 = [];
+
+
+
+        //3의 배수 > 10개 확보
+        var list1 = [];
+
+        for (var i=0; i<10; i++) {
+            list1[i] = (i+1) * 3;
+        }
+
+        console.log(list1);
+
+
+        var list2 = [];
+
+        for (var i=3; i<=(3*10); i+=3) {
+            list2.push(i); //stack.push(값)  list.append(값)
+        }
+
+        console.log(list2);
+
+        console.log(list2.pop());
+
+        console.log(list2);
+
+
+
+
+
+        //예외 처리
+        try {
+
+            var m = 0;
+            console.log(100/m);
+
+            //예외 던지기
+            throw 'user exception'; //throw new Exception('user exception');
+
+        } catch(e) {
+            console.log('예외 처리');
+        }
+
+
+
+        //자바 조건 > boolean
+        //타언어 조건
+
+        //자바스크립트
+        //- 정수 > 0(false), 1(true)
+        //- 실수 > 0.0(false), 1.0(true)
+        //- 문자 > ''(false), 'OOO'(true)
+
+        var flag = 0;
+        flag = 10;
+
+        flag = 0.0;
+        flag = 3.14;
+
+        flag = '';
+        flag = '홍길동';
+
+        flag = new Date();
+        flag = null;
+        flag = undefined;
+
+        if (flag) {
+            console.log('참');
+        } else {
+            console.log('거짓');
+        }
+
+        
+    </script>
+</body>
+</html>

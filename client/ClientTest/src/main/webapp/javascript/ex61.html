@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex61.html -->
+
+    <script>
+
+        //우리 수업
+        //- 풀스택(기본 언어 + DB + 웹클라이언트 + 웹서버)
+
+        //- 클라이언트 개발(자바스크립트(기본 언어 + JDBC + 웹클라이언트 + 웹서버))
+
+
+
+        //ES6 > class > MDN
+
+        class User {
+
+            //name = '';
+
+            //생성자(예약어)
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+
+            hello() {
+                console.log(this.name, this.age);
+            }
+
+        }
+
+        const user1 = new User('홍길동', 20);
+
+        console.log(user1);
+        user1.hello();
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box { 
+            width: 150px; height: 150px;
+            cursor: default; 
+            background-color: gold;
+            border: 1px solid black;
+            /* cursor: nw-resize; */
+        }
+    </style>
+</head>
+<body>
+    <!-- ex53_css.html -->
+    <div id="box" class="box" style="width: 150px; height: 150px;"></div>
+
+    <script>
+
+        const box = document.getElementById('box');
+        let isDown = false;
+
+        window.onmousedown = function(event) {
+            if (event.target.id == 'box') {
+                if (isValid(event)) {
+                    isDown = true;
+                    box.style.opacity = .3;
+                }
+            }
+        };
+
+        function isValid(event) {
+
+            //현재 상자의 너비?
+            //console.log(box.style.width, box.style.height);
+            let w = parseInt(box.style.width);
+            let h = parseInt(box.style.height);
+            
+            if (event.offsetX >= (w-10) && event.offsetX <= w
+                && event.offsetY >= (h-10) && event.offsetY <= h) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        window.onmousemove = function(event) {
+            if (isDown) {
+                box.style.width = event.clientX + 'px';
+                box.style.height = event.clientY + 'px';
+            }
+        };
+
+        window.onmouseup = function(event) {
+            isDown = false;
+            box.style.opacity = 1;
+        };
+
+    </script>
+
+
+</body>
+</html>

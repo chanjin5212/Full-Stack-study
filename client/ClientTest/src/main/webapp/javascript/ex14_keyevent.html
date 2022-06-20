@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        input, textarea {
+            display: block;
+            margin-bottom: 10px;
+            outline: none;
+        }
+
+        input { width: 300px; }
+        
+    </style>
+</head>
+<body>
+    <!-- ex14_keyevent.html -->
+
+    <h1>키 이벤트</h1>
+
+    <form name="form1">
+        <input type="text" name="txt1">
+        <input type="text" name="txt2">
+        <textarea name="txt3"></textarea>
+    </form>
+
+    <script>
+
+        var txt1 = window.document.form1.txt1;
+        var txt2 = window.document.form1.txt2;
+        var txt3 = window.document.form1.txt3;
+
+        /*
+        
+            키 관련 이벤트
+            - onkeyXXX
+            - 포커스를 가지는 태그에서만 발생(텍스트박스, 체크 박스 등..)
+
+            키보드 연속입력(X) > 연속입력(O)
+
+            1. onkeydown
+                - 키를 눌렀을 때 발생
+                - 입력된 문자를 구분하지 못한다.
+                - 물리키를 구분하는 용도
+                - 입력된 문자는 중요하지 않음 > 어떤 물리키를 눌렀지 중요!!
+                - 입력값 자체보다 입력 행위가 중요한 행동!!
+                - 키보드에 존재하는 모든 키에 반응(*********)
+                - 방금 입력한 문자 필요없는 경우 사용!!!
+
+            2. onkeyup
+                - 키를 뗏을 때 발생
+                - 방금 입력한 문자 필요한 경우 사용!!!
+
+            3. onkeypress
+                - 키를 눌렀을 때 발생
+                - 거의 사용 안함
+                - 문자키에 반응 > 입력된 문자를 구분할 수 있다.
+                - 문자가 아닌 키는 반응 안함(*******)
+
+                
+            
+            
+            'a' 키를 누르면 > 텍스트박스 'a' 입력
+            1. 사용자 > 'a' 누른다.
+                1. keydown 이벤트 발생
+                2. 컨트롤(텍스트박스)에 값이 입력(***)
+                3. keyup 이벤트 발생
+
+
+
+        */
+
+        txt1.onkeydown = m1;
+        txt1.onkeyup = m2;
+        txt1.onkeypress = m3;
+
+        function m1(evt) {
+            //console.log('keydown');
+
+            //console.log(evt.keyCode);
+            //console.log(txt1.value);
+
+            //방향키
+            // - 좌(37), 상(38), 우(39), 하(40)
+            // if (evt.keyCode == 37) {
+            //     txt3.cols--;
+            // } else if (evt.keyCode == 39) {
+            //     txt3.cols++;
+            // } else if (evt.keyCode == 38) {
+            //     txt3.rows--;
+            // } else if (evt.keyCode == 40) {
+            //     txt3.rows++;
+            // }
+
+            //txt2.value = txt1.value;
+
+        }
+        
+        function m2(evt) {
+            //console.log('keyup');
+            //txt2.value = txt1.value;
+        }
+        
+        function m3(evt) {
+            //console.log('keypress');
+
+            //console.log(evt.keyCode);
+        }
+
+    </script>
+
+</body>
+</html>

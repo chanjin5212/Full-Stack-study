@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-1.12.4.js"></script>
+    <style>
+        #box { width: 200px; height: 200px; border: 1px solid black; background-color: gold; }
+    </style>
+</head>
+<body>
+    <!-- ex66_jquery_effect.html -->
+
+    <h1>jQuery Effect</h1>
+
+    <input type="button" value="버튼1" id="btn1">
+    <input type="button" value="버튼2" id="btn2">
+    <input type="button" value="버튼3" id="btn3">
+
+    <hr>
+
+    <div id="box">상자</div>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint ducimus in, excepturi cumque nostrum minima at esse deleniti quae, non tempore perspiciatis magni fuga facere. Similique perferendis eum sunt ullam.</p>
+
+
+    <script>
+
+
+        //jQuery Effect Function
+        //1. hide(time), show(time), toggle(time)
+        //2. fadeOut(), fadeIn(), fadeToggle()
+        //3. slideUp(), slideDown(), slideToggle()
+        //4. animate() > 사용자 정의
+
+        $('#btn1').click(function() {
+
+            //$('#box').hide('slow'); //0.6초
+            //$('#box').fadeOut();
+            //$('#box').slideUp();
+
+            // const obj = {
+            //     width: '400px',
+            //     height: '400px'
+            // };
+
+            // $('#box').animate(obj);
+
+
+            // $('#box').animate({
+            //     width: 0,
+            //     height: 0,
+            //     opacity: 0
+            // });
+
+            // $('#box').animate({
+            //     //box.style.width = parseInt(box.style.width) + 100 + 'px'
+            //     width: '+=100px',
+            //     height: '+=50'                
+            // });
+
+
+            /*
+            $('#box').animate({
+                //margin-left: '+=50px'
+                //marginLeft: '+=50px'
+                'margin-left': '+=50px'
+            }, 1000, function() {
+                //alert('애니메이션을 끝날때 하고 싶은 일');
+                $('h1').text('jQuery Effect ' + n);
+                n++;
+
+                if (n > 5) {
+                    //이벤트 등록
+                    //- $('#btn1').click(함수)
+                    //- $('#btn1').on('click', 함수)
+
+                    //이벤트 제거
+                    //- $('#btn1').off('click');
+
+                    $('#btn1').off('click');
+
+                }
+            });
+            */
+
+
+            //$('#box').animate({
+                //width: 'toggle',
+                //height: 'toggle'
+                //'font-size': 'toggle'
+            //});
+
+
+
+            //jQuery 기능 > 메소드로 제공 > 메소드 체이닝
+            //- 대다수의 메소드가 jQuery 객체를 반환한다.
+            
+            //$('#box').css('color', 'blue');
+            //$('#box').css('background-color', 'grey');
+
+
+            // $('#box')
+            //     .css('color', 'blue')
+            //     .css('background-color', 'grey')
+            //     .animate({
+            //         width: 400
+            //     });
+
+
+            // $('#box')
+            //     .slideUp()
+            //     .slideDown()
+            //     .fadeOut()
+            //     .fadeIn();
+
+
+            // $('#box')
+            //     .animate({
+            //         width: 400
+            //     }).animate({
+            //         height: 400
+            //     });
+
+
+            // $('#box').animate({
+            //     width: 400
+            // }, 1000, function() {
+            //     $('#box').animate({
+            //         height: 400
+            //     });
+            // });
+
+            $('#box').animate({
+                width: 1000
+            }, 3000);
+
+            
+        });
+
+        let n = 1;
+
+        $('#btn2').click(function() {
+
+            //$('#box').show('fast'); //0.2초
+            //$('#box').fadeIn();
+            //$('#box').slideDown();
+
+            $('#box').stop();
+
+        });
+
+        $('#btn3').click(function() {
+
+            //$('#box').toggle(2000);
+            //$('#box').fadeToggle();
+            //$('#box').slideToggle();
+
+        });
+
+
+
+
+
+
+
+
+
+
+
+        /*
+        
+            JavaScript(언어) vs jQuery(기술)
+            > 선택? jQuery
+
+            > 공부 + 내 실력 향상 + 커리어 > JavaScript
+
+            SQL 언어 vs PL/SQL 언어(오라클)
+
+
+            1. Java(*)
+            2. Oracle(*)
+            3. JDBC
+            4. HTML(*)
+            5. CSS(*)
+            6. JavaScript(*)
+            7. Servlet
+            8. JSP
+            9. Spring
+            10. MyBatis
+
+
+
+        */
+
+
+    </script>
+
+</body>
+</html>

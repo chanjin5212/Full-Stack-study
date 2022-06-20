@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+		body {
+			margin: 50px;
+		}
+		#timer {
+			border: 1px solid gray;
+			width: 640px;
+			/* margin: 50px auto 20px auto; */
+			padding: 25px;
+		}
+		#timer:after {
+			content: " ";
+			display: block;
+			clear: both;
+		}
+		#timer img, #timer span {
+			float: left;
+			font-size: 7em;
+		}
+		#timer img {
+			width: 95px;
+			height: 139px;
+			border: 0px;
+			outline: none;
+		}
+		#timer span {
+			margin-top: -10px;
+		}
+		#btns {
+			width: 680px;
+			margin-top: 20px;
+			text-align: center;
+		}
+		#btns input {
+			border: 1px solid #aaa;
+			background-color: white;
+			width: 30%;
+			height: 50px;
+			outline: none;
+			cursor: pointer;
+		}
+		#btns input:disabled {
+			background-color: #eee;
+			cursor: not-allowed;
+		}
+	</style>
+</head>
+<body>
+    <div id="timer">
+		<img name="img1" src="/ClientTest/src/main/webapp/javascript/images/0.png">
+		<img name="img2" src="/ClientTest/src/main/webapp/javascript/images/0.png">
+		<span>:</span>
+		<img name="img3" src="/ClientTest/src/main/webapp/javascript/images/0.png">
+		<img name="img4" src="/ClientTest/src/main/webapp/javascript/images/0.png">
+		<span>:</span>
+		<img name="img5" src="/ClientTest/src/main/webapp/javascript/images/0.png">
+		<img name="img6" src="/ClientTest/src/main/webapp/javascript/images/0.png">
+	</div>
+    <div id="btns">
+		<input type="button" value="시작" name="btn1">
+		<input type="button" value="멈춤" name="btn2" disabled>
+		<input type="button" value="종료" name="btn3" disabled>
+	</div>
+
+    <script>
+        var timer = 0;
+        var n = 0;
+
+        document.all.btn1.onclick = m1;
+        document.all.btn2.onclick = m2;
+        document.all.btn3.onclick = m3;
+
+        function m1() {
+            if (timer == 0) {
+                timer = setInterval(function() {
+                    document.all.img6.src = "/ClientTest/src/main/webapp/javascript/images/" + formatnumber(n % 100).substr(1, 1) + ".png";
+                    document.all.img5.src = "/ClientTest/src/main/webapp/javascript/images/" + formatnumber(n % 100).substr(0, 1) + ".png";
+                    document.all.img4.src = "/ClientTest/src/main/webapp/javascript/images/" + formatnumber(n / 100 % 60).substr(1, 1) + ".png";
+                    document.all.img3.src = "/ClientTest/src/main/webapp/javascript/images/" + formatnumber(n / 100 % 60).substr(0, 1) + ".png";
+                    document.all.img2.src = "/ClientTest/src/main/webapp/javascript/images/" + formatnumber(n / 100 / 60).substr(1, 1) + ".png";
+                    document.all.img1.src = "/ClientTest/src/main/webapp/javascript/images/" + formatnumber(n / 100 / 60).substr(0, 1) + ".png";
+
+                    n++;
+                }, 10)
+                document.all.btn1.disabled = true;
+                document.all.btn2.disabled = false;
+                document.all.btn3.disabled = false;
+            }
+        }
+
+        function m2() {
+            clearInterval(timer);
+            timer = 0;
+            document.all.btn1.disabled = false;
+            document.all.btn2.disabled = true;
+            document.all.btn3.disabled = false;
+        }
+
+        function m3() {
+            clearInterval(timer);
+            timer = 0;
+            document.all.btn1.disabled = false;
+            document.all.btn2.disabled = true;
+            document.all.btn3.disabled = true;
+            n = 0;
+            document.all.img1.src = "/ClientTest/src/main/webapp/javascript/images/0.png";
+            document.all.img2.src = "/ClientTest/src/main/webapp/javascript/images/0.png";
+            document.all.img3.src = "/ClientTest/src/main/webapp/javascript/images/0.png";
+            document.all.img4.src = "/ClientTest/src/main/webapp/javascript/images/0.png";
+            document.all.img5.src = "/ClientTest/src/main/webapp/javascript/images/0.png";
+            document.all.img6.src = "/ClientTest/src/main/webapp/javascript/images/0.png";
+        }
+
+        function formatnumber(num) {
+            if (num < 10) {
+                return "0" + num;
+            } else {
+                return "" + num;
+            }
+        }
+    </script>
+</body>
+</html>

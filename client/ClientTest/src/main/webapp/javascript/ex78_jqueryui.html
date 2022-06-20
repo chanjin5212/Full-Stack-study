@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <script src="js/jquery-1.12.4.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <style>
+
+        body { margin-bottom: 300px; }
+
+        #list1 .ui-selected {
+            background-color: gold;
+        }
+
+        #list2 {
+            border: 1px solid #CCC;
+            width: 120px;
+            border-radius: 3px;
+        }
+
+        #list2 > h1 {
+            margin: 0;
+            font-size: 18px;
+            text-align: center;
+            background-color: #555;
+            color: white;
+            border-top-left-radius: 2px;
+            border-top-right-radius: 2px;
+            padding: 7px 0;
+        }
+
+        #list2 > ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;            
+        }
+
+        #list2 > ul > li {
+            margin: 0;
+            text-align: center;
+            padding: 5px;
+            border-bottom: 1px solid #CCC;
+            cursor: pointer;
+        }
+
+        #list2 > ul > li:last-child {
+            border-bottom: 0px;
+        }
+
+        #list2 > ul > li.ui-selected {
+            background-color: cornflowerblue;
+            color: white;
+        }
+
+
+        #list3 img {
+            opacity: .2;
+            cursor: pointer;
+        }
+
+        #list3 img:hover {
+            opacity: .4;
+        }
+
+        #list3 img.ui-selected {
+            opacity: 1;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- ex78_jqueryui.html -->
+
+    <h1>Interactions <small>Selectable</small></h1>
+
+    <h1>목록</h1>
+
+    <ul id="list1">
+        <li>Java</li>
+        <li>Oracle</li>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ul>
+
+
+    <div id="list2">
+        <h1>목록</h1>
+        <ul>
+            <li>Java</li>
+            <li>Oracle</li>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+        </ul>
+    </div>
+
+    <hr>
+
+    <h1>프로젝트 팀원 선택</h1>
+
+    <div id="list3">
+        <img src="images/man_01.png" data-no="0">
+        <img src="images/man_02.png" data-no="1">
+        <img src="images/man_03.png" data-no="2">
+        <img src="images/woman_01.png" data-no="3">
+        <img src="images/woman_02.png" data-no="4">
+        <img src="images/woman_03.png" data-no="5">
+    </div>
+
+
+    <script>
+
+        $('#list1').selectable();
+        $('#list2 > ul').selectable();
+
+        $('#list3').selectable({
+            selected: function(event, ui) {
+                //alert(ui.selected.src);
+                alert($(ui.selected).data('no'));
+            }
+        });
+
+    </script>
+
+</body>
+</html>

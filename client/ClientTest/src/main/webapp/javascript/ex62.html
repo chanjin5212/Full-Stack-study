@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex62.html -->
+
+    <script>
+
+        //화살표 함수, Arrow Function
+        //- 자바의 람다 > 익명 객체(인터페이스 상속 객체)의 추상 메소드를 표현하는 방식(문법)
+        //- 자바스크립트 > 익명 함수를 표현하는 방식
+
+
+        //1. 함수 선언문
+        function f1() {
+            console.log('f1');
+        }
+
+        f1();
+
+        //2. 함수 표현식(리터럴) == 익명 함수
+        const f2 = function () {
+            console.log('f2');
+        };
+
+        f2();
+
+        //3. 화살표 함수 == 익명 함수
+        const f3 = () => {
+            console.log('f3');
+        };
+
+        f3();
+
+
+        //실행문 1줄 > 실행 블럭 생략
+        const f4 = () => console.log('f4');
+        f4();
+
+        //매개변수
+        const f5 = (num) => console.log(num);
+        const f6 = num => console.log(num);
+        const f7 = (a, b) => console.log(a + b);
+
+        //반환값
+        const f8 = () => { return 100; };
+        const f9 = () => 200;
+        console.log(f9());
+
+
+
+        //setTimeout(m1, 1000);
+        //setTimeout(function() {}, 1000);
+        // setTimeout(() => {
+        //     alert();
+        // }, 1000);
+
+
+        // document.getElementById('btn1').onclick = function() {
+
+        // };
+
+        // document.getElementById('btn2').onclick = () => {
+
+        // };
+
+
+
+        console.clear();
+
+
+
+        const list = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ];
+        const clist = [ '사과', '포도', '딸기', '수박', '참외', '복숭아', '바나나', '파인애플', '귤', '망고', '키위', '앵두', '배', '자두' ];
+
+
+
+        //loop
+        for (let i=0; i<list.length; i++) {
+            console.log(list[i]);
+        }
+
+
+        //list.stream().forEach(n -> System.out.println(n));
+        
+        list.forEach(function(num) {
+            console.log(num);
+        });
+
+
+        list.forEach(n => console.log(n));
+        clist.forEach(f => console.log(f));
+
+        //clist.forEach((item, index, temp) => console.log(item, index, temp));
+        clist.forEach((item, index) => console.log(item, index));
+
+        console.clear();
+
+
+
+        //map()
+        //- 요소를 다른 값으로 변경 후 새로운 배열 반환
+        //- 가공 + 변환
+        //console.log(list.map(n => n % 2 == 0 ? '짝수' : '홀수'));
+
+        list.map(n => n % 2 == 0 ? '짝수' : '홀수').forEach(str => console.log(str));
+
+        clist.map(item => item.length).forEach(len => console.log(len));
+
+
+        //20세 + 서울시 > Object[]
+        const names = [ '홍길동', '아무개', '호호호' ];
+
+        // const olist = [
+        //     {
+        //         name: '홍길동',
+        //         age: 20,
+        //         address: '서울시'
+        //     },
+        //     {
+        //         name: '아무개',
+        //         age: 20,
+        //         address: '서울시'
+        //     },
+        //     {
+        //         name: '호호호',
+        //         age: 20,
+        //         address: '서울시'
+        //     }
+        // ];
+
+
+        names.map(name => {
+            return {
+                name: name,
+                age: 20,
+                address: '서울시'
+            };
+        }).forEach(obj => console.log(obj));
+
+        console.clear();
+
+
+        //filter()
+        //- 요소를 조건에 부합되는 것들만 걸러서 반환
+        clist.filter(item => item.length >= 3).forEach(item => console.log(item));
+
+        clist.filter(item => item.length >= 3).map(item => item.length).forEach(item => console.log(item));
+        console.clear();
+
+
+
+        //find()
+        //- 요소 검색
+
+        const mlist = [ '홍길동', '아무개', '하하하', '홍호호', '홍후후' ];
+
+        let result = mlist.find(item => item.startsWith('김'));
+        console.log(result);
+
+
+        for (let i=0; i<mlist.length; i++) {
+            if (mlist[i].startsWith('홍')) {
+                console.log(mlist[i]);
+                break;//return
+            }
+        }
+        
+
+        
+
+
+
+
+    </script>
+</body>
+</html>

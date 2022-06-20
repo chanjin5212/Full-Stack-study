@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex85_map.html -->
+
+    <h1>지도 클릭 이벤트 + 마커 표시</h1>
+
+    <div id="map" style="width:1200px;height:600px;"></div>
+
+    <hr>
+
+    <div id="message"></div>
+
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=4b2c4452052d56d04184af646057bc11"></script>
+
+    <script src="js/data.js"></script>
+
+
+    <script>
+
+        var container = document.getElementById('map');
+
+        var options = {
+            center: new kakao.maps.LatLng(37.499321, 127.033220),
+            level: 3
+        };
+
+        var map = new kakao.maps.Map(container, options);
+
+        kakao.maps.event.addListener(map, 'click', function(event) {
+
+            //이벤트 관련 정보 > 좌표!!! > 위도, 경도
+
+            //alert(event.latLng);
+
+            //const point = new kakao.maps.LatLng(37.555169, 126.970507);
+            
+            //alert(typeof point);
+            //alert(typeof event.latLng);
+
+            //alert(point.constructor.name);
+            //alert(event.latLng.constructor.name);
+
+            //map.panTo(event.latLng);
+
+
+            document.getElementById('message').innerText = `클릭한 위치: 위도(${event.latLng.getLat()}), 경도(${event.latLng.getLng()})`;
+
+
+
+            //좌표 > 마커 표시
+            //1. 마커 객체 생성
+            //2. 지도 + 마커
+
+            const marker = new kakao.maps.Marker({
+                //position: new kakao.maps.LatLng(event.latLng.getLat(), event.latLng.getLng())
+                position: event.latLng
+            });
+
+            marker.setMap(map);
+
+
+        });
+
+
+
+        list.forEach(function(item, index) {
+
+            //console.log(item.name);
+            //console.log(item.position.lat, item.position.lng);
+
+            const marker = new kakao.maps.Marker({
+                position: new kakao.maps.LatLng(item.position.lat, item.position.lng)
+            });
+
+            marker.setMap(map);
+
+        });
+
+
+    </script>
+
+</body>
+</html>

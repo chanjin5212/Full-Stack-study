@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex11_bom.html -->
+    <h1>BOM, Browser Object Model</h1>
+
+    <img src="images/catty01.png" name="cat1">
+
+    <hr>
+
+    <form name="form1">
+        <div name="div1">
+            <label>이름: </label>
+            <input type="text" name="txt1">
+        </div>
+        <div>
+            <label>나이: </label>
+            <input type="text" name="txt2">
+        </div>
+    </form>
+
+    <script>
+
+        /*
+        
+            CSS > 선택자 > HTML 검색 > HTML 접근 > HTML 서식 조작
+            JavaScript > HTML 검색 > HTML 접근 > HTML 조작
+
+            HTML 계층 구조
+            - HTML 문서의 소스를 계층 구조화하는 모델
+
+            1. BOM, Browser Object Model
+                - 초창기 모델
+                - 현재까지 계속 사용
+                - 선택적 모델 > 일부 태그만 포함 > 일부 태그만 조작 가능 > 빠진 태그는 조작 불가능 > 조작할 수 있는 태그의 수가 한정되어 있다.(이미지, 링크, 폼 태그)
+                - 초창기에는 이미지, 링크, 폼 태그 이외에는 조작할 필요성이 없었다.
+                - 태그의 name을 사용해서 접근
+                - id, class는 인식 불가능
+
+            2. DOM, Document Object Model
+                - 발전 모델
+                - 현재까지 계속 사용
+                - BOM + a(알파)
+                - 전역 모델 > 모든 태그를 포함 > 모든 태그를 조작 가능
+                - name, id, class 모두 인식 가능
+
+            BOM
+            - HTML 문서 구조를 미리 정해진 트리 구조에 따라 접근하는 모델
+
+
+        */
+
+
+        //이름(텍스트박스)
+
+        //- window.document.form1.txt1: 텍스트 박스 접근
+        //- .value: 속성 접근
+        //- = '홍길동': 값 대입
+        window.document.form1.txt1.value = '홍길동';
+
+        //CSS 셀렉터
+        window.document.form1.txt2.value = '20';
+
+    </script>
+
+</body>
+</html>

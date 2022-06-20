@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex06_scope.html -->
+    <script>
+
+        /*
+        
+            스코프, Scope
+            - 변수의 생명 주기
+            - 변수의 영역
+
+            자바
+            1. 멤버 변수 > 클래스 전역
+            2. 지역 변수 > 메소드 전역 or 제어문 전역
+
+            자바스크립트
+            1. 전역 변수 > 페이지 전체 > 선언문 실행(탄생) ~ 페이지 종료(소멸)
+            2. 지역 변수 > 함수 전역, 제어문 영역 인식 못함
+
+        */
+
+        var num = 100; //전역 변수. <script> 태그내에서 직접 선언한 변수
+
+        function m1() {
+            var num2 = 200;
+            console.log(num2);
+
+            if (num2 > 0) {
+                var num3 = 300;
+                console.log(num3);
+            }
+            console.log(num3);
+
+        }
+
+        m1();
+
+        //Uncaught ReferenceError: num2 is not defined
+        //console.log(num2);
+
+        //Uncaught ReferenceError: num3 is not defined
+        //console.log(num3);
+
+
+        var a = 10;
+        var a = 20; //재정의(O), 에러 발생(X) > 하지 말것!!!
+        console.log(a);
+
+
+        var b = 20;
+        c = 30; //변수 선언문(var)을 사용하지 않고 변수 생성이 가능하다. 절대 사용 금지!!!
+
+        console.log(c);
+
+        function m2() {
+            var d = 40; //함수 기반 지역 변수
+            e = 50; //전역 변수 > var를 사용하지 않으면 무조건 전역 변수가 된다.
+        }
+
+        m2();
+
+        //console.log(d);
+        console.log(e);
+
+        function m3() {
+            e = 60;
+        }
+
+
+    </script>
+</body>
+</html>

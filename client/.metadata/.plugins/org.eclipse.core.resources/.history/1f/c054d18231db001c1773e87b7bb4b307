@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- ex17_table.html -->
+	
+	<h1>원본 테이블</h1>
+	
+	<table border width="200" height="200">
+		<tr>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>4</td>
+		</tr>
+	</table>
+	
+	
+	<h1>가로 셀병합</h1>
+	
+	<table border width="200" height="200">
+		<tr>
+			<td colspan="2">1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>4</td>
+		</tr>
+	</table>
+	
+</body>
+</html>

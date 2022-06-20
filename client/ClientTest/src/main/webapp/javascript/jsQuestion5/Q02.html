@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .item {
+            position: absolute;
+        }
+
+    </style>
+</head>
+<body>
+    <script>
+
+        let item;
+        let imgCount = 0;
+        let firstImage = null;
+
+        window.onmousedown = function(evnet) {
+
+            imgCount = 0;
+            let n = Math.floor(Math.random() * 9) + 1;
+
+            img = document.createElement('img');
+            img.setAttribute("class", "item");
+            img.setAttribute("src", "/ClientTest/src/main/webapp/javascript/images/face0" + n + ".png");
+            img.style.left = event.clientX - 64 + "px";
+            img.style.top = event.clientY - 64 + "px";
+
+            document.body.appendChild(img);
+
+            for (let i=0; i<document.body.children.length; i++) {
+                console.log(document.body.children[i].nodeName);
+                if (document.body.children[i].nodeName == "IMG") {
+                    if (firstImage == null) {
+                        firstImage = document.body.children[i];
+                    }
+                    imgCount++;
+                }
+            }
+            if (imgCount > 10) {
+                document.body.removeChild(firstImage);
+                firstImage = null;
+            }
+
+        }
+
+    </script>
+</body>
+</html>

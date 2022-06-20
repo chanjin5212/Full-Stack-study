@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <!-- ex39_manipluation.html -->
+
+    <h1>DOM 조작</h1>
+
+    <input type="button" value="버튼1" id="btn1">
+    <input type="button" value="버튼2" id="btn2">
+    <input type="button" value="버튼3" id="btn3">
+    <hr>
+    <div id="div1"></div>
+
+    <script>
+
+        document.getElementById('btn1').addEventListener('click', m1);
+        document.getElementById('btn2').addEventListener('click', m2);
+        document.getElementById('btn3').addEventListener('click', m3);
+
+        var div1 = document.getElementById('div1');
+
+        function m1() {
+
+            //동적으로 태그 생성하기
+
+            
+            //1. innerHTML
+            //div1.innerHTML = '<input type="text" size="50">';
+
+
+            //2.
+            //2.1 태그 생성
+            var input = document.createElement('input'); //<input>
+
+            //2.2 속성 추가
+            //input.type = 'text'; //BOM
+            //input.size = '50';   //BOM
+
+            //var type = document.createAttribute('type'); //type=""
+            //type.value = 'text'; //type="text"
+            //input.setAttributeNode(type); //<input type="text">
+
+            input.setAttribute('type', 'text');
+            input.setAttribute('size', 50); //<input type="text" size="50">
+
+            div1.appendChild(input);
+
+
+            //<p align="center">문단입니다.</p>
+            //div1.innerHTML += '<p align="center">문단입니다.</p>';
+
+
+            var p = document.createElement('p'); //<p></p>
+
+            p.setAttribute('align', 'center'); //<p align="center"></p>
+
+            var txt = document.createTextNode('문단입니다.');
+            //txt.nodeValue = '문단입니다.2';
+            p.appendChild(txt); //<p align="center">문단입니다.</p>
+
+            
+            div1.appendChild(p);
+
+            div1.removeChild(input);
+
+        }
+
+        function m2() {
+
+            //고양이 x 5
+            for (var i=1; i<=5; i++) {
+
+                //div1.innerHTML += '<img onclick="">';
+
+                var img = document.createElement('img');
+
+                img.setAttribute('src', 'images/cat0' + i + '.jpg');
+                img.setAttribute('title', '고양이' + i);
+                img.addEventListener('click', f2);
+
+                //div1.appendChild(img); //막내로 추가
+                
+                //div1.append(img); //막내로 추가
+                //div1.prepend(img); //첫째로 추가
+
+
+            }
+            
+        }
+
+        function f2(event) {
+            //event.target.width *= 2;
+            div1.removeChild(event.target);
+        }
+
+
+
+        function m3() {
+
+            //3 x 3 테이블 > td 이벤트
+
+            var table = document.createElement('table');
+
+            for (var i=0; i<3; i++) {
+
+                var tr = document.createElement('tr');
+
+                for (var j=0; j<3; j++) {
+
+                    var td = document.createElement('td');
+
+                    td.textContent = 'item';
+
+                    td.addEventListener('mouseenter', f3);
+                    td.addEventListener('mouseleave', f4);
+
+                    tr.appendChild(td);
+
+                }
+
+                table.appendChild(tr);
+
+            }
+
+            table.classList.add('table');
+
+            div1.appendChild(table);
+            
+        }
+
+        function f3(event) {
+            event.target.bgColor = 'cornflowerblue';
+        }
+
+        function f4(event) {
+            event.target.bgColor = 'transparent';
+        }
+
+    </script>
+
+</body>
+</html>

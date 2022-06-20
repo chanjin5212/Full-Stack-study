@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex21_link.html -->
+
+    <h1>링크</h1>
+
+    <a href="http://naver.com" name="link1">네이버</a>
+
+    <hr>
+
+    <form name="form1">
+        <input type="button" name="btn1" value="버튼1">
+    </form>
+
+    <script>
+
+        //document.all.btn1
+
+        document.form1.btn1.onclick = m1;
+
+        function m1() {
+            
+            //document.link1 > 동작 안함
+            //document.links[0]
+            //document.links['link1']
+
+            //BOM
+            document.links['link1'].href = 'http://google.com';
+            document.links['link1'].target = '_blank';
+            document.links['link1'].title = '구글로 이동합니다.';
+
+            //DOM
+            //document.links['link1'].innerText = '구글';   //비표준(MS)
+            document.links['link1'].textContent = '구글'; //표준
+
+            document.link1.textContent = 'google';
+
+        }
+
+    </script>
+
+</body>
+</html>

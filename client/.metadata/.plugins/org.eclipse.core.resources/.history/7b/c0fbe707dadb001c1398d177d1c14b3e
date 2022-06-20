@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- ex19.html -->
+	<h1>HTML5</h1>
+	
+	<form method="POST" action="ex19.jsp">
+	
+		<input type="submit" value="전송하기">
+		<hr>
+		
+		전화번호: <input type="tel">
+		
+		<hr>
+		
+		URL: <input type="url">
+		
+		<hr>
+		
+		이메일: <input type="email">
+		
+		<hr>
+		
+		
+		<h3>로그인(필수입력값)</h3>
+		아이디: <input type="text" required value="aaa"><br>
+		암호: <input type="password" required value="111"><br>
+		<input type="submit" value="로그인">
+		
+		
+		<hr>
+		
+		<label for="txt1">이름:</label> <input type="text" id="txt1">
+		
+		<hr>
+		
+		<input type="text" value="이름을 입력하시오." onfocus="this.value='';">
+		
+		<hr>
+		
+		<input type="text" placeholder="이름을 입력하시오.">
+		<br>
+		<input type="password" placeholder="암호 입력">
+		<br>
+		<textarea cols="40" rows="5" placeholder="자기 소개"></textarea>
+		
+		
+	
+	
+	</form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

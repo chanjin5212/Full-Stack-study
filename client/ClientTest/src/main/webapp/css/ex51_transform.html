@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <style>
+
+
+      #mainmenu > img, #footmenu > img {
+         transition: .7s all;
+      }
+
+
+
+      #mainmenu {
+         border: 0px solid black;
+         /* font-size: 0; */
+         width: 630px;
+         margin: 0 auto;
+
+         transform: translate(0px, -100px);
+      }
+
+      #mainmenu > img {
+         float: left;
+      }
+
+      #mainmenu::after {
+         content: '';
+         display: block;
+         clear: both;
+      }
+
+      /* #mainmenu:hover {
+         transform: translate(0px, -10px);
+      } */
+
+      #mainmenu > img:hover {
+         transform: translate(0px, 90px);
+      }
+
+
+
+
+
+
+      #footmenu {
+         border: 0px solid black;
+         width: 630px;
+         /* margin: 0 auto; */
+         
+         position: fixed;
+         /* left: 0; */
+         /* right: 0; */
+         left: calc(50% - 315px);
+         bottom: 0;
+
+         transform: translate(0px, 90px);
+      }
+
+      #footmenu > img {
+         float: left;
+      }
+
+      #footmenu::after {
+         content: '';
+         display: block;
+         clear: both;
+      }
+
+      #footmenu > img:hover {
+         transform: translate(0px, -90px);
+      }
+
+   </style>
+</head>
+<body>
+   <!-- ex51_transform.html -->
+   <nav id="mainmenu">
+      <img src="images/rect_icon01.png" alt="">
+      <img src="images/rect_icon02.png" alt="">
+      <img src="images/rect_icon03.png" alt="">
+      <img src="images/rect_icon04.png" alt="">
+      <img src="images/rect_icon05.png" alt="">
+   </nav>
+
+   <nav id="footmenu">
+      <img src="images/rect_icon01.png" alt="">
+      <img src="images/rect_icon02.png" alt="">
+      <img src="images/rect_icon03.png" alt="">
+      <img src="images/rect_icon04.png" alt="">
+      <img src="images/rect_icon05.png" alt="">
+   </nav>
+
+</body>
+</html>

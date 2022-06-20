@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+		#place {
+			border: 1px solid #999;
+			padding: 20px;
+			min-height: 146px;
+		}
+	</style>
+</head>
+<body>
+    <div id="place"></div>
+
+    <script>
+        var place = document.getElementById("place");
+
+        window.onkeydown = function() {
+            if (event.keyCode >= 48 && event.keyCode <= 57) {
+                place.innerHTML += "<img src='/ClientTest/src/main/webapp/javascript/images/" + (event.keyCode - 48) + ".png'>";
+            } else if (event.keyCode >= 96 && event.keyCode <= 105) {
+                place.innerHTML += "<img src='/ClientTest/src/main/webapp/javascript/images/" + (event.keyCode - 96) + ".png'>";
+            }
+        }
+    </script>
+</body>
+</html>

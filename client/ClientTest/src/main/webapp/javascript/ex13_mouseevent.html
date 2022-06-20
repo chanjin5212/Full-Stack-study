@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        textarea, input {
+            display: block;
+            margin-bottom: 10px;
+        }
+        textarea {
+            width: 500px;
+            height: 300px;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- ex13_mouseevent.html -->
+    <h1>마우스 관련 이벤트</h1>
+
+    <form name="form1">
+        <textarea name="txt1"></textarea>
+        <input type="button" value="버튼1" name="btn1">
+    </form>
+
+    <script>
+
+        /*
+        
+            마우스 관련 이벤트
+            - onmouseXXX
+
+            1. onmouseover(onmouseenter)
+                - 해당 객체의 영역에 마우스(커서)가 진입하는 순간 발생
+            2. onmouseout(onmouseleave)
+                - 해당 객체의 영역에서 마우스(커서)가 빠져나가는 순간 발생
+            3. onmousedown
+                - 해당 객체의 영역에서 마우스 버튼을 누르는 순간 발생
+            4. onmouseup
+                - 해당 객체의 영역에서 마우스 버튼을 떼는 순간 발생
+            5. onmousemove
+        
+        */
+
+        var txt1 = window.document.form1.txt1;
+        var btn1 = window.document.form1.btn1;
+
+        //txt1.onmouseover = m1;
+        //txt1.onmouseout = m2;
+
+        txt1.onmouseenter = m1;
+        txt1.onmouseleave = m2;
+        txt1.onmousedown = m3;
+        txt1.onmouseup = m4;
+        txt1.onmousemove = m5;
+
+        function message(txt) {
+            var now = new Date();
+            txt1.value = txt + ' - ' + now.toLocaleTimeString() + '\r\n' + txt1.value;
+        }
+
+        function m1() {
+            //alert('m1');
+            //window.document.body.bgColor = 'cornflowerblue';
+            //message('mouseover-');
+        }
+
+        function m2() {
+            //window.document.body.bgColor = 'white';
+            //message('mouseout-');
+        }
+
+        function m3(evt) {
+            //message('mousedown-');
+
+            //message(event.buttons + '-');
+            //message(evt.buttons + '=');
+
+            // if (event.buttons == 2) {
+            //     alert('오른쪽 버튼 클릭 금지!!!');
+            // }
+
+            /*
+            
+                마우스 버튼
+                1. evt.buttons
+
+                마우스 커서 좌표
+                1. x, y
+                    - 문서 좌측 상단을 기준
+                    - 비표준(MS) > 비권장
+                2. clientX, clientY *****************
+                    - 문서 좌측 상단을 기준
+                    - 표준 > 권장
+                    - 절대(=absolute)
+                3. screenX, screenY
+                    - 모니터 좌측 상단을 기준
+                4. offsetX, offsetY *****************
+                    - 이벤트 객체의 좌측 상단을 기준
+                    - 상대(=relative)
+            
+            */
+
+            //message(evt.x + ',' + evt.y);
+            //message(evt.clientX + ',' + evt.clientY);
+            //message(evt.screenX + ',' + evt.screenY);
+            message(evt.offsetX + ',' + evt.offsetY);
+
+        }
+
+        function m4() {
+            //message('mouseup-');
+        }
+
+        function m5(evt) {
+            //message('mousemove');
+            message(evt.offsetX + ',' + evt.offsetY);
+        }
+
+
+
+        //클릭 > 마우스 이벤트(X)
+        //**** 클릭 이벤트에서는 마우스 좌표를 접근하면 안된다!!!
+        btn1.onclick = m6;
+
+        function m6(evt) {
+            //alert('click');
+            //alert(evt.clientX);
+        }
+        
+
+    </script>
+
+</body>
+</html>

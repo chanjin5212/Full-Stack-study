@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex018_location.html -->
+
+    <h1>location</h1>
+
+    <form name="form1">
+        <input type="button" name="btn1" value="버튼1">
+    </form>
+
+
+    <script>
+
+        window.document.form1.btn1.onclick = m1;
+
+        function m1() {
+
+            //location 객체
+            //- window > location
+            //- 현재 창의 페이지(URL)와 관련된 행동
+
+
+            //http://127.0.0.1:5504/javascript/ex018_location.html
+            console.log(window.location.href); //읽기
+
+            //페이지 이동
+            //window.location.href = 'https://naver.com';
+
+            console.log(window.location.host);      //127.0.0.1:5504
+            console.log(window.location.hostname);  //127.0.0.1
+            console.log(window.location.protocol);  //http:
+            console.log(window.location.port);      //5504
+
+
+            //window.location.reload(); //새로고침(F5)
+
+            window.locatin.href = 'ex018_location.html'; //새로 고침
+            
+
+        }
+
+
+        //전역 이벤트 > 어떤 상황에서 행동하던지 항상 발생하는 이벤트
+        window.onkeydown = m2;
+
+        function m2(evt) {
+            //alert(evt.keyCode);
+            if (evt.keyCode == 49) {
+                window.location.href = 'https://naver.com';
+            } else if (evt.keyCode == 50) {
+                window.location.href = 'https://google.com';
+            } else if (evt.keyCode == 51) {
+                window.location.href = 'https://daum.net';
+            }
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+		fieldset { width: 200px; }
+		fieldset > div { margin: 5px; }
+		#tbl1 { border: 1px solid gray; border-collapse: collapse; margin-top: 20px; width: 400px; }
+		#tbl1 td { border: 1px solid gray; padding: 4px 10px; text-align: center;}
+		#tbl1 td:nth-child(1) { width: 150px; }
+	</style>
+</head>
+<body>
+    <h1>테이블</h1>
+    <fieldset>
+		<legend>색상 입력</legend>
+		<div><label>색상 : </label><input type="color" id="txtColor"></div>
+		<div><label>이름 : </label><input type="text" id="txtName" size="15"></div>
+		<div><input type="button" value="추가하기" id="btnAdd"></div>
+	</fieldset>
+    <table id="tbl1">
+		<thead>
+			<tr>
+				<th>색상명</th>
+				<th>미리보기</th>
+			</tr>
+		</thead>
+		<tbody id="tbody1">
+			<tr>
+				<td>노랑</td>
+				<td bgcolor="#FFFF00">#FFFF00</td>
+			</tr>
+			<tr>
+				<td>풀색</td>
+				<td bgcolor="#ACEF12">#ACEF12</td>
+			</tr>
+		</tbody>
+	</table>
+
+    <script>
+
+        let txtColor = document.getElementById("txtColor");
+        let txtName = document.getElementById("txtName");
+        let btnAdd = document.getElementById("btnAdd");
+        let tbody1 = document.getElementById("tbody1");
+        
+        btnAdd.onclick = function() {
+
+            let row = "<tr>";
+            row += "<td>";
+            row += txtName.value;
+            row += "</td>";
+            row += "<td bgColor='" + txtColor.value + "'>";
+            row += txtColor.value;
+            row += "</td>";
+            row += "</tr>";
+
+            tbody1.innerHTML += row;
+
+            txtColor.value = "#000";
+            txtName.value = "";
+
+        }
+
+        txtColor.onchange = function() {
+            txtName.focus();
+        }
+
+        txtName.onkeydown = function() {
+            if (event.keyCode == 13) {
+                btnAdd.click();
+            }
+        }
+
+    </script>
+</body>
+</html>

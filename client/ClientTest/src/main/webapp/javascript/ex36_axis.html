@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        div {
+            border: 1px solid black;
+            padding: 15px;
+            margin: 15px;
+        }
+
+        #me {
+            border-width: 10px;
+        }
+
+        .check {
+            background-color: gold;
+        }
+
+        .one {
+            font-size: 3em;
+        }
+
+        .two {
+            text-decoration: underline;
+        }
+
+        .three {
+            color: blue;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- ex36_axis.html -->
+    <h1>Axis</h1>
+
+    <input type="button" value="버튼" id="btn">
+    <hr>
+
+    <div>
+        할아버지
+        <div>
+            큰아버지
+            <div>
+                사촌
+            </div>
+        </div>
+        <div>
+            아버지
+            <div>
+                형
+            </div>
+            <div>
+                형
+            </div>
+            <div id="me">
+                나
+                <div>자식</div>
+                <div>
+                    자식
+                    <div>손자</div>
+                </div>
+                <div>자식</div>
+            </div>
+            <div>
+                동생
+            </div>
+        </div>
+        <div>
+            작은아버지
+            <div>
+                사촌
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        //DOM > id, class, tagname, name
+        //- 식별자로 검색하는 도구
+        //- obj.getElementById()
+        //- obj.getElementsByClassName()
+        //- obj.getElementsByTagName()
+        //- obj.getElementsByName()
+
+        //DOM > Axis, Traversing..
+        //- 트리 구조를 탐색하는 도구
+        //- 본인을 기준으로 부모, 자식, 형제를 탐색하는 방법
+
+
+        document.getElementById('btn').onclick = m1;
+
+        function m1() {
+
+            /*
+
+                BOM 트리의 구성요소
+                - 내장객체 + 태그들로 구성된 트리
+
+
+                DOM 트리의 구성 요소(노드)
+                - DOM 트리는 태그들로만 구성되어 있지 않다.
+                - 구성 요소 > 태그, PCDATA, 주석, 엔티티, 선언문, 속성 등..
+                1. 태그(1)
+                2. 속성(2)
+                3. PCDATA(3)
+                4. 주석(8)
+                5. 선언문(13)
+
+
+
+                DOM 트리 노드의 프로퍼티
+                1. nodeType > 해당 노드가 어떤 형식 > 열거형(숫자)
+                2. nodeName > 태그(태그명), 속성(속성명), PCDATA(#text)
+                3. nodeValue > 태그(null), 속성(속성값), PCDATA(문자열)
+                
+
+            */
+
+            //나(id="me")
+            var me = document.getElementById('me');
+
+            //me.className = 'check'; //<div class="check">
+
+
+            //XXXList > 배열
+
+            
+
+            
+            //자식 태그
+            //- me.childNodes: 자식 노드들(친자식)
+            //- me.firstChild: 첫번째 자식노드 > me.childNodes[0]
+            //- me.lastChild: 마지막 자식노드 > me.childNodes[me.childNodes.length-1]
+
+            //- me.children: 자식 노드들(태그만)
+            //- me.firstElementChild: 첫번째 자식태그 > me.children[0]
+            //- me.lastElementChild: 마지막 자식태그 > me.children[me.children.length-1]
+
+
+
+            //alert(me.childNodes.length);
+
+            //console.log(10, 20, 30);
+
+            // for (var i=0; i<me.childNodes.length; i++) {
+            //     //console.log(me.childNodes[i]);
+            //     console.log(me.childNodes[i].nodeType
+            //                 , me.childNodes[i].nodeName
+            //                 , me.childNodes[i].nodeValue);
+            // }
+
+
+            // for (var i=0; i<me.childNodes.length; i++) {
+            //     if (me.childNodes[i].nodeType == 1) {
+            //         // console.log(me.childNodes[i].nodeType
+            //         //         , me.childNodes[i].nodeName
+            //         //         , me.childNodes[i].nodeValue);
+
+            //         me.childNodes[i].className = 'check';
+            //     }
+            // }
+
+
+            //alert(me.childNodes.length); //7
+            //alert(me.children.length);   //3
+
+            // for (var i=0; i<me.children.length; i++) {
+            //     me.children[i].className = 'check';
+            // }
+
+
+            //me.children[0].className = 'check';
+            //me.firstElementChild.className = 'check';
+
+            //me.children[me.children-1].className = 'check';
+            //me.lastElementChild.className = 'check';
+
+
+            //me.children[1].firstElementChild.className = 'check';
+
+
+
+
+            //부모 & 조상
+            //- me.parentNode
+            //- me.parentElement
+
+            //me.parentNode.className = 'check';    //자료형 > Node(태그,속성,PCDATA 등..)
+            //me.parentElement.className = 'check'; //자료형 > 태그
+
+            //me.parentElement.parentElement.className = 'check';
+
+            //<body>
+            //me.parentElement.parentElement.parentElement.className = 'check';
+
+            //<html>
+            //me.parentElement.parentElement.parentElement.parentElement.className = 'check';
+
+
+
+            //DOM 트리구조의 최상위 노드 > document 객체
+
+            //alert(me.parentElement.parentElement.parentElement.parentElement.parentElement);
+            //alert(me.parentElement.parentElement.parentElement.parentElement.parentNode);
+            //alert(document);
+            //alert(me.parentElement.parentElement.parentElement.parentElement.parentNode 
+            //        === document);
+            //alert(me.parentElement.parentElement.parentElement.parentElement.parentNode.parentNode);
+
+
+
+
+            //형
+            //me.parentElement.firstElementChild.className = 'check';
+
+            //동생
+            //me.parentElement.lastElementChild.className = 'check';
+
+
+            //- me.previousSibling > 바로 위의 형제
+            //- me.nextSibling > 바로 밑의 형제
+
+            //- me.previousElementSibling
+            //- me.nextElementSibling
+
+            //me.previousElementSibling.className = 'check';
+
+
+
+            //무분별한 id와 class 남발 > 가독성 저하 & 코드 관리 열약;; > 최소한 식별자 > Axis
+
+
+
+
+            //class 속성 제어 프로퍼티
+            //1. className > 단일 클래스 > BOM
+            //2. classList > 다중 클래스(배열) > DOM
+
+            //<div class="check one two three">
+            //me.className = 'check one';
+
+            me.classList.add('check');
+            me.classList.add('two');
+            me.classList.add('three');
+
+            me.classList.remove('check');
+
+        }
+
+
+    </script>
+
+</body>
+</html>

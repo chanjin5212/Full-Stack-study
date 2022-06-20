@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        form {
+            width: 200px;
+            margin: 20px auto;
+        }
+
+        form > div {
+            margin-bottom: 15px;
+        }
+
+        form > div > input {
+            display: block;
+            margin-bottom: 5px;
+            outline: none;
+        }
+
+        #txtId { width: 15px; }
+        #txtMessage {
+            width: 250px;
+            border: 0px solid transparent;
+            outline: none;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <form name="form1">
+        <h1>회원 가입</h1>
+        <div>
+            아이디 :
+            <input type="text" name="txtId">
+            <input type="text" name="txtMessage" id="txtMessage">
+        </div>
+    </form>
+
+    <script>
+
+        window.document.form1.txtId.onkeyup = m1;
+
+        function m1() {
+            if (window.document.form1.txtId.value.length == 0) {
+                window.document.form1.txtMessage.value = "";
+            } else if (window.document.form1.txtId.value.length < 4) {
+                window.document.form1.txtMessage.value = "아이디가 너무 짧습니다."
+            } else if (window.document.form1.txtId.value.length > 12) {
+                window.document.form1.txtMessage.value = "아이디가 너무 깁니다."
+            } else {
+                window.document.form1.txtMessage.value = "아이디가 적합합니다."
+            }
+        }
+
+        
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+		#tbl1 {
+			border: 1px solid gray;
+			border-collapse: collapse;
+			width: 600px;
+		}
+		
+		#tbl1 td {
+			border: 1px solid gray;
+			padding: 10px;
+		}
+		
+		#tbl1 td:first-child {
+			background-color: #DEDEDE;
+			width: 100px;
+			text-align: center;
+		}
+		
+		input {
+			border: 1px solid gray;
+			padding-left: 3px;
+		}
+		
+		#zip {
+			width: 60px;
+		}
+		
+		#address1, #address2 {
+			width: 98%;
+		}
+	
+    </style>
+</head>
+<body>
+    <form name="form1">
+        <h1>우편 번호 검색</h1>
+        <table id="tbl1">
+            <tbody>
+                <tr>
+                    <td>우편번호</td>
+                    <td>
+                        <input type="text" id="zip" name="zip" readonly>
+                        <input type="button" value="우편번호검사하기" onclick="search();">
+                    </td>
+                </tr>
+                <tr>
+                    <td>주소</td>
+                    <td>
+                        <input type="text" id="address1" name="address1" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>상세주소</td>
+                    <td>
+                        <input type="text" id="address2" name="address2">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+
+    <script>
+        function search() {
+            window.open("search_imp1.html", "search", "width=300, height=200");
+        }
+    </script>
+</body>
+</html>

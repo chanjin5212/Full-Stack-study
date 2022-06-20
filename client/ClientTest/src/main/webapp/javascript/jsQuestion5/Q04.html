@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+		body {
+			margin: 30px 50px;
+		}
+		#tbl1 {
+			border: 1px solid black;
+			border-collapse: collapse;
+		}
+		#tbl1 td {
+			border: 1px solid black;
+			width: 120px;
+			height: 120px;
+		}
+		#tbl1 td img {
+			display: block;
+			width: 120px;
+			height: 120px;
+		}
+	</style>
+</head>
+<body>
+    <div class="main m1200">
+	
+        <table id="tbl1">
+            <tbody><tr>
+                <td class="cell" data-color="255"></td>
+                <td class="cell" data-color="255"></td>
+                <td class="cell" data-color="255"></td>
+                <td class="cell" data-color="255"></td>
+                <td class="cell" data-color="255"></td>
+                <td class="cell" data-color="255"></td>
+                <td class="cell" data-color="255"></td>
+                <td class="cell" data-color="255"></td>
+                <td class="cell" data-color="255"></td>
+            </tr>
+            <tr>
+                <td class="cell" data-color="255"></td>
+                <td class="cell" data-color="255"></td>
+                <td class="cell" data-color="255"></td>
+                <td class="cell" data-color="255"></td>
+                <td class="cell" data-color="255"></td>
+                <td class="cell" data-color="255"></td>
+                <td class="cell" data-color="255"></td>
+                <td class="cell" data-color="255"></td>
+                <td class="cell" data-color="255"></td>
+            </tr>
+            <tr>
+                <td class="cell" data-color="255"></td>
+                <td class="cell" data-color="255"></td>
+                <td class="cell" data-color="255"></td>
+                <td class="cell" data-color="255"></td>
+                <td class="cell" data-color="255"></td>
+                <td class="cell" data-color="255"></td>
+                <td class="cell" data-color="255"></td>
+                <td class="cell" data-color="255"></td>
+                <td class="cell" data-color="255"></td>
+            </tr>
+            <tr>
+                <td class="cell" data-color="255"></td>
+                <td class="cell" data-color="255"></td>
+                <td class="cell" data-color="255"></td>
+                <td class="cell" data-color="255"></td>
+                <td class="cell" data-color="255"></td>
+                <td class="cell" data-color="255"></td>
+                <td class="cell" data-color="255"></td>
+                <td class="cell" data-color="255"></td>
+                <td class="cell" data-color="255"></td>
+            </tr>
+            <tr>
+                <td class="cell" data-color="255"></td>
+                <td class="cell" data-color="255"></td>
+                <td class="cell" data-color="255"></td>
+                <td class="cell" data-color="255"></td>
+                <td class="cell" data-color="255"></td>
+                <td class="cell" data-color="255"></td>
+                <td class="cell" data-color="255"></td>
+                <td class="cell" data-color="255"></td>
+                <td class="cell" data-color="255"></td>
+            </tr>
+        </tbody></table>
+    
+        <script>
+            
+            var timer = 0;
+            var index = -1;
+            var cell, btn1;
+    
+            window.onload = function() {
+                
+                cell = document.getElementsByClassName("cell");
+                btn1 = document.getElementById("btn1");
+                
+                for (var i=0; i<cell.length; i++) {
+                    cell[i].onclick = function() {
+                        if (event.srcElement.nodeName == "TD") {
+    
+                            for (var j=0; j<cell.length; j++) {
+                                cell[j].innerHTML = "";
+                            }
+    
+                            var c = parseInt(event.srcElement.dataset["color"]);
+                            c -= 25;
+                            if (c >= 0) {
+                                event.srcElement.style.backgroundColor = "rgb(" + c + "," + c + "," + c + ")";
+                                event.srcElement.dataset["color"] = c;
+                            } else {
+                                event.srcElement.onclick = null;
+                            }
+                            event.srcElement.innerHTML = "<img src='/ClientTest/src/main/webapp/javascript/images/dog-foot.png'>";
+                        }
+                    };
+                }
+                
+            };
+            
+        </script>
+    
+    
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input { margin: 5px; }
+    </style>
+</head>
+<body>
+    <form>
+        <input type="button" value="서울시 강남구 역삼동" onclick="sel('06232', '서울시 강남구 역삼동');">
+        <input type="button" value="서울시 강남구 대치동" onclick="sel('06291', '서울시 강남구 대치동');">
+        <input type="button" value="서울시 강남구 도곡동" onclick="sel('06267', '서울시 강남구 도곡동');">
+    </form>
+
+    <script>
+        function sel(zip, address1) {
+            opener.document.form1.zip.value = zip;
+            opener.document.form1.address1.value = address1;
+            opener.document.form1.address2.focus();
+            window.close();
+        }
+    </script>
+</body>
+</html>

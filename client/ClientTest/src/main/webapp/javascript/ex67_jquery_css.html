@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-1.12.4.js"></script>
+    <style>
+
+        .one {
+            font-size: 3em;
+            color: orange;
+        }
+
+        .two {
+            font-style: italic;
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- ex67_jquery_css.html -->
+    <h1>jQuery + CSS</h1>
+
+    <input type="button" value="버튼1" id="btn1">
+
+    <hr>
+
+    <div id="box">상자</div>
+
+    <script>
+
+        $('#btn1').click(function() {
+
+            //CSS 조작
+            //- css(속성)     > 읽기
+            //- css(속성, 값) > 쓰기
+
+            //alert(document.getElementById('box').style.color);
+
+            //alert(getComputedStyle(document.getElementById('box')).getPropertyValue('color'));
+
+            //alert($('#box').css('color'));
+
+            // $('#box')
+            //     .css('color', 'blue')
+            //     .css('background-color', 'gold')
+            //     .css('width', 300)
+            //     .css('height', 100);
+
+
+            // $('#box').css({
+            //     color: 'blue',
+            //     backgroundColor: 'gold',
+            //     width: 300,
+            //     height: 100
+            // });
+
+
+            //box.classList.add('one')
+            //box.classList.remove('one')
+
+            //$('#box').addClass('one');
+            //$('#box').addClass('two');
+            //$('#box').removeClass('one');
+
+            $('#box').toggleClass('one');
+
+
+        });
+
+    </script>
+
+</body>
+</html>

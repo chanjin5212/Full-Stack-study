@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex83_chart.html -->
+
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+    
+    <div id="container"></div>
+
+    <script>
+
+Highcharts.chart('container', {
+    chart: {
+        plotBackgroundColor: null,
+        plotBorderWidth: null,
+        plotShadow: false,
+        type: 'pie'
+    },
+    title: {
+        text: 'Programming Language'
+    },
+    tooltip: {
+        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+    },
+    accessibility: {
+        point: {
+            valueSuffix: '%'
+        }
+    },
+    plotOptions: {
+        pie: {
+            allowPointSelect: true,
+            cursor: 'pointer',
+            dataLabels: {
+                enabled: true,
+                format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+            }
+        }
+    },
+    series: 
+        [
+            {
+                name: 'Brands',
+                colorByPoint: true,
+
+                data: 
+                [
+                    
+                    {
+                        name: 'Java',
+                        y: 30
+                    },
+                    
+                    {
+                        name: 'Oracle',
+                        y: 25
+                    },
+
+                    {
+                        name: 'HTML',
+                        y: 10
+                    },
+
+                    {
+                        name: 'CSS',
+                        y: 7
+                    },
+
+                    {
+                        name: 'JavaScript',
+                        y: 22
+                    }
+
+            ]
+    }]
+});
+
+    </script>
+       
+
+</body>
+</html>

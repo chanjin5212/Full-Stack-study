@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        /*  
+        
+            그룹 선택자
+            - 2개 이상의 선택자를 한번에 적용하는 방법
+            - 선택자, 선택자, 선택자 { 구현부; }
+
+        */
+
+        /* h1 {
+            color: orange;
+        } */
+
+        #mainTitle {
+            color: orange;
+        }
+
+        .employee-name {
+            color: cornflowerblue;
+        }
+
+        .info {
+            color: tomato;
+        }
+
+        /* 
+        h1 {
+            font-family: '바탕체';
+        }
+
+        h2 {
+            font-family: '바탕체';
+        } 
+        */
+
+        h1, h2 {
+            font-family: '궁서체';
+        }
+
+        #mainTitle, h2, .info {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <!-- ex05_selector.html -->
+    <h1 id="mainTitle">회사 소개</h1>
+
+    <h2>대표 이사</h2>
+    <p class="employee-name">홍길동</p>
+    <p class="info">인삿말 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구</p>
+
+    <h2>총괄 팀장</h2>
+    <p class="employee-name">아무개</p>
+    <p class="info">인삿말 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구</p>
+
+    <h2>운영 부장</h2>
+    <p class="employee-name">테스트</p>
+    <p class="info">인삿말 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구</p>
+
+    <h1>또 다른 제목</h1>
+
+
+</body>
+</html>

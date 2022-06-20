@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        #box {
+            border: 1px solid black;
+            width: 200px;
+            height: 200px;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- ex48_css.html -->
+
+    <h1>JavaScript + CSS</h1>
+
+    <input type="button" value="버튼" id="btn">
+    <hr>
+    <div id="box" style="width: 200px;">상자입니다.</div>
+
+    <h1>텍스트</h1>
+
+    <div class="tool">
+        <input type="button" value="  +  " id="btn1">
+        <input type="button" value="  -  " id="btn2">
+    </div>
+
+    <p id="content">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur enim alias obcaecati hic nemo quod cumque asperiores, animi sunt, perferendis temporibus doloribus est fuga cupiditate excepturi commodi. Dolore quas rerum eius eos, minima ab, sapiente omnis optio beatae praesentium, eaque itaque. Quas incidunt voluptatum cum nam repudiandae voluptates corporis fugiat nemo! Est quae veniam excepturi ipsum non. Rerum animi aut nihil fuga odit voluptatum fugit, eaque earum eveniet, debitis omnis, qui obcaecati iure vero ullam reprehenderit. Esse ad inventore possimus perferendis quos, qui ut quis saepe. Necessitatibus nobis aliquid, quas cumque sit explicabo animi. Aperiam veniam deserunt molestias magnam, adipisci aspernatur laborum omnis odio assumenda non perferendis vitae, error in excepturi explicabo, et eos consectetur modi cumque cum sunt? Atque neque consequatur sit dolor obcaecati fuga enim cum nam debitis hic, porro a soluta perferendis veniam adipisci numquam nihil alias repellat quod aut est minus! Reprehenderit at commodi consequuntur sunt harum minus minima hic consectetur laboriosam, dolores ea sapiente est atque, quisquam libero ad eligendi totam odio facilis. Provident eligendi, perferendis veniam quasi in vitae ab nihil omnis, modi maxime cupiditate! Enim sed suscipit doloremque laudantium corrupti dolorem dolorum eligendi praesentium, et voluptatum doloribus earum fuga itaque, rem deserunt aliquam soluta aliquid odio id esse tempora libero voluptatem quia molestias? Doloribus ipsam rerum laudantium fugiat tempora dolorem amet itaque perspiciatis aliquid esse ab harum quam, id soluta sequi adipisci minus, obcaecati odit officia quas ea vel molestiae neque labore? Recusandae sapiente voluptates dignissimos nobis expedita, fuga blanditiis sit veritatis quas ab exercitationem. Fugiat molestiae iure corporis natus magnam dolorum beatae quas laudantium debitis minus, deserunt quo excepturi libero aliquid quisquam officia molestias labore optio autem provident sint ipsam praesentium commodi possimus. Blanditiis iste iure sequi molestiae, consequuntur sapiente corrupti quisquam cumque vel quas impedit a deserunt excepturi sint, quidem ut!</p>
+
+    <script>
+
+        const btn = document.getElementById('btn');
+        const box = document.getElementById('box');
+
+        btn.addEventListener('click', function() {
+
+            /*
+            
+                JavaScript로 CSS 조작
+                - style 프로퍼티 제공 > 하위 배열(CSS 속성에 준하는 키) 제공
+
+            */
+
+            //<div id="box" style="color: blue; background-color: yellow;">
+            //box.style = 'color: blue;';
+            //box.setAttribute('style', 'color: yellow;');
+
+            //관리 불편;;; > 이 방식은 사용 안함
+            //box.style = 'color: blue; background-color: yellow;';
+
+
+            //box.style = 'color: blue;';
+            // box.style.color = 'blue'; //A
+            // box.style['color'] = 'blue'; //B
+
+            // box.style.backgroundColor = 'yellow'; //A
+            // box.style['background-color'] = 'yellow'; //B
+
+            // box.style.fontSize = '10em';
+            // box.style['background-image'] = 'url(images/catty01.png)';
+
+
+
+            //box.style.width = '400px';
+
+            //누를때마다 현재 너비의 + 50px
+
+            //box.style.width = box.style.width + 50;
+
+            //alert(box.style.width);
+
+            //box.style.height = '300px';
+
+            //alert(box.style.height);
+
+            //(인라인 스타일시트가 아닌) CSS로 정의된 속성값은 JavaScript로 읽지를 못한다.
+
+
+
+
+            //임베디드와 외부 CSS를 읽어오는 방법 > 태그에 적용된 모든 CSS를 읽어오는 방법
+            // > 어떤 방식으로 CSS가 적용되었는지는 모르겠지만.. 현재 태그에 적용되어 있는 모든 CSS를 직접 확인해서 정보를 가져와라!!!
+            const list = getComputedStyle(box);
+
+            //alert(box.style.height); //''
+            //alert(list.getPropertyValue('height')); //200px
+
+
+            
+            let width = list.getPropertyValue('width');
+
+            //alert(width);
+
+            //              = '200px' + 50 > '200px50'
+            box.style.width = parseInt(width) + 50 + 'px'; //250px
+
+
+        });
+
+
+
+        let fontSize = 16;
+
+        document.getElementById('btn1').addEventListener('click', function() {
+            //확대
+            fontSize += 3;
+            if (fontSize > 30) {
+                fontSize = 30;
+            }
+            document.getElementById('content').style.fontSize = fontSize + 'px';
+        });
+
+        document.getElementById('btn2').addEventListener('click', function() {
+            //축소
+            fontSize -= 3;
+            if (fontSize < 10) {
+                fontSize = 10;
+            }
+            document.getElementById('content').style.fontSize = fontSize + 'px';
+        });
+
+
+
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Picture</h1>
+<h2>200x200</h2>
+    <img src="html/images/placeimg_200_200_animals.jpg">
+<h2>500x200</h2>
+    
+<h2>200x 400</h2>
+    
+<h2>Mixed</h2>
+    
+</body>
+</html>

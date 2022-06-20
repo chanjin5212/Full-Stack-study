@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        /* 
+        
+            ID 선택자
+            - 태그에 명시된 id 속성을 검색해서 태그를 검색
+            - 태그명#ID
+            - 원하는 태그를 직접 선택할 수 있다.
+            - 일괄적용이 안된다. > ID는 유일해서..
+        
+        */
+
+        /* h2#title {
+            color: orange;
+        } */
+
+        #title {
+            color: orange;
+        }
+
+
+        /* 
+        
+            클래스 선택자
+            - 태그에 명시된 class 속성을 사용해서 태그를 검색
+            - 태그명.클래스명
+            - .클래스명
+        
+        */
+
+        .test {
+            color: red;
+        }
+
+
+        /*  
+        
+            1. 전체 선택자
+            -----------------
+            2. 태그 선택자
+            3. ID 선택자
+            4. 클래스 선택자
+            -----------------
+            5. 나머지
+                - 2~4 조합해서 구성
+
+        */
+
+
+    </style>
+</head>
+<body>
+    <!-- ex04_selector.html -->
+
+    <h1 class="test">h1 입니다.</h1>
+
+    <p class="test">p 입니다.</p>
+    <p>p 입니다.</p>
+    <p class="test">p 입니다.</p>
+    <p>p 입니다.</p>
+    <p class="test">p 입니다.</p>
+
+    <div>div 입니다.</div>
+    <div class="test">div 입니다.</div>
+    <div>div 입니다.</div>
+
+    <h2>h2 입니다.</h2>
+    <p>p 입니다.</p>
+
+    <h2 id="title">h2 입니다.</h2>
+    <p>p 입니다.</p>
+
+    <hr>
+
+    <h2>회사 소개</h2>
+
+    <p>오시는 길: 어쩌구 저쩌구</p>
+
+</body>
+</html>

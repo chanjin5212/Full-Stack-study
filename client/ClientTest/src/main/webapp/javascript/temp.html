@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            border-bottom: 1px dashed #AAA;
+        }
+        h1 > small {
+            font-size: .7em;
+            color: #777;
+        }
+
+        div > div {
+            font-size: 1.2rem;
+            border: 1px solid #BBB;
+            width: 150px;
+            padding: 5px;
+            border-radius: 3px;
+            margin-bottom: 3px;
+        }
+        
+        div > div > span {
+            border: 1px solid #999;
+            display: inline-block;
+            width: 25px;
+            text-align: right;
+            border-radius: 3px;
+            background-color: rgba(255, 99, 71, .3);
+        }
+    </style>
+</head>
+<body>
+    <h1>구구단 <small>5단</small></h1>
+
+    <div id="list">
+        <div>5 x 1 = <span>5</span></div>
+        <div>5 x 2 = <span>10</span></div>
+        <div>5 x 3 = <span>15</span></div>
+        <div>5 x 4 = <span>20</span></div>
+        <div>5 x 5 = <span>25</span></div>
+        <div>5 x 6 = <span>30</span></div>
+        <div>5 x 7 = <span>35</span></div>
+        <div>5 x 8 = <span>40</span></div>
+        <div>5 x 9 = <span>45</span></div>
+    </div>
+
+    <script>
+
+        document.querySelectorAll('#list div').forEach(function(index, item) {
+            item.addEventListener('click', function() {
+                event.target.firstElementChild.style.display = 'inline-block';
+            });
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+	
+	h3 {
+		width: 680px;
+		margin: 0px auto;
+	}
+	
+	#menu1, #menu2, #menu3, #menu4 {
+		width: 680px;
+		margin: 10px auto;
+		border: 0px solid black;		
+	}
+	
+	#menu1 div, #menu2 div, #menu3 div, #menu4 div {
+		float: left;
+		margin-right: -10px;
+		border: 10px solid black;
+		overflow: hidden;
+	}
+	
+	#menu1 div img {
+		display: block;
+		transform: translate(-126px, 0px);
+		transition: all .5s;
+	}
+	
+	#menu1 div:hover img {
+		transform: translate(0px, 0px);
+	}
+	
+	#menu2 div img {
+		display: block;
+		opacity: 0;
+		transition: all .5s;
+	}
+	
+	#menu2 div:hover img {
+		opacity: 1;
+	}
+	
+	#menu3 div img {
+		display: block;
+		transition: all .5s;
+		opacity: 0;
+		transform: scale(0, 0);
+	}
+	
+	#menu3 div:hover img {
+		transform: scale(1, 1);
+		opacity: 1;
+	}
+	
+	#menu4 div img {
+		transform: translate(0px, -126px) scale(0, 0) rotate(0deg);
+		display: block;
+		opacity: 0;
+		transition: all .5s;
+	}
+	
+	#menu4 div:hover img {
+		transform: translate(0px, 0px) scale(1, 1) rotate(360deg);
+		opacity: 1;
+	}
+
+	#menu1:after, #menu2:after, #menu3:after, #menu4:after {
+		content: " ";
+		display: block;
+		clear: both;
+	}
+	
+
+
+    </style>
+</head>
+<body>
+    <div style="width: 700px; margin: 30px auto;">
+        <div id="menu1">
+            <div>
+                <img src="/src/main/webapp/css/images/rect_icon01.png">
+            </div>
+            <div>
+                <img src="/src/main/webapp/css/images/rect_icon02.png">
+            </div>
+            <div>
+                <img src="/src/main/webapp/css/images/rect_icon03.png">
+            </div>
+            <div>
+                <img src="/src/main/webapp/css/images/rect_icon04.png">
+            </div>
+            <div>
+                <img src="/src/main/webapp/css/images/rect_icon05.png">
+            </div>
+        </div>
+        <div id="menu2">
+            <div>
+                <img src="/src/main/webapp/css/images/rect_icon01.png">
+            </div>
+            <div>
+                <img src="/src/main/webapp/css/images/rect_icon02.png">
+            </div>
+            <div>
+                <img src="/src/main/webapp/css/images/rect_icon03.png">
+            </div>
+            <div>
+                <img src="/src/main/webapp/css/images/rect_icon04.png">
+            </div>
+            <div>
+                <img src="/src/main/webapp/css/images/rect_icon05.png">
+            </div>
+        </div>
+        <div id="menu3">
+            <div>
+                <img src="/src/main/webapp/css/images/rect_icon01.png">
+            </div>
+            <div>
+                <img src="/src/main/webapp/css/images/rect_icon02.png">
+            </div>
+            <div>
+                <img src="/src/main/webapp/css/images/rect_icon03.png">
+            </div>
+            <div>
+                <img src="/src/main/webapp/css/images/rect_icon04.png">
+            </div>
+            <div>
+                <img src="/src/main/webapp/css/images/rect_icon05.png">
+            </div>
+        </div>
+        <div id="menu4">
+            <div>
+                <img src="/src/main/webapp/css/images/rect_icon01.png">
+            </div>
+            <div>
+                <img src="/src/main/webapp/css/images/rect_icon02.png">
+            </div>
+            <div>
+                <img src="/src/main/webapp/css/images/rect_icon03.png">
+            </div>
+            <div>
+                <img src="/src/main/webapp/css/images/rect_icon04.png">
+            </div>
+            <div>
+                <img src="/src/main/webapp/css/images/rect_icon05.png">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

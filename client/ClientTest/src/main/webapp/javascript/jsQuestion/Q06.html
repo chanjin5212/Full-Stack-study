@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+		body {
+			margin: 25px;
+		}
+		#list {
+			display: inline-block;
+			border: 1px solid #DEDEDE;
+			padding: 5px;
+		}
+		
+		#label {
+			border: 0px solid #DEDEDE;
+			font-size: 30px;
+			font-weight: bold;
+			width: 600px;
+			color: #333;
+			margin: 10px;
+		}
+	
+    </style>
+</head>
+<body>
+    <div id="list">
+        <img src="/ClientTest/src/main/webapp/javascript/images/img01.jpg" name="img1">
+        <img src="/ClientTest/src/main/webapp/javascript/images/img02.jpg" name="img2">
+        <img src="/ClientTest/src/main/webapp/javascript/images/img03.jpg" name="img3">
+    </div>
+    <br>
+    <input type="text" name="label" id="label" readonly="readonly">
+
+    <script>
+
+       
+        document.images["img1"].onmouseover = change;
+        document.images["img2"].onmouseover = change;
+        document.images["img3"].onmouseover = change;
+        document.images["img1"].onmouseout = change;
+        document.images["img2"].onmouseout = change;
+        document.images["img3"].onmouseout = change;
+
+
+
+        function change() {
+            var name = event.srcElement.src;
+            var index = name.lastIndexOf(".");
+            var name = name.substr(index-1);
+            
+            if (name == "1.jpg") {
+                document.all.label.value = "'스키' 타는 사람이 '당근'으로 변했습니다.";
+            } else if (name == "2.jpg") {
+                document.all.label.value = "'해바라기'가 '피망'으로 변했습니다.";
+            } else if (name == "3.jpg") {
+                document.all.label.value = "'나무'가 '개'가 됐습니다.";
+            } else {
+                document.all.label.value = "";
+            }
+
+            if (event.type == "mouseover") {
+                console.log("하고있냐");
+                name = "0" + (parseInt(name.substr(0)) + 3) + ".jpg";
+            } else if (event.type == "mouseout") {
+                name = "0" + (parseInt(name.substr(0)) - 3) + ".jpg";
+            }
+
+            event.srcElement.src = "/ClientTest/src/main/webapp/javascript/images/img" + name;
+            document.title = event.srcElement.src;
+        }
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-1.12.4.js"></script>
+</head>
+<body>
+    <!-- ex65_jquery_event.html -->
+
+    <h1>jQuery Event</h1>
+
+    <input type="button" value="버튼1" id="btn1" class="btn">
+    <input type="button" value="버튼2" id="btn2" class="btn">
+    <input type="button" value="버튼3" id="btn3" class="btn">
+    <input type="button" value="버튼4" id="btn4" class="btn">
+    <input type="button" value="버튼5" id="btn5" class="btn">
+
+    <script>
+
+        //순수한 JavaScript > Vanilla JS
+        //jQuery
+
+
+        //1. BOM
+        //<input onclick="">
+        //btn.onclick = function() {}
+
+        //2. DOM
+        //btn.addEventListener()
+
+        //3.jQuery
+        //- 이벤트 함수
+
+
+        /*
+        
+            jQuery 기능
+            - 모든 기능이 메소드(함수)으로 제공된다.
+            - 프로퍼티가 없다.        
+
+
+            jQuery 함수 형태
+            1. 전용 함수
+                a. obj.test()       //getter, 읽기
+                b. obj.test(param)  //setter, 쓰기
+
+            2. 범용 함수
+                a. obj.test(param)        //getter, 읽기
+                b. obj.test(param, param) //setter, 쓰기
+        
+        */
+
+        //btn1.value = '쓰기'
+        //alert(btn1.value)
+
+        //jQuery('#btn1').val('쓰기');
+        //alert(jQuery('#btn1').val());
+
+        //jQuery('#btn1').css('color', 'red'); //쓰기
+        //alert(jQuery('#btn1').css('color')); //읽기
+
+
+
+        //jQuery 이벤트 함수
+        //1. 전용 이벤트 함수
+        //  - 객체.이벤트함수(콜백함수)
+        //2. 범용 이벤트 함수
+        //  - 객체.on(이벤트명, 콜백함수)
+
+        
+        // $('#btn1').click(function() {
+        //     alert('버튼1');
+        // });
+
+        //btn2.addEventListener('click', function() {});
+
+        // $('#btn2').on('click', function() {
+        //     alert('버튼2');
+        // });
+
+
+
+        $('.btn').click(function(event) {
+            
+            //이벤트 주체?
+            //alert(event.target.value);
+            //alert(this);
+            //alert(event.target === this);
+
+            //alert(this);
+            //this.value = '클릭';
+
+            $(this).val('클릭');
+
+        });
+
+        
+
+
+
+        // document.getElementById('btn1').onclick = function(event) {
+        //     //event.target.value = '클릭';
+        //     this.value = 'Click';
+        // };
+
+
+        //document.getElementById('btn1').onclick = event => {
+            //event.target.value = '클릭';
+            //this.value = 'click';
+            //alert(window === this);
+            //alert(this);
+        //};
+
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- ex16_table.html -->
+	
+	<!-- 
+		
+		테이블 행
+		1. 헤더 행(머릿말)
+		2. 데이터 행
+	
+	 -->
+	
+	<h1>주소록</h1>
+	
+	<table border>
+		<tr>
+			<td>번호</td>
+			<td>이름</td>
+			<td>나이</td>
+			<td>성별</td>
+			<td>주소</td>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>홍길동</td>
+			<td>20</td>
+			<td>남자</td>
+			<td>서울시 강남구 역삼동</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>호호호</td>
+			<td>22</td>
+			<td>여자</td>
+			<td>서울시 강남구 대치동</td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>하하하</td>
+			<td>25</td>
+			<td>남자</td>
+			<td>서울시 강동구 천호동</td>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>홍길동</td>
+			<td>20</td>
+			<td>남자</td>
+			<td>서울시 강남구 역삼동</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>호호호</td>
+			<td>22</td>
+			<td>여자</td>
+			<td>서울시 강남구 대치동</td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>하하하</td>
+			<td>25</td>
+			<td>남자</td>
+			<td>서울시 강동구 천호동</td>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>홍길동</td>
+			<td>20</td>
+			<td>남자</td>
+			<td>서울시 강남구 역삼동</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>호호호</td>
+			<td>22</td>
+			<td>여자</td>
+			<td>서울시 강남구 대치동</td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>하하하</td>
+			<td>25</td>
+			<td>남자</td>
+			<td>서울시 강동구 천호동</td>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>홍길동</td>
+			<td>20</td>
+			<td>남자</td>
+			<td>서울시 강남구 역삼동</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>호호호</td>
+			<td>22</td>
+			<td>여자</td>
+			<td>서울시 강남구 대치동</td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>하하하</td>
+			<td>25</td>
+			<td>남자</td>
+			<td>서울시 강동구 천호동</td>
+		</tr>
+	</table>
+	
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

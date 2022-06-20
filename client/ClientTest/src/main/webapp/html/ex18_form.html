@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- ex18_form.html -->
+	
+	<!--  
+		
+		폼, Form
+		- 입력 양식, 입력 컨트롤
+		- 클라이언트(사용자)로부터 입력장치(키보드, 마우스, 터치 등..)을 통해서 데이터를 입력받는 역할
+		- 입력 데이터 > 서버로 전송!!! > 업무 활용 or 데이터베이스 저장 등..
+		ex) 텍스트 박스, 버튼, 체크 박스, 라디오 버튼 등..
+		- <form>
+		- <form>의 자식 태그들..
+		
+		<form>
+		- 모든 컨트롤을 감싸는 컨테이너
+		- 스스로 랜더링 결과를 생성하지 않는다.
+		- 입력한 값을 서버로 전송하는 역할(******)
+		
+		form.method
+		- 데이터를 보내는 방식
+		1. GET
+			- http://localhost:8090/client/html/ex18.jsp?txtName=hong
+			- ?txtName=hong 추가
+			- 물건을 송장에 붙여서 보내는 방식
+			- 전송되는 데이터가 노출(주소창) > 보안 X
+			- URL에 붙여서 넘기는 방식 > URL(256자 제한) > Overflow > 65536 바이트
+			- 짧은 데이터 전용
+			- 보내는 데이터 형식 > 숫자 or 영문자
+			- URL 형식 > 한글 허용 X > 인코딩
+			- %EC%9E%90%EB%B0%94		
+			- https://www.google.com/search?q=%EC%9E%90%EB%B0%94&sxsrf=ALiCzsbbsVPFlbRTfuu2EqCSLKc_eQeB7Q%3A1653439655637&source=hp&ei=p3yNYuiaJc_R-Qbn55fIBQ&iflsig=AJiK0e8AAAAAYo2Kt8aU98KfrW503T5L_pCwEVK5qaKS&ved=0ahUKEwioitLatvn3AhXPaN4KHefzBVkQ4dUDCAk&uact=5&oq=%EC%9E%90%EB%B0%94&gs_lcp=Cgdnd3Mtd2l6EAMyBAgjECcyBAgjECcyBAgjECcyCwgAEIAEELEDEIMBMgsIABCABBCxAxCDATIICAAQgAQQsQMyBAgAEEMyBAgAEEMyBAgAEEMyBAgAEEM6BwgjEOoCECc6EQguEIAEELEDEIMBEMcBENEDOhEILhCABBCxAxCDARDHARCjAjoOCC4QgAQQsQMQgwEQ1AI6BQgAEIAEULAHWPEJYKQPaAFwAHgAgAF-iAHPA5IBAzAuNJgBAKABAbABCg&sclient=gws-wiz
+			
+			
+		2. POST
+			- http://localhost:8090/client/html/ex18.jsp
+			- 물건을 상자안에 담아서 보내는 방식
+			- 전송되는 데이터가 노출 안됨 > 보안 O
+			- 전송 길이 무제한
+			- 보내는 데이터 모든 종류 가능
+		
+		
+		form.action
+		- 데이터를 수신할 서버측 주소(URL)
+		- 택배 > 받는 사람 주소 
+		- 서버측 동작하고 있는 프로그램 주소 > 아파치 톰캣의 주소 + 그안에서 동작중인 자바 프로그램(Servlet,JSP,Spring)
+	
+	-->
+	
+	<h1>사용자 데이터 입력</h1>
+	
+	<form method="GET" action="ex18.jsp">
+		<input type="text" name="txtName" autocomplete="off">
+		<input type="submit" value="전송하기">
+	</form>
+	
+	<h1>네이버 검색</h1>
+	
+	
+	<!-- OpenAPI -->
+	
+	<form action="https://search.naver.com/search.naver" method="GET">
+		<input type="text" name="query">
+		<input type="submit" value="검색하기">
+	</form>
+	
+	<hr>
+	
+	<h1>폼 컨트롤</h1>
+	
+	<!--  
+		
+		<input>
+		- 인라인 태그
+		- 단독 태그
+		- input.type: 입력 컨트롤 종류 지정
+		- input.name: 식별자. HTML에서 사용
+		- input.id: 식별자. CSS, JavaScript에서 사용
+		- input.class: 식별자. CSS, JavaScript에서 사용
+		- input.size: 길이(문자 개수)
+		- input.maxlength: 최대 입력 길이(문자 개수) + 유효성 검사
+		- input.value: 컨트롤의 입력값(현재 입력값)
+		- input.readonly: 읽기 전용(전원 ON) > 서버 전송 가능
+		- input.disabled: 비활성화(전원 OFF) > 서버 전송 불가능
+		- input.accesskey: 바로가기(Alt + 조합키)
+		- input.autofocus: 자동 포커스
+		- input.autocomplete: 자동 완성 끄기
+	
+	-->
+	
+	<form>
+		텍스트박스(단일라인):
+		<input type="text" name="txt1" id="txt1" class="txt"
+				size="20" maxlength="5" 
+				accesskey="s" autofocus>
+		<hr>
+		
+		<!--  
+			암호 상자, Masked Text Box
+			- 모든 속성이 텍스트 박스와 동일
+			- 단, value 속성은 사용 금지!!!
+		-->
+		텍스트박스(암호):
+		<input type="password">
+		<hr>
+		
+		<!--  
+			텍스트 박스(다중라인)
+			- <textarea>
+			- 쌍태그
+			- 대부분의 속성은 텍스트 박스와 유사
+			- maxlength 속성이 없다. > 많은 양의 텍스트를 입력받는 컨트롤
+			- value 속성이 없다. > PCDATA
+			- textarea내의 영역은 컨트롤 영역이다. 문서 영역이 아니다.
+				> 공백 문자 처리 규칙 > 문서 영역에만 해당 된다.
+		-->
+		텍스트박스(다중라인):
+		<textarea cols="50" rows="5" style="resize: none;">하나
+둘
+셋</textarea>
+
+		<hr>
+		
+		
+		<!--  
+			
+			체크박스
+			- 논리값 입력
+			
+		-->
+		체크박스:
+		<input type="checkbox">
+		
+		<h2>취미 선택</h2>
+		<input type="checkbox" id="cb1"> <label for="cb1">독서</label><br>
+		<label><input type="checkbox"> 수영</label><br>
+		<input type="checkbox" checked> 영화<br>
+		
+		
+		<hr>
+		
+		<!--  
+		
+			라디오 버튼
+			- 체크 박스와 형제격
+		
+		-->
+		<input type="radio" name="rbGender"> 남자
+		<input type="radio" name="rbGender" checked> 여자
+		<input type="radio" name="rbGender"> 모름
+		
+		<hr>
+		
+		<!--  
+		
+			셀렉트 박스
+			- 콤보 박스(Combo), 드랍 다운 리스트(DropDown List)..
+		
+		-->
+		
+		셀렉트 박스:
+		<select>
+			<option>강아지</option>
+			<option>고양이</option>
+			<option>병아리</option>
+		</select>
+		
+		<br>
+		
+		셀렉트 박스:
+		<select size="5">
+			<option>강아지</option>
+			<option>고양이</option>
+			<option>병아리</option>
+		</select>
+		
+		<br>
+		
+		셀렉트 박스:
+		<select size="5" multiple>
+			<option>강아지</option>
+			<option>고양이</option>
+			<option>병아리</option>
+		</select>
+		
+		<br>
+		
+		셀렉트 박스:
+		<select>
+			<optgroup label="자바">
+				<option>클래스</option>
+				<option>메소드</option>
+				<option>배열</option>
+			</optgroup>			
+			
+			<optgroup label="오라클">
+				<option>테이블</option>
+				<option>조인</option>
+				<option>뷰</option>
+				<option>프로시저</option>
+			</optgroup>
+			
+			<optgroup label="HTML">
+				<option>body태그</option>
+				<option>p태그</option>
+			</optgroup>
+		</select>
+		
+		<hr>
+		
+		<!--  
+			파일 업로드
+			- 첨부 파일
+			- Open Dialog Box(열기 대화상자) 호출
+		-->
+		
+		파일선택:
+		<input type="file">
+		
+		<hr>
+		
+		<!--  
+			히든 태그
+			- 눈에 보이지 않음
+			- 개발자용
+			- 서버로 전송할 데이터 > 사용자에게 보이면 안되는 데이터를 보내는 용도(보안X)
+			- 눈에 안보이는 텍스트 박스
+		-->
+		히든 태그:
+		<input type="hidden" name="txtName" value="홍길동">
+		
+		<hr>
+		
+		<!--  
+			버튼
+		-->
+		전송버튼: <input type="submit" value="전송버튼">
+		<br>
+		취소버튼: <input type="reset" value="초기화">
+		<br>
+		이미지버튼(전송버튼): <input type="image" src="images/catty01.png">
+		<br>
+		버튼: <input type="button" value="버튼" onclick="alert('클릭!!');">
+		<br>
+		버튼: <button type="button">
+				버튼
+				<img src="images/bullet01.png">
+			 </button>
+		
+		
+	</form>
+	
+	
+	<!--  
+	
+		웹 개발 > 경험했던 웹(사이트) > 일반 사용자 > 
+		
+		
+		
+		ex01.html ~ ex18.html: HTML4.01 + XHTML1.0 (~2014년도까지 웹)
+		ex19.html ~          : HTML5 (2014년도 + 추가된)
+		
+	
+	-->
+	
+	
+	<br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

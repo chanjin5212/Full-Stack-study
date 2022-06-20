@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <link rel="stylesheet" href="basic.css">
+    <style>
+		#list {
+			margin: 100px auto;
+			width: 1100px;
+		}
+		#list > button {
+			font-size: 2.5em;
+			padding: 10px;
+			width: 100px;
+			height: 100px;
+			border: 1px solid #ccc;
+		}
+		#list > button:enabled {
+			background-color: white;
+		}
+		#list > button:disabled {
+			background-color: #bbb;			
+		}
+	</style>
+</head>
+<body>
+    <div id="list">
+		<button type="button" name="btn"><i class="fas fa-dog"></i></button>
+		<button type="button" name="btn" disabled><i class="fas fa-paw"></i></button>
+		<button type="button" name="btn" disabled><i class="fas fa-bone"></i></button>
+		<button type="button" name="btn" disabled><i class="fas fa-frog"></i></button>
+		<button type="button" name="btn" disabled><i class="fas fa-cat"></i></button>
+		<button type="button" name="btn" disabled><i class="fas fa-piggy-bank"></i></button>
+		<button type="button" name="btn" disabled><i class="fas fa-horse"></i></button>
+		<button type="button" name="btn" disabled><i class="fas fa-dove"></i></button>
+		<button type="button" enam="btn" disabled><i class="fas fa-drumstick-bite"></i></button>
+        <button type="button" name="btn" disabled><i class="fas fa-fish"></i></button>
+	</div>
+    <script>
+		
+		var list = document.all.btn;
+		var n = 0;
+
+		var timer = setInterval(function() {
+			for (var i=0; i<list.length; i++) {
+				list[i].disabled = true;
+			}
+			list[n].disabled = false;
+			n++;
+			if (n >= list.length) n = 0;
+		}, 150);
+	</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex19_history.html -->
+    <form name="form1">
+
+        <input type="button" name="btn1" value="뒤로 가기">
+        <input type="button" name="btn2" value="앞으로 가기">
+        <input type="button" name="btn3" value="2단계 뒤로 가기">
+
+    </form>
+
+    <script>
+
+        //history 객체
+        //- window > history
+        //- 브라우저의 탐색 기록(history)을 접근(제어)
+
+        //ex19 > 네이버 > 구글 > ex19 > 다음 > 예스24
+
+        document.form1.btn1.onclick = m1;
+        document.form1.btn2.onclick = m2;
+        document.form1.btn3.onclick = m3;
+
+        function m1() {
+            window.history.back(); //뒤로가기
+        }
+
+        function m2() {
+            history.forward(); //앞으로가기
+        }
+
+        function m3() {
+            history.go(-2);
+        }
+
+
+
+
+
+
+    </script>
+
+</body>
+</html>

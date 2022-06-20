@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form > input {
+            display: block;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- ex15_attribute.html -->
+
+    <h1>JavaScript로 태그의 속성 제어하기</h1>
+
+    <form name="form1">
+        <input type="text" name="txt1">
+        <input type="button" name="btn1" value="끄기">
+    </form>
+
+    <script>
+
+        var txt1 = window.document.form1.txt1;
+        var btn1 = window.document.form1.btn1;
+
+        btn1.onclick = m1;
+
+        function m1() {
+
+            /*
+                JavaScript로 HTML의 속성 제어하기
+
+                1. HTML의 대부분의 속성은 JavaScript의 프로퍼티로 제공된다.
+                2. HTML 태그의 속성명을 그대로 JavaScript 프로퍼티명으로 사용한다.
+                    - <input type="text" value="">
+                    - txt1.value
+                3. 태그의 식별자나 근복적인 속성은 조작하지 말것!!
+                4. 플래그 타입 속성은 boolean값으로 조작한다.
+                5. HTML 속성명이 복합어면 캐멀 표기법으로 작성한다.
+
+            */
+
+            //태그(텍스트박스)의 조작 > 태그의 속성을 조작
+            //txt1.value = '홍길동'; //쓰기
+            //alert(txt1.value); //읽기
+            //txt1.size = 50;
+            //txt1.type = 'radio'; //이런 행동은 되도록 금지!!!
+            //txt1.readOnly = true;
+
+
+            //<p align="center"> 열거형 > 문자열
+            //p.align = 'center';
+
+            //<body bgcolor="blue"> 색상 > 문자열
+            //window.document.html(X)
+            //window.document.body.bgColor = 'blue';
+
+
+            //하나의 버튼(스위치) > On/Off > 토글 버튼(Toggle Button)
+            if (btn1.value == '끄기') {
+                window.document.body.bgColor = 'black';
+                btn1.value = '켜기';
+            } else {
+                window.document.body.bgColor = 'white';
+                btn1.value = '끄기';
+            }
+
+
+        }
+
+
+    </script>
+
+</body>
+</html>

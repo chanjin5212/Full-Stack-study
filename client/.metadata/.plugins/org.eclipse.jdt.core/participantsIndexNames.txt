@@ -1,0 +1,3 @@
+INDEX VERSION 1.131
+C:\class\client\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\92150811.index
+\ClientTest\src\main\java

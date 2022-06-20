@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        #box {
+            width: 250px;
+            height: 188px;
+            border: 10px solid cornflowerblue;
+            overflow: hidden;
+        }
+
+        #list {
+            width: 12500px;
+            display: flex;
+            /* outline: 5px solid tomato; */
+            transition: .7s all;
+        }
+    </style>
+</head>
+<body>
+    <!-- ex57_css.html -->
+
+    <div id="box">
+        <div id="list">
+            <img src="images/cat01.jpg">
+            <img src="images/cat02.jpg">
+            <img src="images/cat03.jpg">
+            <img src="images/cat04.jpg">
+            <img src="images/cat05.jpg">
+        </div>
+    </div>
+
+    <script>
+        const box = document.getElementById('box');
+        const list = document.getElementById('list');
+
+        let dist = 0;
+
+        box.onclick = function() {
+            dist += 250;
+            list.style.transform = `translate(-${dist}px, 0px)`;
+            
+        };
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #cat3 {
+            position: absolute;
+            left: 125px;
+            top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <!-- ex54_css.html -->
+
+    <!-- 250 x 188 -->
+    <img src="images/cat01.jpg" id="cat1">
+    <img src="images/cat02.jpg" id="cat2">
+    <img src="images/cat03.jpg" id="cat3">
+
+    <script>
+
+        window.onmousedown = function(event) {
+            
+            let x = event.clientX;
+            let y = event.clientY;
+
+            //alert(event.target.id);
+
+            //특정 포인트에 겹쳐있는 모든 태그?
+            //- document.elementFromPoint
+            //- document.elementsFromPoint
+
+            //alert(document.elementFromPoint(x, y).id);
+            console.log(document.elementsFromPoint(x, y));
+
+        };
+
+
+        //console.log(document.elementFromPoint(100, 350).nodeName);
+        
+
+    </script>
+
+</body>
+</html>

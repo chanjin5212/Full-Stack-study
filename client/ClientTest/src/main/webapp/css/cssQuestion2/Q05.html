@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #8fd1d8;
+        }
+
+        h1 {
+            color: #4e4e4e;
+            font-variant: small-caps;
+            font-size: 3em;
+        }
+
+        #main {
+            width: 569px;
+            margin: 0px auto;
+        }
+
+        #tape {
+            width: 569px;
+            height: 359px;
+            background-image: url(/ClientTest/src/main/webapp/css/images/tape.png);
+            position: relative;
+            left: 0px;
+            top: 0px;
+        }
+        #lefthole {
+            position: absolute;
+            left: 125px;
+            top: 119px;
+        }
+        
+        #righthole {
+            position: absolute;
+            left: 362px;
+            top: 119px;
+        }
+
+        #lefthole, #righthole {
+            animation-name: holeKey;
+            animation-duration: 1.25s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+
+        @keyframes holeKey {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        #line {
+            width: 133px;
+            height: 64px;
+            background-image: url(/ClientTest/src/main/webapp/css/images/tapeline.png);
+            background-position: -50px 0px;
+            position: absolute;
+            left: 218px;
+            top: 127px;
+            animation-name: lineKey;
+            animation-duration: 1.5s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            animation-timing-function: linear;
+        }
+
+        @keyframes lineKey {
+            from {
+                background-position: -50px 0px;
+            }
+            to {
+                background-position: 7px 0px;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="main">
+        <h1><i class="fas fa-headphones-alt"></i> Music</h1>
+        <div id="tape">
+            <img id="lefthole" src="/ClientTest/src/main/webapp/css/images/tapehole.png">
+            <img id="righthole" src="/ClientTest/src/main/webapp/css/images/tapehole.png">
+            <div id="line"></div>
+        </div>
+    </div>		
+       
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+		#tbl1 {
+			border: 1px solid gray;
+			width: 500px;
+			margin: 10px auto;
+			border-collapse: collapse;
+		}
+
+		input {
+			display: block;
+			margin: 10px auto;
+			padding: 5px;
+		}
+		
+		#tbl1 td {
+			border: 1px solid gray;
+			text-align: center;
+			padding: 15px;
+		}
+
+		h4 {
+			margin: 0;
+		}
+		
+		select {
+			width: 150px;
+			margin: 15px;
+			height: 340px;
+		}
+
+		select option {
+			padding: 5px;
+		}
+
+		.btn {
+			width: 100%;
+		}
+	
+    </style>
+</head>
+<body>
+    <table id="tbl1">
+        <tbody>
+            <tr>
+                <td>
+                    <h4>차단된 친구</h4>
+                    <select name="leftList" size="10" ondblclick="add2();">
+                        <option value="1">권예진</option>
+                        <option value="1">권준혁</option>
+                        <option value="1">김동식</option>
+                        <option value="1">김세진</option>
+                        <option value="1">김여정</option>
+                        <option value="1">노형준</option>
+                        <option value="1">박민선</option>
+                        <option value="1">백강현</option>
+                        <option value="1">변기현</option>
+                    </select>
+                </td>
+                <td>
+                    <input type="button" value="Add >" onclick="add2();" class="btn">
+                    <input type="button" value="< Remove" onclick="remove2();" class="btn">
+                    <input type="button" value="Add All>" onclick="addAll();" class="btn">
+                    <input type="button" value="< Remove All" onclick="removeAll();" class="btn">
+                </td>
+                <td>
+                    <h4>허영된 친구</h4>
+                    <select name="rightList" size="10" ondblclick="remove2();"></select>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+
+        var leftList = document.all.leftList;
+        var rightList = document.all.rightList;
+
+        function add2() {
+            moveOne(leftList, rightList);
+        }
+
+        function remove2() {
+            moveOne(rightList, leftList);
+        }
+
+        function moveOne(left, right) {
+            var selOption = left.options[left.selectedIndex];
+
+            right.options.add(new Option(selOption.text, selOption.value));
+
+            left.options.remove(selOption.index);
+        }
+
+        function addAll() {
+            moveAll(leftList, rightList);
+        }
+
+        function removeAll() {
+            moveAll(rightList, leftList);
+        }
+
+        function moveAll(left, right) {
+            for (i=0; i<left.options.length; i++) {
+                var op = left.options[i];
+                right.options.add(new Option(op.text, op.value));
+            }
+
+            var count = left.options.length;
+
+            for (i=0; i<count; i++) {
+                left.options.remove(0);
+            }
+        }
+
+    </script>
+</body>
+</html>

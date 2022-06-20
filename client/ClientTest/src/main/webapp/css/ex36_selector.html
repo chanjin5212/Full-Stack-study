@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <style>
+      #list input {
+         display: block;
+         border: 1px solid #444;
+         padding: 3px;
+         margin-top: 3px;
+         background-color: white;
+         color: #444;
+      }
+
+
+      /* #list input:required { background-color: gold; }
+      #list input:optional { background-color: #CCC; } */
+
+
+      /* #list input:disabled { background-color: #999; }
+      #list input:enabled { background-color: yellow; } */
+
+      /* #list input:read-only { cursor: not-allowed; } */
+
+
+      /* 체크박스, 라디오, 셀렉트 > CSS 속성 일부 적용X */
+      input[type=checkbox] {
+         /* border: 1px solid black;
+         background-color: yellow; */
+
+         /* 불투명도(0~1) */
+         /* opacity: .1; */
+      }
+
+      /* 체크된 체크박스 */
+      input[type=checkbox]:checked {
+         /* opacity: 1; */
+      }
+
+
+      #cat {
+         visibility: hidden;
+      }
+      #cb-cat:checked + #cat {
+         visibility: visible;
+      }
+
+
+      #cb1:checked + div {
+         display: none;
+      }
+
+
+      .item {
+         border: 1px solid black;
+         width: 200px;
+      }
+
+      .item #cb2 {
+         display: none;
+      }
+
+      .item label {
+         font-size: 1.5rem;
+         font-family: Arial;
+         font-variant: small-caps;
+         display: block;
+         padding: 10px;
+         background-color: cornflowerblue;
+         color: white;
+         cursor: pointer;
+      }
+
+      .item div {
+         padding: 15px;
+         border-top: 1px solid black;
+         display: none;
+      }
+
+      .item #cb2:checked + label {
+         background-color: tomato;
+      }
+
+      .item #cb2:checked + label + div {
+         display: block;
+      }
+
+      
+   </style>
+</head>
+<body>
+   <!-- ex36_selector.html -->
+
+   <h1>콘텐츠</h1>
+
+   <div class="item">
+      <input type="checkbox" id="cb2">
+      <label for="cb2">Html</label>
+      <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi sed quibusdam modi? Sapiente optio animi, voluptatibus voluptas impedit consequuntur dolores libero reiciendis porro. Adipisci cumque ipsa deserunt eligendi saepe quia!</div>
+   </div>
+
+
+
+   <hr>
+
+
+   <div id="list">
+      <input type="text" value="1" required>
+      <input type="text" value="2" readonly>
+      <input type="text" value="3" readonly>
+      <input type="text" value="4">
+      <input type="text" value="5" required>
+      <input type="text" value="6" disabled>
+      <input type="text" value="7" disabled>
+      <input type="text" value="8">
+      <input type="text" value="9">
+      <input type="text" value="10" required>
+   </div>
+
+   <hr>
+
+   <div>
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+   </div>
+
+   <hr>
+
+   <div>
+      <input type="checkbox" id="cb-cat">
+      <img src="images/catty01.png" id="cat">
+   </div>
+
+   <hr>
+
+   <details>
+      <summary>제목</summary>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo, exercitationem reiciendis error aspernatur sunt possimus ea atque repellendus enim ducimus, sequi velit. Beatae eligendi repudiandae in. A consequuntur est harum.</p>
+   </details>
+
+   <hr>
+
+   설명 감추기 <input type="checkbox" id="cb1">
+   <div>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate fuga ut laudantium dolores. Nostrum architecto libero, optio modi earum excepturi. Atque sed quod iste cumque architecto magnam ab dolores consectetur.</div>
+
+
+</body>
+</html>

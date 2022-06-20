@@ -1,0 +1,271 @@
+1. c:\class\client 폴더 생성
+
+2. 이클립스 실행 > 1번 워크스페이스 지정
+
+2.5 Perspective > Java(X), JavaEE(O)
+
+3. 인코딩
+  - General > Workspace 
+	> Text file encoding > "UTF-8"
+  - Web > CSS Files > "UTF-8"
+  - Web > HTML Files > "UTF-8"
+  - Web > JSP Files > "UTF-8"
+
+4. Apache Tomcat 설치 및 설정
+  - http://tomcat.apache.org
+  - 이클립스 연동
+  - 검색 > "server" > Runtime Environments
+      > Add > "C:\class\apache-tomcat-8.5.78" > Finish
+
+5. Apache Tomcat 인스턴스 생성
+  - 보조창 > Servers > 
+
+6. 새 프로젝트 생성
+  - New > 웹 응용프로그램(Web Application) > Web > Dynamic Web Project > "ClientTest" > Finish
+
+7. 프로젝트 구조
+
+
+
+"JavaTest" == "콘솔 프로그램 1개"
+"ClientTest" == "웹사이트 1개"
+
+Hello World!
+
+콘솔 응용프로그램의 자원
+1. *.java
+2. *.txt
+3. ..
+
+
+웹 응용프로그램의 자원
+1. *.html
+2. *.css
+3. *.js
+4. *.jsp
+5. *.java
+6. *.txt
+7. ..
+
+src > main > webapp > New > HTML File > "hello.html"
+
+
+
+webapp > "hello.html"
+webapp > WEB-INF > "hello.html"
+
+http://localhost:8090/ClientTest/hello.html
+http://localhost:8090/ClientTest/WEB-INF/hello.html
+
+
+
+개발 환경 & 실행 환경
+- 웹 서비스 구현
+- 제공하는 쪽: 웹 서버 > Apache Tomcat
+- 제공받는 쪽: 웹 클라이언트 > 브라우저(Chrome, Edge, IE, FireFox..)
+- 개발툴: 이클립스(IDE)
+
+
+웹 클라이언트(브라우저) -> 웹 서버
+- URL 사용
+
+- http://www.naver.com
+- http://www.naver.com:80
+- http://localhost:8090/ClientTest/hello.html
+
+
+
+1. http://
+	- Hyper Text Transfer Protocol > 웹 페이지를 주고 받는 통신 규칙
+	- Scheme
+	- Protocol(*)
+	- 서버와 클라이언트간에 데이터를 주고받기 위한 약속
+	- 무전기 > 대화 약속!! > 어쩌구 저쩌구 오바. > 규칙!!
+
+2. naver.com
+   localhost(127.0.0.1)
+   	- Domain > DNS > Server IP Address
+   	- Server IP Address
+   	- 서버측 호스트(컴퓨터)를 찾는 주소
+   	
+3. :80
+   :8090
+    - 웹 서버 통신 포트 번호
+    - 웹 서비스를 하기 위한 포트 번호
+    - 80 > http:// 프로토콜을 위한 예약 포트 번호(전세계)
+    - 443 > https://
+    
+4. http://www.naver.com
+   http://localhost:8090/ClientTest
+   	- 브라우저가 웹서버에 접속하기 위해 지정한 서버측 주소
+   	- 위의 주소를 통해 상대방 컴퓨터를 찾을 수 있다.
+   	- 왜 찾았나? 목적? > 상대방 컴퓨터의 저장장치에 들어있는 자원을 요청하기 위해서!!
+   	- 서버와 클라이언트간의 최소한의 약속
+   		- 위의 주소를 접속하면, 내(웹서버)가 내 저장장치에 있는 특정 폴더를 열여 줄테니 접속해서 보고 싶은거 마음대로 가져가라~ > 웹 서버 프로그램 사용해서 지정 > "webapp"
+   	- 외부 > http://localhost:8090/ClientTest/hello.html
+   	- 내부 > webapp/hello.html
+   	
+   	- 내부 > webapp/sub/hi.html
+   	- 외부 > http://localhost:8090/ClientTest/sub/hi.html
+   	
+
+
+5. http://localhost:8090/ClientTest/hello.html
+   http://localhost:8090/client/hello.html
+   http://localhost:8090/hello.html
+	- URL을 전부 소문자로 작성
+	- ClientTest > Context Root Path
+   		
+
+6. webapp > META-INF: 개발자 접근X
+   webapp > WEB-INF: 개발자 접근O(단 서버 수업 때), 서버 환경 설정용, 외부에서 접근 불가능
+   	- 예약된 폴더 > 당분간 사용 금지
+   	
+   	
+웹수업
+- 클라이언트(브라우저): HTML, CSS, JavaScript
+- 서버(아파치 톰캣): Servlet, JSP, Spring
+
+   
+HTML
+- 웹 페이지 골격 작성
+- 웹 페이지 내용물 작성
+	
+CSS
+- 웹 페이지 서식 작성
+
+JavaScript
+- 웹 페이지 기능 작성
+- 프로그래밍 구현
+
+
+
+HTML, Hyper Text Markup Language
+- 하이퍼텍스트 마크업 언어
+- 프로그래밍 언어(X) > 프리젠테이션 언어(O) : 무언가를 표현하는 기능을 가지는 언어
+- Hyper Text > 링크
+- Markup > 언어 표기법 : <명령어>
+	- HTML, XHTML, XML, VoiceML, **ML, 
+- SGML > 메타 언어 > 다른 언어를 정의할 수 기능을 가진 언어
+- 웹 서비스에서 제공하는 페이지를 작성하는 언어
+
+
+HTML 주관 단체
+- W3C, World Wide Web Consortium
+- https://w3.org
+- HTML 1.0 ~ HTML5
+- HTML 4.01, XHTML 1.0, HTML5
+
+- HTML 4.01 > 가장 대중화된 버전(웹 가장 활성화)
+- XHTML 1.0 = XML + HTML > 문법 강력하게 준수
+- HTML5 > 2014년
+
+- 브라우저 전쟁 > 1차 전쟁(Netscape vs IE) > 2차 전쟁(IE vs 나머지 브라우저 > 웹 표준 준수) > 2014 HTML5
+
+- 브라우저 회사 > 기존 HTML + 자체 HTML 생산;;;; + 기존 HTML 자체 처리;;;;
+  > 개발자!!! >
+
+- 해당 페이지 오류!!
+- A(Netscape), B(IE)
+
+- IE > 웹 기술 > 아주 많은 문제점 발생 > 표준 문법 위반!! + 자체 문법 생산!! > 웹사이트 2개 생성
+
+- 브라우저마다 약간의 실행결과 차이가 있다.
+	> 크롬(Chrome)
+	> 크로미움 프로젝트 > 크롬 기반 기술 오픈 소스 > MS 엣지, 웨일 등..
+
+
+HTML 개발 환경
+- 텍스트 편집기
+	1. 메모장
+	2. IDE > Eclipse, IntelliJ, Visual Studio 등..
+	3. Sublime Text, Atom, Brackets, Visual Studio Code(MS)..
+	
+- 실행 환경/도구
+	1. 크롬
+	2. 엣지
+	3. 파이어폭스
+	4. 사파리(맥)
+	5. 모바일 버전
+
+
+
+
+
+HTML 언어 구성 요소
+1. 태그(Tag), 엘리먼트(Element)
+2. 속성(Attribute)
+3. 텍스트(PCDATA)
+4. 엔티티(Entity)
+5. 주석(Comment)
+6. 선언문(Declaration)
+7. 외부 요소
+8. 등등..
+
+
+HTML 문서 확장자
+- *.html
+- *.htm
+
+
+webapp > html > "ex01.html"
+       > css
+       > javascript
+       
+       
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

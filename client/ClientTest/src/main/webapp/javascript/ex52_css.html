@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .draggable {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .box { 
+            width: 150px; height: 150px;
+            cursor: default; 
+            background-color: gold;
+            border: 1px solid black;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- ex52_css.html -->
+
+    <h1 class="draggable">제목입니다.</h1>
+    <div class="box draggable">상자1</div>
+    <div class="box draggable">상자2</div>
+    <div class="box draggable">상자3</div>
+    <input type="text" class="draggable">
+    <img src="images/cat01.jpg" class="draggable">
+
+    <script>
+
+        let isDown = false;
+        let x = 0;
+        let y = 0;
+        let obj; //드래그 대상
+
+        window.onmousedown = function(event) {
+            if (event.target.classList.contains('draggable')) {
+                isDown = true;
+                x = event.offsetX;
+                y = event.offsetY;
+                obj = event.target;
+            }
+        };
+
+        window.onmousemove = function(event) {
+            if (isDown) {
+                obj.style.left = event.clientX - x + 'px';
+                obj.style.top  = event.clientY - y + 'px';
+
+                //고스트 이미지 현상 제거
+                event.stopPropagation();
+                return false;
+            }
+        };
+
+        window.onmouseup = function(event) {
+            isDown = false;
+        };
+
+
+    </script>
+
+
+</body>
+</html>

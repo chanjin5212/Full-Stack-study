@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        /*  
+        
+            선택자
+            1. 전체 선택자: * {}
+            
+            2. 태그 선택자: tag {}
+            3. ID 선택자: #id {}
+            4. Class 선택자: .class {}
+
+            5. 그룹 선택자: sel1, sel2, sel3 {}
+
+            6. 자식 선택자: parent > child {}
+            7. 자손 선택자: parent child {}
+            
+            8. 인접 형제 선택자: sel1 + sel2 {}
+            9. 형제 선택자: sel1 ~ sel2 {}
+
+
+            인접 형제 선택자, Adjacent Sibling Selector
+            - 선택자 + 선택자
+            - 정밀도 높음 + 범위 좁음
+            - (= 자식 선택자)
+
+            형제 선택자, Sibling Selector
+            - 선택자 ~ 선택자
+            - 정밀도 낮음 + 범위 높음
+            - (= 자손 선택자)
+
+        */
+
+        /* hr + p { color: red; } */
+
+        /* span + p { color: blue; } */
+
+        /* p + p { color: orange; } */
+
+        hr ~ p { color: red; }
+
+    </style>
+</head>
+<body>
+    <!-- ex08_selector.html -->
+
+    <p>p 태그</p>
+    <p>p 태그</p>
+    <p>p 태그</p>
+    <span>span 태그</span>
+
+    <hr>
+
+    <p>p 태그(***)</p> 
+    <span>span 태그</span>
+    <p>p 태그</p>
+
+    <div>div 태그</div>
+    <span>span 태그</span>
+
+
+</body>
+</html>

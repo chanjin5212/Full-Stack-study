@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <!-- ex05_function.html -->
+
+    <script>
+
+        /*
+        
+            Java Method
+            public [static] int m1(int num) {
+
+                return 10;
+            }
+
+
+            JavaScript Function
+            function m1(num) {
+
+                return 10;
+            }
+        
+        */
+
+        function m1() {
+            console.log('m1');
+        }
+
+        m1();
+
+        function m2(name) {
+            console.log('name: ' + name);
+
+            //매개변수(실인자) 값들을 자동으로 담고 있는 배열
+            //console.log(arguments); //예약어 > 내장 배열
+            console.log(arguments[0]);
+            console.log(arguments[1]);
+            console.log(arguments[2]);
+
+        }
+
+        m2('홍길동');
+        m2('아무개');
+        m2('하하하');
+
+        m2();
+        m2('호호호', '후후후', '헤헤헤');
+
+
+        //undefined : 변수가 선언된 직 후의 상태. 초기화하기 전 상태.
+        var num1;
+        console.log(num1); //undefined
+
+        //null : 개발자가 의도적으로 비어놓은 상태.
+        var num2 = null;
+        console.log(num2);
+
+        console.log(undefined == null);     //true
+        console.log(undefined === null);    //false. 자바의 ==와 동일
+
+        console.log(10 == 10);  //true
+        console.log(10 === 10); //true
+
+        //== : 자료형의 비교(X), 값만 비교(O)
+        //=== : 자료형 비교(O) + 값 비교(O)
+        console.log('10' == 10); //true
+        console.log('10' === 10);//false
+
+        console.log('10' != 10);
+        console.log('10' !== 10);
+
+
+
+        function m3() {
+            return 100;
+        }
+
+        console.log(m3());
+
+
+
+    </script>
+
+</body>
+</html>

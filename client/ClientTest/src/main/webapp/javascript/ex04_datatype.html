@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex04_datatype.html -->
+    <script>
+
+        //단일라인 주석
+        /*
+            다중라인 주석
+        */
+
+        /*
+        
+            JavaScript 자료형
+
+            1. number
+                - 숫자형(정수, 실수)
+            
+            2. string
+                - 문자, 문자열
+
+            3. boolean
+                - 논리형
+            
+            4. object
+                - 객체형
+                - JavaScript에는 클래스라는게 없다. 하지만 객체 개념은 있다.
+                - 자바 > 객체 지향 프로그래밍 언어
+                - 자바스크립트 > 객체 기반 프로그래밍 언어
+            
+            5. 기타(자료형 > 상수)
+                a. null
+                b. undefined
+                c. NaN(Not a Number)
+            
+            
+
+            변수, 상수(리터럴)
+            - JavaScript는 변수의 타입이 없다.
+            - var 변수명;
+            - 변수는 모든 자료형의 데이터를 저장할 수 있다.(= 자바의 Object 변수)
+        
+        */
+
+        //var 변수명 = 리터럴;
+        var num = 10;
+        var num2 = 10.5;
+        
+        var name = "홍길동";  //문자열("")
+        var name2 = '홍길동'; //문자열('')
+
+        var now = new Date();
+
+        var flag = true;
+        var flag = false;
+
+
+        //현재 변수나 상수의 자료형을 확인? 연산자
+        console.log(typeof 100);        //number
+        console.log(typeof 3.14);       //number
+        console.log(typeof num);        //number
+        console.log(typeof '홍길동');    //string
+        console.log(typeof "홍길동");    //string
+        console.log(typeof name);       //string
+        console.log(typeof new Date()); //object
+        console.log(typeof true);       //boolean
+
+        //number
+        //string
+        //object
+        //boolean
+
+
+
+        //연산자
+        //- 자바와 동일
+
+
+
+        //제어문
+        //- 자바와 동일
+
+
+
+        //Java > Strong Type
+        //SQL > Week Type
+        //JavaScript > Week Type
+
+        //JavaScript는 자료형에 대한 처리가 유연하다. > 자동 형변환을 잘한다.
+        // - JavaScript > 자료형 취급 모호 & 느슨함 > 개선 > TypeScript(Microsoft)
+
+        console.log('10' + 2);
+        console.log('10' * 2);
+        console.log(2 + '10');
+
+
+        //문자 이스케이프
+        // - 자바와 동일
+        console.log('C:\class\client');
+        console.log('C:\\class\\client');
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

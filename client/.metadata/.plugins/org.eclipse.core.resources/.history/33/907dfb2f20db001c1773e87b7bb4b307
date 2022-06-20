@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- ex13_image.html -->
+	
+	<!-- 
+	
+		이미지, Image
+		- <img>
+		- 단독태그
+		
+		img.src
+		
+		img.alt
+		
+		img.width
+		
+		img.height
+		
+	
+	 -->
+	 
+	 <img>
+	 
+</body>
+</html>

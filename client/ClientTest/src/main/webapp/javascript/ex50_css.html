@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .box { width: 150px; height: 150px;
+                position: absolute; left: 0; top: 0;
+                cursor: default; }
+        
+        #box1 { background-color: tomato; }
+        #box2 { background-color: gold; }
+        #box3 { background-color: cornflowerblue; }
+        #box4 { background-color: greenyellow; }
+        #box5 { background-color: plum; }
+
+    </style>
+</head>
+<body>
+    <!-- ex50_css.html -->
+
+    <script>
+
+        //DOM > 클릭 > 상자 생성 + 이동
+
+        window.onmousedown = function(event) {
+
+            if (event.buttons == 1) {
+
+                let box = document.createElement('div'); //<div></div>
+    
+                box.classList.add('box'); //<div class="box"></div>
+
+                box.style.left = event.clientX - 75 + 'px';
+                box.style.top = event.clientY - 75 + 'px';
+
+
+                let r = parseInt(Math.random() * 256); //0~255
+                let g = parseInt(Math.random() * 256);
+                let b = parseInt(Math.random() * 256);
+
+                box.style.backgroundColor = `rgb(${r},${g},${b})`;
+
+
+                document.body.appendChild(box);
+
+            } else if (event.buttons == 2) {
+
+                document.body.removeChild(event.target);
+
+            }
+
+        };
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <style>
+
+      #box {
+         border: 20px solid black;
+         width: 400px;
+         height: 1000px;
+      }
+
+      #ball {
+         background-color: cornflowerblue;
+         width: 50px;
+         height: 50px;
+         border-radius: 50%;
+         margin: 0 auto;
+         animation-name: key-ball;
+         animation-duration: .7s;
+         /* animation-fill-mode: forwards; */
+         animation-iteration-count: infinite;
+         animation-direction: alternate;
+         animation-timing-function: ease-in;
+      }
+
+      @keyframes key-ball {
+         from { transform: translate(0px, 0px); }
+         to { transform: translate(0px, 950px); }
+      }
+
+      /* HTML5 Canvas game */
+
+   </style>
+</head>
+<body>
+   <!-- ex56_animation.html -->
+
+   <div id="box">
+      <div id="ball"></div>
+   </div>
+
+</body>
+</html>

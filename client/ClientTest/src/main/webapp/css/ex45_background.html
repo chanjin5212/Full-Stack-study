@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <style>
+
+      .box {
+         border: 1px solid black;
+         width: 700px;
+         height: 200px;
+         margin: 20px;
+      }
+
+      #box1 {
+         /* 선형 그레디언트 */
+         /* background: linear-gradient(yellow, green); */
+         /* background: linear-gradient(to top right, yellow, green); */
+         /* background: linear-gradient(45deg, yellow, green); */
+         /* background: linear-gradient(to right, yellow, green, red, blue, orange, cornflowerblue); */
+         background: linear-gradient(to right, yellow, yellow, yellow, green);
+      }
+
+      #box2 {
+         /* 원형 그레디언트 */
+         background: radial-gradient(yellow, green, yellow, yellowgreen);
+      }
+
+   </style>
+</head>
+<body>
+   <!-- ex45_background.html -->
+   <div id="box1" class="box"></div>
+   <div id="box2" class="box"></div>
+
+</body>
+</html>

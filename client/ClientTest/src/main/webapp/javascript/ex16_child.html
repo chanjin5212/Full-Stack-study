@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex16_child.html -->
+    <h1>자식 페이지</h1>
+    
+    <form name="form1">
+
+        <input type="button" name="cbtn1" value="창닫기">
+
+        <hr>
+
+        <input type="text" name="ctxt1">
+
+        <hr>
+
+        <input type="button" name="cbtn2" value="부모창에 있는 텍스트박스에 접근하기">
+
+        <hr>
+
+        <h2>아이디 중복검사</h2>
+
+        아이디: <input type="text" name="txtid">
+        <input type="button" value="검색하기">
+
+        <br><br>
+
+        <input type="button" name="btnapply" value="사용하기">
+        <input type="button" name="btnclose" value="닫기">
+
+    </form>
+
+    <script>
+
+        window.document.form1.btnapply.onclick = m3;
+
+        function m3() {
+
+            //1. 허가받은 아이디 > 부모창에게 전달
+            opener.document.form1.txtid.value = window.document.form1.txtid.value;
+
+            //2. 창닫기
+            window.close();
+
+        }
+
+        
+
+        window.document.form1.cbtn1.onclick = m1;
+
+        function m1() {
+            //window.open() //새창 띄우기
+            window.close(); //자신(창) 닫기
+        }
+
+
+
+        window.document.form1.cbtn2.onclick = m2;
+
+        function m2() {
+            //부모페이지 window? > 예약어 > opener
+
+            opener.document.form1.ptxt1.value = '자식창에서 왔습니다.';
+        }
+
+
+
+
+
+    </script>
+
+</body>
+</html>

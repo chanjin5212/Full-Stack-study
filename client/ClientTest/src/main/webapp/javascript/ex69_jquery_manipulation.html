@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-1.12.4.js"></script>
+</head>
+<body>
+    <!-- ex69_jquery_manipulation.html -->
+
+    <h1>jQuery 태그 조작</h1>
+
+    <input type="button" value="버튼1" id="btn1">
+    <hr>
+    <div id="box">상자</div>
+    <hr>
+    <input type="text" id="txt1">
+
+    <script>
+        
+        $('#btn1').click(function() {
+
+            //콘텐츠 조작
+            //- innerText, textContent > text()
+            //- innerHTML > html()
+            //- value > val()
+
+            //alert($('#box').text());
+            //$('#box').text('홍길동입니다.');
+
+            //$('#box').html('<b>안녕하세요</b>');
+            //$('#box').html('<input type="text">');
+
+            //alert($('#txt1').val());
+            //$('#txt1').val('하하하');
+
+
+
+            //속성 조작
+            //- obj.prop        > 읽기
+            //- obj.prop = 값;  > 쓰기
+            //- obj.getAttribute('prop')
+            //- obj.setAttribute('prop', value)
+
+
+            //HTML 속성을 조작하는 메소드
+            //- obj.attr('prop')
+            //- obj.attr('prop', value)
+
+            //JavaScript 프로퍼티(속성)을 조작하는 메소드
+            //- obj.prop('prop')
+            //- obj.prop('prop', value)
+
+            //$('#txt1').attr('size', 50);
+            //$('#txt1').prop('size', 50);
+
+
+            //$('#txt1')
+            //    .attr('size', 50)
+            //    .attr('maxlength', 10);
+
+            // $('#txt1').attr({
+            //     size: 50,
+            //     maxlength: 10
+            // });
+
+
+
+            //비권장;;
+            // $('#box')
+            //     .attr('title', '상자')
+            //     .css('color', 'blue')
+            //     .text('Box')
+            //     .click(function() {
+            //         alert('클릭');
+            //     });
+
+
+
+
+            //태그 추가
+            //box.innerHTML += 고양이
+
+            //$('#box').html('<img src="images/catty01.png">');
+            //$('#box').html($('#box').html() + '<img src="images/catty01.png">');
+
+            n++;
+            
+            //$('#box').append(`<img src="images/catty0${n}.png">`);
+            //$('#box').prepend(`<img src="images/catty0${n}.png">`);
+
+            //$('#box')
+            //    .append(`<img src="images/catty0${n}.png">`)
+            //    .css('border', '1px solid black');
+
+            
+            // $('#box').append(
+            //             $(`<img src="images/catty0${n}.png">`)
+            //                         .css('border', '1px solid black')
+            //                         .click(function() {
+            //                             alert(this.src);
+            //                         })
+            // );
+
+            
+            //부모.append(자식)
+            //$('#box').append(`<img src="images/catty0${n}.png">`);
+            //자식.appendTo(부모)
+            //$(`<img src="images/catty0${n}.png">`).appendTo($('#box'));
+
+            //부모.prepend(자식)
+            //$('#box').prepend(`<img src="images/catty0${n}.png">`);
+            //자식.prependTo(부모)
+            //$(`<img src="images/catty0${n}.png">`).prependTo($('#box'));
+
+
+            // $(`<img src="images/catty0${n}.png">`)
+            //         .css('border', '1px solid black')
+            //         .click(function() {
+            //             alert();
+            //         })
+            //         .appendTo($('#box'));
+
+            //$(docuemnt.body)
+            //$('#box').remove();
+            $('input').remove();
+
+
+        });
+
+        let n = 0;
+
+    </script>
+
+</body>
+</html>

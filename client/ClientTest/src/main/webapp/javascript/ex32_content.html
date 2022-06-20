@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex32_content.html -->
+
+    <h1>Content</h1>
+
+    <input type="button" value="버튼" id="btn1">
+    <input type="button" value="버튼" id="btn2">
+    <hr>
+    <div id="div1"></div>
+    <div id="div2"><img src="images/catty01.png" onclick="clone();"></div>
+
+    <script>
+
+        //BOM or DOM > 태그 조작
+        //1. 태그 검색(BOM, DOM)
+        //2. 속성 조작(BOM, DOM)
+        //3. 콘텐츠 조작(DOM)
+
+        /*
+        
+            Content
+            - 시작 태그와 끝 태그의 사이의 내용물 조작
+            1. innerText
+                - 시작 태그와 끝 태그의 사이의 문자열 읽기/쓰기 프로퍼티
+                - 문자열만 읽기/쓰기
+                - 태그 > 이스케이프 > 순수한 의미없는 문자열 취급
+                - 비표준(MS)
+
+            2. innerHTML
+                - 시작 태그와 끝 태그의 사이의 문자열 읽기/쓰기 프로퍼티
+                - 문자열 + 태그 읽기/쓰기
+
+            3. outerText
+                - 내용물 + 태그
+
+            4. outerHTML
+                - 내용물 + 태그
+
+            5. textContent
+                - 시작 태그와 끝 태그의 사이의 문자열 읽기/쓰기 프로퍼티
+                - innerText와 동일한 프로퍼티
+                - 표준
+        
+        */
+        
+
+        var btn1 = document.getElementById('btn1');
+        var div1 = document.getElementById('div1');
+
+        btn1.onclick = m1;
+
+        function m1() {
+            
+            //<div id="div1">홍길동</div>
+            //<div id="div1"><i>홍길동</i></div>
+
+            //alert(div1.innerText);
+            //alert(div1.innerHTML);
+            //alert(div1.textContent);
+
+            //div1.innerText = '아무개';
+            //div1.innerHTML = '아무개';
+            //div1.textContent = '아무개';
+
+            //div1.innerText = '<b>아무개</b>';
+            //div1.innerHTML = '<b>아무개</b>';
+            //div1.textContent = '<b>아무개</b>';
+
+
+            //동적으로 태그를 생성하기
+
+            //for (var i=0; i<10; i++) {
+            //    div1.innerHTML += '<input type="text">';
+            //}
+
+
+            div1.innerHTML += '<img src="images/catty0' + n + '.png">';
+            n++;
+            if (n > 9) n = 1;
+
+        }
+
+        var n = 1;
+
+
+
+        document.getElementById('btn2').onclick = m2;
+
+        function m2() {
+            div1.innerHTML = '';
+        }
+
+
+
+
+        function clone() {
+            document.getElementById('div2').innerHTML 
+                += '<img src="images/catty01.png" onclick="clone();">';
+        }
+
+
+    </script>
+
+</body>
+</html>

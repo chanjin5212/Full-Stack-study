@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <style>
+
+      /*  
+      
+         박스 모델
+         1. border
+         2. width, height
+
+
+      
+      */
+
+      #box2 {
+         border-color: orange;
+         background-color: bisque;
+
+         /* 
+
+            *** 일반적으로 태그의 높이는 상대 크기(%)를 지정할 수 없다.
+
+            <div>
+            - 블럭 태그 
+            - 너비: 100%
+            - 높이: 내용물
+            
+            너비, 높이
+            - width, height
+            - 단위 > px(절대값), %(상대값)
+
+         */
+
+         width: 200px;
+         /* height: 100px; */
+         /* height: auto; */
+
+      }
+
+      .box {
+         border: 10px solid black;
+      }
+
+      /*  
+         *** 박스 모델은 width, height는 블럭태그에만 적용이 가능하다.
+         *** 인라인 태그 중 일부는 적용이 가능하다.(처음부터 영역이 눈에 보이는 태그들)
+
+         블럭태그
+         - 너비: 100%
+         - 높이: 내용물
+
+         인라인태그
+         - 너비: 내용물
+         - 높이: 내용물
+
+      */
+      #div1 {
+         background-color: red;
+         color: white;
+         width: 200px;
+         height: 200px;
+      }
+
+      #span1 {
+         background-color: blue;
+         color: white;
+         width: 200px;
+         height: 200px;
+      }
+
+
+      #word {
+         /* display: inline-block; */
+         width: 200px;
+         height: 200px;
+         background-color: yellow;
+      }
+
+      #cat01 {
+         width: 150px;
+         height: 150px;
+      }
+
+      #txt1{
+         width: 200px;
+         height: 100px;
+      }
+
+   </style>
+</head>
+<body>
+   <!-- ex17_box.html -->
+   <h1>박스 모델</h1>
+
+   <div id="box1" class="box">상자1</div>
+   <div id="box2" class="box">상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2</div>
+   <div id="box3" class="box">상자3</div>
+
+   <h1>블럭 태그</h1>
+   <div id="div1">블럭 태그</div>
+
+   <h1>인라인 태그</h1>
+   <span id="span1">인라인 태그</span>
+
+   <h1>문단</h1>
+   <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste, accusamus expedita dolores laborum nisi deserunt vitae beatae voluptatibus exercitationem necessitatibus, aspernatur, tempore aperiam consectetur commodi fuga veritatis odio! Voluptates ab repellat iste quo mollitia quaerat amet earum quasi beatae delectus eos laudantium illum necessitatibus, eius ex atque cum error non blanditiis. Nulla suscipit ullam impedit quae optio atque, nam numquam et cumque iusto aperiam vitae voluptates expedita porro commodi odio explicabo recusandae repudiandae nemo <span id="word" class="words">asperiores</span> itaque sequi rem vero. Rerum debitis molestias aut ducimus, corrupti soluta voluptatem corporis cupiditate, impedit dolorem suscipit magni animi similique? Est quod perspiciatis fugit ipsam deserunt praesentium beatae debitis. Illum eum deleniti corrupti reiciendis, neque corporis dicta odio doloremque debitis repellendus dolores rem accusamus, nemo error soluta sapiente sequi! Omnis tempore quis itaque, ipsam quod quae, molestiae cumque dolores ratione deleniti voluptatem odio animi quo quia obcaecati rerum placeat porro eveniet dolor aperiam sapiente. Sunt ducimus praesentium consectetur sequi quae? Eaque error corrupti ea nulla delectus incidunt fuga quibusdam necessitatibus voluptate distinctio, cum eligendi neque! Ipsum eveniet repellat itaque rerum eaque expedita unde modi ab. Ipsum voluptatibus itaque ea repellat nesciunt non ex asperiores omnis natus totam quia perspiciatis quam porro ducimus vel, a earum.</p>
+   
+
+   <hr>
+
+   앞의 내용
+   <img src="images/cat01.jpg" id="cat01">
+   뒤의 내용
+
+   <hr>
+
+   이름: <input type="text" id="txt1"> 님
+
+   <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex25_message.html -->
+
+    <form name="form1">
+        <input type="button" name="btn1" value="버튼1">
+        <input type="button" name="btn2" value="버튼2">
+        <input type="button" name="btn3" value="버튼3">
+    </form>
+
+    <script>
+
+        document.form1.btn1.onclick = m1;
+        document.form1.btn2.onclick = m2;
+        document.form1.btn3.onclick = m3;
+
+        //메시지 박스, 대화 상자(Dialog Box)
+
+        //1. void alert(message); > 메시지 전달용
+        //2. boolean confirm(message); > 의사 확인용
+        
+        //3. string prompt(message, value); > 데이터 입력용
+
+        function m1() {
+            alert();
+            alert(100);
+            alert('문자열');
+        }
+
+        function m2() {
+            var result = confirm('메시지');
+
+            if (result) {
+                document.body.bgColor = 'blue';
+            } else {
+                document.body.bgColor = 'white';
+            }
+        }
+
+        function m3() {
+            
+            var result = prompt('메시지', '');
+            console.log(result);
+
+        }
+
+    </script>
+
+
+</body>
+</html>

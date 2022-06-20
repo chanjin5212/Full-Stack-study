@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        .box {
+            padding: 60px;
+        }
+
+        #p1 { background-color: tomato; }
+        #p2 { background-color: gold; }
+        #p3 { background-color: cornflowerblue; }
+
+
+
+
+        #tbl2 td {
+            width: 126px;
+            height: 126px;
+            padding: 0;
+        }
+
+        #tbl2 td img {
+            display: block;
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- ex47_event.html -->
+
+    <div id="p1" class="box">
+        <div id="p2" class="box">
+            <div id="p3" class="box"></div>
+        </div>
+    </div>
+
+    <h1>테이블</h1>
+
+    <table class="table">
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+    </table>
+
+    <h1>테이블</h1>
+
+    <table class="table" id="tbl2">
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+    <script>
+
+        //이벤트 버블링(Event Bubbling)
+        //  vs 이벤트 터널링(Event Tunneling) == 이벤트 캡쳐링(Event Capturing)
+
+        const p1 = document.getElementById('p1');
+        const p2 = document.getElementById('p2');
+        const p3 = document.getElementById('p3');
+
+
+        //부모와 자식간에 동일한 이벤트를 추가하는 경우
+
+        //***** JavaScript는 기본적으로 이벤트 버블링을 지원한다.
+
+        //BOM Event > 이벤트 버블링
+
+        p1.onclick = function(event) {
+            alert('빨강');
+
+            //event.cancelBubble = true;
+        };
+
+        p2.onclick = function(event) {
+            alert('노랑');
+
+            //event.cancelBubble = true;
+        };
+
+        p3.onclick = function(event) {
+            alert('파랑');
+
+            //이벤트 버블링을 여기서 중단해라!!!
+            //event.cancelBubble = true;
+        };
+
+
+        //DOM Event > 이벤트 버블링 or 이벤트 캡쳐링
+        // p1.addEventListener('click', function() {
+        //     alert('빨강');
+        // }, true);
+        
+        // p2.addEventListener('click', function() {
+        //     alert('노랑');
+        // }, true);
+
+        // p3.addEventListener('click', function() {
+        //     alert('파랑');
+        // }, true);
+
+
+        // p1.addEventListener('click', function() {
+        //     alert('red');
+        // });
+        
+        // p2.addEventListener('click', function() {
+        //     alert('yellow');
+        // });
+
+        // p3.addEventListener('click', function() {
+        //     alert('blue');
+        // });
+
+
+
+
+        //Hover Table
+        //<tr> -> 이벤트 매핑
+        
+        //1. <tr>
+        //2. <table> -> <tr>
+
+        const table = document.getElementsByClassName('table')[0];
+
+        const row = table.firstElementChild.children; //table.tbody.tr
+
+        for (let i=0; i<row.length; i++) {
+
+            //이벤트를 건 당사자 != event.target
+
+            row[i].onmouseover = function(event) {
+                //event.srcElement.bgColor = 'gold';
+                //event.target.bgColor = 'gold';
+
+                //row[i].bgColor = 'gold';
+                //event.target.parentElement.bgColor = 'gold';
+                event.currentTarget.bgColor = 'gold';
+            };
+
+            row[i].onmouseout  = function(event) {
+                event.currentTarget.bgColor = 'transparent';
+            };
+
+        }
+
+
+
+
+
+
+        const tbl2 = document.getElementById('tbl2');
+
+        const trlist = tbl2.firstElementChild.children;
+
+        for (let i=0; i<trlist.length; i++) {
+            
+            const tdlist = trlist[i].children;
+
+            for (let j=0; j<tdlist.length; j++) {
+
+                tdlist[j].addEventListener('mousedown', function(event) {
+
+                    //alert(event.target.nodeName);
+
+                    if (event.buttons == 1) {
+                        
+                        if (event.target.nodeName == 'TD') {
+                            
+                            let img = document.createElement('img');
+                            img.setAttribute('src', 'images/rect_icon01.png');
+                            event.target.appendChild(img);
+
+                        } else {
+                            //기존 이미지 제거
+                            let td = event.target.parentElement;
+
+                            td.removeChild(event.target);
+
+                            let img = document.createElement('img');
+                            img.setAttribute('src', 'images/rect_icon01.png');
+                            
+                            td.appendChild(img);
+                        }
+
+                    } else if (event.buttons == 2) {
+
+                        if (event.target.nodeName == 'TD') {
+
+                            let img = document.createElement('img');
+                            img.setAttribute('src', 'images/rect_icon02.png');
+                            event.target.appendChild(img);
+
+                        } else {
+                            //기존 이미지 제거
+                            let td = event.target.parentElement;
+
+                            td.removeChild(event.target);
+
+                            let img = document.createElement('img');
+                            img.setAttribute('src', 'images/rect_icon02.png');
+                            
+                            td.appendChild(img);
+                        }
+
+                    } else if (event.buttons == 4) {
+
+                        //삭제
+                        event.target.parentElement.removeChild(event.target);
+
+                    }
+
+                });
+
+            }
+
+        }
+
+        //<body oncontextmenu="return false">
+        window.oncontextmenu = function() {
+            return false;
+        };
+
+    </script>
+
+</body>
+</html>

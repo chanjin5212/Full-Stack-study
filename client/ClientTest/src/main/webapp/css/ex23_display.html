@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <style>
+      /*  
+      
+         display
+         - 요소의 출력 방식 조작
+      
+      */
+
+      .box {
+         border: 1px solid black;
+         display: inline;
+      }
+
+      #box2, #link2 {
+         /* display: none; */
+         /* visibility: hidden; */
+      }
+
+      .link {
+         border: 1px solid black;
+         display: block;
+      }
+
+      /* ul { border: 1px solid red;  }
+      li { border:1px solid black; } */
+
+      #menu ul {
+         padding: 0;
+      }
+
+      #menu li {
+         /* inline처럼 출력 + 크기 지정 */
+         display: inline-block;
+         width: 19.4%;
+         text-align: center;
+         background-color: #CCC;
+         padding-top: 10px;
+         padding-bottom: 10px;
+      }
+
+      #menu li:hover {
+         background-color: black;
+         color: white;
+      }
+
+
+      #cats {
+         border: 10px solid gold;
+         width: 250px;
+      }
+
+      /* 
+         인라인 태그가 연속으로 나열되면 태그와 태그의 공백때문에 출력 결과에 빈틈이 발생
+         > 보통은 눈에 안띈다.
+         > 이미지같은 경우는 눈에 잘띈다.
+      */
+      #cats .cat {
+         display: block;
+      }
+
+      /*  
+      
+         display
+         1. none
+         2. inline
+         3. block
+         4. inline-block
+      
+      */
+
+   </style>
+</head>
+<body>
+   <!-- ex23_display.html -->
+
+   <!-- 메뉴 생성용 태그(navigation) -->
+   <nav id="menu">
+      <ul>
+         <li>메뉴</li>
+         <li>메뉴</li>
+         <li>메뉴</li>
+         <li>메뉴</li>
+         <li>메뉴</li>
+      </ul>
+   </nav>
+
+
+   <h1>블럭태그</h1>
+
+   <div id="box1" class="box">상자1</div>
+   <div id="box2" class="box">상자2</div>
+   <div id="box3" class="box">상자3</div>
+
+   <h1>인라인태그</h1>
+
+   <a href="#" id="link1" class="link">링크1</a>
+   <a href="#" id="link2" class="link">링크2</a>
+   <a href="#" id="link3" class="link">링크3</a>
+
+   <h1>고양이</h1>
+
+   <div id="cats">
+      <img src="images/cat01.jpg" class="cat">
+      <img src="images/cat01.jpg" class="cat">
+      <img src="images/cat01.jpg" class="cat">
+      <img src="images/cat01.jpg" class="cat">
+      <img src="images/cat01.jpg" class="cat">
+      <img src="images/cat01.jpg" class="cat">
+      <img src="images/cat01.jpg" class="cat">
+      <img src="images/cat01.jpg" class="cat">
+      <img src="images/cat01.jpg" class="cat">
+   </div>
+
+
+</body>
+</html>

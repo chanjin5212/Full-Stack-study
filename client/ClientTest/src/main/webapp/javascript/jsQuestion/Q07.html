@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            border: 10px solid #A9A9A9;
+            margin: 10px;
+        }
+
+        input {
+            border: 10px solid #A9A9A9;
+            padding: 5px 70px;
+            font-size: 1.7em;
+            margin: 10px 50px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <h1>Pattern Lock</h1>
+    <div style="text-align: center;">
+        <img src="/ClientTest/src/main/webapp/javascript/images/rect_icon01.png" data-no="1">
+        <img src="/ClientTest/src/main/webapp/javascript/images/rect_icon02.png" data-no="2">
+        <img src="/ClientTest/src/main/webapp/javascript/images/rect_icon03.png" data-no="3">
+        <br>
+        <img src="/ClientTest/src/main/webapp/javascript/images/rect_icon04.png" data-no="4">
+        <img src="/ClientTest/src/main/webapp/javascript/images/rect_icon05.png" data-no="5">
+        <img src="/ClientTest/src/main/webapp/javascript/images/rect_icon06.png" data-no="6">
+        <br>
+        <img src="/ClientTest/src/main/webapp/javascript/images/rect_icon07.png" data-no="7">
+        <img src="/ClientTest/src/main/webapp/javascript/images/rect_icon08.png" data-no="8">
+        <img src="/ClientTest/src/main/webapp/javascript/images/rect_icon09.png" data-no="9">
+    </div>
+    <div style="text-align: center;">
+        <input type="button" value="RESET" onclick="reset()">
+        <input type="button" value="INPUT" onclick="input()">
+    </div>
+
+    <script>
+        var pw = "";
+        var list = document.images;
+        for (var i=0; i<list.length; i++) {
+            list[i].onmouseover = function () {
+                pw += event.srcElement.dataset["no"];
+                event.srcElement.src = "/ClientTest/src/main/webapp/javascript/images/rect_icon10.png";
+            }
+        }
+
+        function reset() {
+            for (var i=0; i<list.length; i++) {
+                list[i].src = "/ClientTest/src/main/webapp/javascript/images/rect_icon0" + (i+1) + ".png";
+            }
+            pw = "";
+        }
+
+        function input() {
+            if (pw == "14789") {
+                location.href = "http://google.com";
+            } else {
+                alert("Error!!");
+                reset();
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <style>
+
+      /* 
+      
+         태그의 수평 정렬, Horizonal Alignment
+         - 인라인 태그와 블럭 태그의 수평 정렬
+         - 내용물의 정렬 vs 태그 스스로 정렬
+
+
+         내용물의 정렬(text-align)
+         1. 인라인 태그
+            - 불가능 > 여백(공간)이 없어서..
+         2. 블럭 태그
+            - 가능 > 여백(공간)이 있어서.. > text-align은 블럭 태그 전용
+
+
+         태그 스스로 정렬(지원하는 속성 없음)
+         1. 인라인 태그
+            - 가능 > 부모 블럭 태그의 text-align 사용해서 정렬한다.
+         2. 블럭 태그
+            - 블가능 > 좌우 공간이 없어서 부모 태그에 적용 X > 너비 100%
+            - 가능 > 좌우 margin을 동일하게 지정
+
+      */
+
+      body {
+         margin: 0;
+      }
+
+      #span1, #div1 {
+         background-color: gold;
+      }
+
+      #span1 {
+         text-align: right;
+      }
+
+      #div1 {
+         /* text-align: right; */
+         /* 블럭 태그는 너비가 100%가 아니어도 나머지 공간을 자신의 영역이라고 인식한다. */
+         width: 300px;
+
+         margin-left: auto;
+         /* margin-right: auto; */
+
+         /* margin: 0 auto; */
+      }
+
+   </style>
+</head>
+<body>
+   <!-- ex30_align.html -->
+   <h1>인라인 태그</h1>
+
+   <div style="text-align: center;">
+      
+      <span id="span1">인라인 태그</span>
+      
+   </div>
+
+
+   <h1>블럭 태그</h1>
+
+   <div style="text-align: right; border: 10px solid black;">
+      <div id="div1">블럭 태그</div>
+   </div>
+
+</body>
+</html>

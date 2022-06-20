@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main, .main {
+            position: static;
+        }
+        #img1 {
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <img src="/ClientTest/src/main/webapp/javascript/images/face10.png" id="img1">
+    <script type="text/javascript">
+
+		let img1;
+		
+		window.onload = function() {
+			img1 = document.getElementById("img1");
+			
+			img1.style.left = "530px";
+			img1.style.top = "200px";
+			
+			img1.onmouseover = function () {
+				let ox = parseInt(img1.style.left);
+				let oy= parseInt(img1.style.top);
+				
+				if ((parseInt(event.clientX) >= ox + 60) && parseInt(event.clientX) <= ox + 120) {
+					img1.style.left = ox - 60 + "px";
+				}
+				
+				if ((parseInt(event.clientX) <= ox + 60) && parseInt(event.clientX) >= ox) {
+					img1.style.left = ox + 60 + "px";
+				}
+				
+			}
+		};
+	</script>
+</body>
+</html>

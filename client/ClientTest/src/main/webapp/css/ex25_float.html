@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <style>
+
+      #menu {
+         background-color: orange;
+         width: 800px;
+         height: 100px;
+      }
+
+      #submenu {
+         background-color: yellow;
+         width: 200px;
+         height: 500px;
+         float: left;
+      }
+
+      #content {
+         background-color: cornflowerblue;
+         width: 600px;
+         height: 500px;
+         float: left;
+      }
+
+      #footer {
+         /* 앞의 요소가 float되어서 지금 요소가 위로 말려 올라가는 현상 제거 */
+         clear: both;
+         background-color: green;
+         width: 800px;
+         height: 50px;
+      }
+
+      #main {
+         /* border: 30px solid gray; */
+         width: 800px;
+      }
+
+   </style>
+</head>
+<body>
+   <!-- ex25_float.html -->
+
+   <h1>페이지 레이아웃</h1>
+
+   <div id="main">
+      <div id="menu">주메뉴(orange)</div>
+      <div id="submenu">보조메뉴(yellow)</div>
+      <div id="content">콘텐츠(blue)</div>
+      <div id="footer">하단(green)</div>
+   </div>
+
+</body>
+</html>

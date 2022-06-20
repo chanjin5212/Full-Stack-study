@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex84_map.html -->
+
+    <h1>좌표 이동하기 + 레벨 바꾸기</h1>
+
+    <div id="map" style="width:1200px;height:600px;"></div>
+
+    <hr>
+
+    <input type="button" value="서울역으로 이동하기" id="btn1">
+    <input type="button" value="역삼역으로 이동하기" id="btn2">
+    <input type="button" value="강남역으로 이동하기" id="btn3">
+
+    <hr>
+
+    <input type="button" value="지도 확대하기" id="btn4">
+    <input type="button" value="지도 축소하기" id="btn5">
+
+
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=4b2c4452052d56d04184af646057bc11"></script>
+
+
+	<script>
+
+		var container = document.getElementById('map');
+
+		var options = {
+			center: new kakao.maps.LatLng(37.499321, 127.033220),
+			level: 3
+		};
+
+		var map = new kakao.maps.Map(container, options);
+
+
+        document.getElementById('btn1').onclick = function() {
+
+            const point = new kakao.maps.LatLng(37.555169, 126.970507);
+            //map.setCenter(point);
+            map.panTo(point);
+
+        };
+
+        document.getElementById('btn2').onclick = function() {
+
+            const point = new kakao.maps.LatLng(37.499359, 127.033175);
+            //map.setCenter(point);
+            map.panTo(point);
+
+        };
+
+        document.getElementById('btn3').onclick = function() {
+
+            const point = new kakao.maps.LatLng(37.497948, 127.027692);
+            //map.setCenter(point);
+            map.panTo(point);
+
+        };
+
+
+        map.setDraggable(false);
+        map.setZoomable(false);
+
+
+        document.getElementById('btn4').onclick = function() {
+
+            //alert(map.getLevel());
+            map.setLevel(map.getLevel() - 1);
+
+        };
+
+        document.getElementById('btn5').onclick = function() {
+
+            map.setLevel(map.getLevel() + 1);
+
+        };
+
+
+
+	</script>
+
+
+
+</body>
+</html>

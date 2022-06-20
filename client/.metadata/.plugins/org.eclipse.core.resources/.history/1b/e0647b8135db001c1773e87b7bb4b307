@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Picture</h1>
+<h2>200x200</h2>
+    <img src="/client/html/images/placeimg_200_200_animals.jpg">
+    <img src="/client/html/images/placeimg_200_200_arch.jpg">
+    <img src="/client/html/images/placeimg_200_200_nature.jpg">
+    <img src="/client/html/images/placeimg_200_200_people.png">
+    <img src="/client/html/images/placeimg_200_200_tech.jpg">
+<h2>500x200</h2>
+    <img src="/client/html/images/placeimg_500_200_animals.jpg">
+    <img src="/client/html/images/placeimg_500_200_people.jpg">
+<h2>200x 400</h2>
+    <img src="/client/html/images/placeimg_200_400_animals.jpg">
+    <img src="/client/html/images/placeimg_200_400_arch.jpg">
+    <img src="/client/html/images/placeimg_200_400_nature.jpg">
+    <img src="/client/html/images/placeimg_200_400_people.jpg">
+    <img src="/client/html/images/placeimg_200_400_tech.jpg">
+<h2>Mixed</h2>
+	<img src="/client/html/images/placeimg_200_300_arch.jpg">
+	<img src="/client/html/images/placeimg_500_300_animals.jpg">
+	<img src="/client/html/images/placeimg_300_300_animals.jpg">
+</body>
+</html>

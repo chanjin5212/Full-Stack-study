@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- ex13_image.html -->
+	
+	<!-- 
+	
+		이미지, Image
+		- <img>
+		- 단독태그
+		
+		img.src
+		- source
+		- 이미지 파일 URL
+		
+		img.alt
+		
+		img.width
+		
+		img.height
+		
+	
+	 -->
+	 
+	 <img src="images/cat01.jpg">
+	 
+	 <img src="/client/html/images/cat02.jpg">
+	 
+	 <img src="images/cat01.jp">
+	 
+	 <hr>
+	 
+	 <img src="images/dog01.jp" alt="강아지 오형제">
+	 
+</body>
+</html>

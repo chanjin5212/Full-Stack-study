@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main {
+            width: 500px;
+            margin: 0px auto;
+        }
+
+        h1 {
+            font-variant: small-caps;
+        }
+
+        .item {
+            border: 1px solid #999;
+            border-radius: 5px;
+            margin-bottom: 5px;
+            width: 350px;
+            overflow: hidden;
+        }
+
+        .item input[type=radio] {
+            display: none;
+        }
+
+        .item label {
+            display: block;
+            float: left;
+            width: 150px;
+            height: 130px;
+            text-align: center;
+            font-size: 3em;
+            font-variant: small-caps;
+            font-weight: bold;
+            background-color: #eee;
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+            padding-top: 20px;
+            cursor: pointer;
+            position: relative;
+            left: 0;
+            top: 0;
+            z-index: 1;
+        }
+
+        .item .disc {
+            float: left;
+            width: 150px;
+            height: 150px;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            margin: 0px 20px;
+        }
+
+        .item::after {
+            content: ' ';
+            display: block;
+            clear: both;
+        }
+
+        #disc1 {
+            background-image: url(https://drive.google.com/uc?export=download&id=1H7TqYHv5NjRScP-8f9h1PsEZO3GWXiGH);
+        }
+        
+        #disc2 {
+            background-image: url(https://drive.google.com/uc?export=download&id=18x4nR3VoKA238TvGjC5qGscr2FIkmLCk);
+        }
+        
+        #disc3 {
+            background-image: url(https://drive.google.com/uc?export=download&id=1DIod4hb720iLUdT9EYW38-_l2-tGDN7g);
+        }
+        
+        #disc4 {
+            background-image: url(https://drive.google.com/uc?export=download&id=1ROrHcrpStIqZYusMlYXx73GGnIenrOSg);
+        }
+
+        input[type=radio]:checked+label {
+            background-color: tomato;
+            color: white;
+        }
+
+        input[type=radio]:checked+label+div {
+            transition: all 1000s;
+            transition-timing-function: linear;
+            transform: rotate(300000deg);
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <h1>Music</h1>
+        <div class="item">
+            <input type="radio" name="rb" id="rb1">
+            <label for="rb1">Play</label>
+            <div class="disc" id="disc1"></div>
+        </div>
+        <div class="item">
+            <input type="radio" name="rb" id="rb2">
+            <label for="rb2">Play</label>
+            <div class="disc" id="disc2"></div>
+        </div>
+        <div class="item">
+            <input type="radio" name="rb" id="rb3">
+            <label for="rb3">Play</label>
+            <div class="disc" id="disc3"></div>
+        </div>
+        <div class="item">
+            <input type="radio" name="rb" id="rb4">
+            <label for="rb4">Play</label>
+            <div class="disc" id="disc4"></div>
+        </div>
+    </div>		
+    
+</body>
+</html>

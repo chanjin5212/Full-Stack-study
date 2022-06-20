@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <style>
+
+      /*  
+      
+         CSS 박스 모델, Box Model
+         - 모든 태그는 사각형으로 랜더링(출력) 된다.
+         - 태그가 화면에 출력될 때 공통된 성질에 관련된 정책(모델)
+
+         1. 테두리, border
+            - 모든 태그는 자신의 영역을 가진다.
+            - 영역을 기준으로 테두리를 가진다.
+            - 영역은 반드시 사각형이다.
+            - 일부 요소는 추가 작업없이 테두리를 시각적으로 표현한다.(폼 컨트롤)
+      
+      */
+
+      #box2 {
+         
+         /* background-color: gold; */
+
+         border-color: black; /* 선 색상 */
+         border-width: 3px;     /* 선 두께 */
+         border-style: solid;   /* 선 종류(solid, dashed, dotted) */
+
+      }
+
+      #box1 {
+
+         border: 1px solid red;
+
+      }
+
+      #box3 {
+
+         /* 
+         border-top: 5px solid blue;
+         border-right: 5px solid green;
+         border-bottom: 5px solid orange;
+         border-left: 5px solid yellow; 
+         */
+
+         /* 
+         border-top-color: red;
+         border-top-width: 3px;
+         border-top-style: solid; 
+         */
+
+         /* 
+         border: 1px solid red;
+         border-bottom-color: blue; 
+         */
+
+         border: 1px solid;
+
+         /* 
+         border-top-color: red;
+         border-right-color: blue;
+         border-bottom-color: green;
+         border-left-color: yellow; 
+         */
+
+         /* border-color: red blue green yellow; */
+         /* border-color: red blue; */
+         /* border-color: red; */
+         /* border-color: red blue yellow; */
+
+         border-width: 3px 5px 7px 10px;
+      }
+
+      #txt2 {
+         background-color: white;
+         border: 1px solid #999;
+         outline: none;
+      }
+
+      h1 {
+         border-left: 10px solid #CCC;
+         border-right: 10px solid #CCC;
+      }
+
+   </style>
+</head>
+<body>
+   <!-- ex16_box.html -->
+   <h1>박스 모델</h1>
+
+   <div id="box1" class="box">상자1</div>
+   <div id="box2" class="box">상자2</div>
+   <div id="box3" class="box">상자3</div>
+
+   <hr>
+
+   <input type="text" id="txt1"><br>
+   <input type="text" id="txt2"><br>
+
+</body>
+</html>

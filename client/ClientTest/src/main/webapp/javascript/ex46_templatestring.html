@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=`, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex46_templatestring.html -->
+
+    <script>
+
+        let name = '홍길동';
+        let age = 20;
+
+        console.log('이름은 ' + name + '이고, 나이는 ' + age + '세입니다.');
+        console.log('이름은 %s이고, 나이는 %d세입니다.', name, age);
+
+
+        let result = '이름은 ' + name + '이고, 나이는 ' + age + '세입니다.';
+        //alert(result);
+
+        //result = string.format('이름은 %s이고, 나이는 %d세입니다.', name, age);
+        //alert(result);
+
+
+        //ES6
+        //1. string
+        //  - 'string'
+        //  - "string"
+
+        //2. template string > 그냥 문자열과 동일한 자료형
+        //  - `string`
+        //  - ${} : 형식 문자열, Place Holder
+
+        //alert(typeof `홍길동`); //문자열
+
+        //alert('홍길동' === `홍길동`);
+
+        result = `안녕하세요. 저는 ${name}입니다. 나이는 ${age}세입니다. 
+        
+        
+        
+        만 나이로 ${age-1}세입니다. 현재 시각은 ${new Date()}입니다.`;
+        
+        alert(result);
+
+
+
+
+
+
+
+
+    </script>
+
+
+</body>
+</html>

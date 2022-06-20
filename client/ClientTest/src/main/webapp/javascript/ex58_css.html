@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        #heart {
+            border: 1px solid black;
+            width: 300px;
+            height: 300px;
+            background-image: url(images/heart.png);
+            background-repeat: no-repeat;
+        }
+
+        #puma {
+            width: 512px;
+            height: 256px;
+            background-image: url(images/puma.png);
+            background-repeat: no-repeat;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- ex58_css.html -->
+
+    <h1>배경 이미지 조작</h1>
+
+    <div id="heart"></div>
+    <hr>
+    <input type="button" value="두근 두근" id="btn1">
+
+    <hr>
+
+    <h1>퓨마</h1>
+
+    <div id="puma"></div>
+
+    <script>
+
+        let x = 0;
+
+        document.getElementById('btn1').onclick = function() {
+
+            x -= 300;
+            if (x < -600) {
+                x = 0;
+            }
+            document.getElementById('heart').style.backgroundPosition = x + 'px 0px';
+
+        };
+
+
+
+        const puma = document.getElementById('puma');
+        x = 0;
+        let y = 0;
+        let timer = 0;
+
+        puma.onclick = function() {
+
+            if (timer == 0) {
+                timer = setInterval(function() {
+
+                    x -= 512;
+                    
+                    if (x < -(512 * 3)) {
+                        x = 0;
+                        y -= 256;
+
+                        if (y < -256) {
+                            y = 0;
+                        }
+                    }
+
+                    puma.style.backgroundPosition = `${x}px ${y}px`;
+
+                }, 50);
+            } else {
+                clearInterval(timer);
+                timer = 0;
+            }
+
+        };
+
+
+
+
+    </script>
+
+</body>
+</html>

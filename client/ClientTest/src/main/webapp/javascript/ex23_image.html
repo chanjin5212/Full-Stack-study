@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex23_image.html -->
+
+    <h1>이미지</h1>
+
+    <input type="button" name="btn1" value="버튼1">
+    <hr>
+    <img src="images/cat01.jpg" name="cat1">
+
+    <hr>
+    <img src="images/cat01.jpg" name="cat2">
+
+    <hr>
+    <img src="images/switch_on.png" name="sw1">
+
+    <hr>
+    <img src="images/circle_icon01.png" name="icon">
+
+    <hr>
+    <img src="images/dog01.jpg" name="dog1">
+
+    <hr>
+    <img src="images/0.png" name="number">
+
+
+    <script>
+
+        document.all.btn1.onclick = m1;
+
+        function m1() {
+
+            var cat1 = document.images['cat1'];
+
+            //alert(cat1.width);
+            cat1.width = 500;
+            //cat1.height = 500;
+
+            cat1.src = 'images/cat02.jpg';
+
+        }
+
+
+
+        var cat2 = document.images['cat2'];
+
+        //롤오버 이미지
+        cat2.onmouseover = m2;
+        cat2.onmouseout = m3;
+
+        function m2() {
+            cat2.src = 'images/cat02.jpg';
+        }
+
+        function m3() {
+            cat2.src = 'images/cat01.jpg';
+        }
+
+
+
+        var sw1 = document.images['sw1'];
+
+        //Toggle Button
+        sw1.onclick = m4;
+
+        function m4() {
+            if (sw1.src.endsWith('switch_on.png')) {
+                sw1.src = 'images/switch_off.png';
+                document.body.bgColor = 'black';
+            } else {
+                sw1.src = 'images/switch_on.png';
+                document.body.bgColor = 'white';
+            }
+        }
+
+
+
+
+        var icon = document.images['icon'];
+        var n = 1;
+
+        icon.onclick = m5;
+
+        function m5() {
+            n++;
+            if (n > 18) {
+                n = 1;
+            }
+            icon.src = 'images/circle_icon' + addZero(n) + '.png';
+        }
+
+        function addZero(num) {
+            if (num < 10) 
+                return '0' + num;
+            else
+                return num;
+        }
+
+
+
+
+        var dog1 = document.images['dog1'];
+        var no = 1;
+
+        //window.onkeydown = m6;
+
+        function m6(evt) {
+            //alert(evt.keyCode);
+
+            if (evt.keyCode == 37) { //좌
+                no--;
+                if (no < 1) {
+                    alert('처음 이미지입니다.');
+                    no++;
+                    return;
+                }
+            } else if (evt.keyCode == 39) { //우
+                no++;
+                if (no > 5) {
+                    alert('마지막 이미지입니다.');
+                    no--;
+                    return; //빈 리턴문(=메소드 종료)
+                }
+            } else if (evt.keyCode >= 49 && evt.keyCode <= 53) {
+                //dog1.src = 'images/dog0' + parseInt(evt.keyCode - 48) + '.jpg';
+
+                no = parseInt(evt.keyCode - 48);
+            }
+            
+            dog1.src = 'images/dog0' + no + '.jpg';
+
+        }
+
+
+        var number = document.images['number'];
+
+        window.onkeydown = m7;
+
+        function m7(evt) {
+
+            //상단 숫자키(48) vs 우측 숫자패드(96)
+            //alert(evt.keyCode);
+
+            var no;
+
+            if (evt.keyCode >= 48 && evt.keyCode <= 57) {
+                //상단 숫자키
+                no = parseInt(evt.keyCode) - 48;
+            } else if (evt.keyCode >= 96 && evt.keyCode <= 105) {
+                //우측 숫자패드
+                no = parseInt(evt.keyCode) - 96;
+            }
+
+            //alert(no);
+            number.src = 'images/' + no + '.png';
+
+        }
+
+
+    </script>
+</body>
+</body>
+</html>

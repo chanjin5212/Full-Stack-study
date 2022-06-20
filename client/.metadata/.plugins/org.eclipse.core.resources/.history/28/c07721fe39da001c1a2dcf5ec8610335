@@ -1,0 +1,35 @@
+"JavaTest" == "콘솔 프로그램 1개"
+"ClientTest" == "웹사이트 1개"
+
+Hello World!
+
+콘솔 응용프로그램의 자원
+1. *.java
+2. *.txt
+3. ..
+
+
+웹 응용프로그램의 자원
+1. *.html
+2. *.css
+3. *.js
+4. *.jsp
+5. *.java
+6. *.txt
+7. ..
+
+src > main > webapp > New > HTML File > "hello.html"
+
+
+
+
+
+
+
+
+
+
+
+
+
+

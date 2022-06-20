@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+	    body {
+			margin: 20px;
+		}
+		#tbl1 {
+			border: 1px solid black;
+			border-collapse: collapse;
+		}
+		#tbl1 td {
+			border: 1px solid black;
+			width: 120px;
+			height: 120px;
+		}
+		#tbl1 td img {
+		display: block;
+			width: 120px;
+			height: 120px;
+		}
+	</style>
+</head>
+<body>
+    <input type="button" value="walk" id="btn1">
+    <hr>
+    <table id="tbl1">
+		<tbody><tr>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>
+		</tr>
+	</tbody></table>
+    <script>
+		
+		var timer = 0;
+		var index = -1;
+		var cell, btn1;
+		var foot = "left";
+		var c = 255;
+
+		window.onload = function() {
+			
+			cell = document.getElementsByClassName("cell");
+			btn1 = document.getElementById("btn1");
+			
+			btn1.onclick = function() {
+			timer = setInterval(function() {
+				if (index > -1) {
+				cell[index].innerHTML = "";
+				cell[index].style.backgroundColor = "rgb(" + c + ", " + c + ", " + c + ")";
+				c-=5;
+				if (c < 0) clearInterval(timer);
+				}
+				index++;
+				if (index == 5) index = 0;
+				cell[index].innerHTML = "<img src='/ClientTest/src/main/webapp/javascript/images/foot_" + foot + "2.png'>";
+				if (foot == "left") foot = "right";
+				else foot = "left";
+				
+			}, 300);
+			};
+			
+		};
+		
+	</script>
+</body>
+</html>

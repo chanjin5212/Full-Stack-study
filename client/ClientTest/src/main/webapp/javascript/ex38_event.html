@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <!-- ex38_event.html -->
+    <h1>DOM Event</h1>
+
+    <input type="button" value="버튼1" id="btn1">
+    <input type="button" value="버튼2" id="btn2">
+
+    <script>
+
+        var btn1 = document.getElementById('btn1');
+        var btn2 = document.getElementById('btn2');
+
+
+        //BOM Event
+        //btn1.onclick = 함수;
+        //btn1.onclick = m1;
+        //btn1.onclick = null;
+
+        // btn1.onclick = m1;
+        // btn1.onclick = m2; //덮어쓰기
+
+        // function m1() {
+        //     alert('m1');
+        // }
+
+        // function m2() {
+        //     alert('m2');
+        // }
+
+
+
+        //DOM Event
+        //btn1.addEventListener(이벤트종류, 함수);
+
+        //동일한 이벤트를 여러번 추가 > 관리 가능 > Invocation List
+        btn1.addEventListener('click', m3);
+        btn1.addEventListener('click', m4); //DOM
+        btn1.onclick = m4; //BOM
+
+        btn1.removeEventListener('click', m4);
+
+        function m3() {
+            alert('m3');
+        }
+
+        function m4() {
+            alert('m4');
+        }
+
+
+
+    </script>
+
+</body>
+</html>

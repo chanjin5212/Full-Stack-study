@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- jQuery 설치(CDN) -->
+    <!-- <script src="https://code.jquery.com/jquery-migrate-3.4.0.js" integrity="sha256-0Nkb10Hnhm4EJZ0QDpvInc3bRp77wQIbIQmWYH3Y7Vw=" crossorigin="anonymous"></script> -->
+
+    <!-- jQuery 설치(로컬) -->
+    <script src="js/jquery-1.12.4.js"></script>
+
+</head>
+<body>
+    <!-- ex63_jquery.html -->
+
+    <input type="text" name="txt1" id="txt1">
+
+    <script>
+
+        /*
+
+            jQuery
+            - http://jquery.com
+            - jQuery is a fast, small, and feature-rich JavaScript library.
+            - 자바스크립트 라이브러리 > 기능 집합
+            - Lightweight Footprint
+            - CSS3 Compliant
+            - Cross-Browser > Chrom, Edge, Firefox, Safari, Android, IOS..
+            - JavaScipt
+
+
+            jQuery 설치
+            1. 로컬 설치 > 직접 파일 다운로드 + 참조
+            2. CDN 설치 > URL + 참조
+            3. Node > NPM (yarn) > 로컬 설치
+
+
+
+        */
+
+
+        //텍스트 박스 > value 조작
+        //1. BOM > BOM 트리
+        document.all.btn1.value = 'BOM';
+
+        //2. DOM > getXXX 메소드 or DOM 트리(Axis)
+        document.getElementById('txt1').setAttribute('value', 'DOM');
+
+        //3. jQuery > jQuery 함수
+        jQuery('#txt1').val('jQuery');
+
+    </script>
+</body>
+</html>

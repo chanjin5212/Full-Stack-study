@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+		body {
+			margin: 50px;
+		}
+		#timer {
+			border: 1px solid gray;
+			width: 560px;
+			height: 159px;
+			/* margin: 50px auto 20px auto; */
+			padding: 5px;
+			text-align: center;
+		}
+		#timer:after {
+			content: " ";
+			display: block;
+			clear: both;
+		}
+		#timer input, #timer span {
+			float: left;
+			font-size: 7em;
+		}
+		#timer input {
+			width: 155px;
+			border: 0px solid black;
+			outline: none;
+			text-align: center;
+		}
+		#timer span {
+			margin-top: 3px;
+		}
+		#btns {
+			width: 560px;
+			/* margin: 20px auto; */
+			margin-top: 20px;
+			text-align: center;
+		}
+		#btns input {
+			border: 1px solid #aaa;
+			background-color: white;
+			width: 30%;
+			height: 50px;
+			outline: none;
+			cursor: pointer;
+		}
+		#btns input:disabled {
+			background-color: #eee;
+			cursor: not-allowed;
+		}
+	</style>
+</head>
+<body>
+	<div id="timer">
+		<input type="text" name="txt1" id="txt1">
+		<span>:</span>
+		<input type="text" name="txt2" id="txt2">
+		<span>:</span>
+		<input type="text" name="txt3" id="txt3">
+	</div>
+	<div id="btns">
+		<input type="button" value="시작" name="btn1">
+		<input type="button" value="멈춤" name="btn2" disabled>
+		<input type="button" value="종료" name="btn3" disabled>
+	</div>
+
+    <script>
+
+        var timer = 0;
+        var n = 0;
+
+        document.all.btn1.onclick = m1;
+        document.all.btn2.onclick = m2;
+        document.all.btn3.onclick = m3;
+
+
+        function m1() {
+            if (timer == 0) {
+                timer = setInterval(function() {
+                    document.all.txt1.value = formatnumber(n / 100 / 60);
+                    document.all.txt2.value = formatnumber(n / 100 % 60);
+                    document.all.txt3.value = formatnumber(n % 100);
+
+                    n++;
+                }, 10);
+                document.all.btn1.disabled = true;
+                document.all.btn2.disabled = false;
+                document.all.btn3.disabled = false;
+            }
+        };
+
+        function m2() {
+            clearInterval(timer);
+            timer = 0;
+            document.all.btn1.disabled = false;
+            document.all.btn2.disabled = true;
+            document.all.btn3.disabled = false;
+        }
+
+        function m3() {
+            clearInterval(timer);
+            timer = 0;
+            n = 0;
+            document.all.txt1.value = formatnumber(n / 100 / 60);
+            document.all.txt2.value = formatnumber(n / 100 % 60);
+            document.all.txt3.value = formatnumber(n % 100);
+            document.all.btn1.disabled = false;
+            document.all.btn2.disabled = true;
+            document.all.btn3.disabled = true;
+        }
+
+        function formatnumber(num) {
+            if (num < 10) {
+                return "0" + parseInt(num);
+            } else {
+                return parseInt(num);
+            }
+        }
+    </script>
+</body>
+</html>

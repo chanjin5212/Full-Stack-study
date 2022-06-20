@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <style>
+
+      #list {
+         border: 1px solid gray;
+         border-collapse: collapse;
+         width: 800px;
+         margin-top: 50px;
+      }
+
+      #list th, #list td {
+         border: 1px solid gray;
+         padding: 5px;
+      }
+
+      #list #col1 { width: 50px; }
+      #list #col2 { width: 500px; }
+      #list #col3 { width: 100px; }
+      #list #col4 { width: 100px; }
+      #list #col5 { width: 50px; }
+
+      #list th {
+         background-color: #CCC;
+      }
+
+      #list td {
+         text-align: center;
+      }
+
+      #list .cell2 {
+         text-align: left;
+         padding-left: 10px;
+      } 
+
+
+
+
+
+
+      #list.striped {
+         border-left: 0px;
+         border-right: 0px;
+      }
+
+      #list.striped th, #list.striped td {
+         border-left: 0px;
+         border-right: 0px;
+      }
+
+
+
+
+
+
+      #list.dark {
+         border-color: white;
+         background-color: #000;
+         color: white;
+      }
+
+      #list.dark th, #list.dark td {
+         border-color: white;
+         background-color: #444;
+         color: white;
+      }
+
+
+
+
+      #list td:hover {
+         /* color: red; */
+         /* background-color: yellow; */
+      }
+
+
+
+
+
+      #list tr:hover {
+         background-color: yellow;
+      }
+
+
+
+      h1 {
+         /* text-decoration: underline red dashed 10px; */
+         border-bottom: 1px solid black;
+         width: 200px;
+         padding-bottom: 3px;
+      }
+      
+
+   </style>
+</head>
+<body>
+   <!-- ex19_box.html -->
+
+   <h1>게시판</h1>
+
+   <!-- table>tr*20>td*5 -->
+
+   <!-- table#list.table -->
+   <table id="list" class="table">
+      <!-- tr>th#col$*5 -->
+      <tr>
+         <th id="col1">번호</th>
+         <th id="col2">제목</th>
+         <th id="col3">이름</th>
+         <th id="col4">날짜</th>
+         <th id="col5">읽음</th>
+      </tr>
+      <!-- (tr>td.cell$*5)*20 -->
+      <!-- (tr>(td.cell1{$$})+(td.cell2>lorem5)+(td.cell3>lorem1)+(td.cell4{2022-05-$$})+(td.cell5{$$}))*20 -->
+      <tr>
+         <td class="cell1">01</td>
+         <td class="cell2">
+            Lorem ipsum dolor sit amet.
+         </td>
+         <td class="cell3">
+            Lorem.
+         </td>
+         <td class="cell4">2022-05-01</td>
+         <td class="cell5">01</td>
+      </tr>
+      <tr>
+         <td class="cell1">02</td>
+         <td class="cell2">
+            Enim?
+         </td>
+         <td class="cell3">
+            Inventore.
+         </td>
+         <td class="cell4">2022-05-02</td>
+         <td class="cell5">02</td>
+      </tr>
+      <tr>
+         <td class="cell1">03</td>
+         <td class="cell2">
+            Et ratione quae ipsa iste?
+         </td>
+         <td class="cell3">
+            Provident?
+         </td>
+         <td class="cell4">2022-05-03</td>
+         <td class="cell5">03</td>
+      </tr>
+      <tr>
+         <td class="cell1">04</td>
+         <td class="cell2">
+            Corporis!
+         </td>
+         <td class="cell3">
+            Qui!
+         </td>
+         <td class="cell4">2022-05-04</td>
+         <td class="cell5">04</td>
+      </tr>
+      <tr>
+         <td class="cell1">05</td>
+         <td class="cell2">
+            Iste minus rem vitae eaque.
+         </td>
+         <td class="cell3">
+            Quibusdam.
+         </td>
+         <td class="cell4">2022-05-05</td>
+         <td class="cell5">05</td>
+      </tr>
+      <tr>
+         <td class="cell1">06</td>
+         <td class="cell2">
+            Sunt rem fuga ratione nemo?
+         </td>
+         <td class="cell3">
+            Omnis.
+         </td>
+         <td class="cell4">2022-05-06</td>
+         <td class="cell5">06</td>
+      </tr>
+      <tr>
+         <td class="cell1">07</td>
+         <td class="cell2">
+            Ipsum sint earum error. Omnis.
+         </td>
+         <td class="cell3">
+            Voluptas?
+         </td>
+         <td class="cell4">2022-05-07</td>
+         <td class="cell5">07</td>
+      </tr>
+      <tr>
+         <td class="cell1">08</td>
+         <td class="cell2">
+            Alias quia quae cumque sequi.
+         </td>
+         <td class="cell3">
+            Facere.
+         </td>
+         <td class="cell4">2022-05-08</td>
+         <td class="cell5">08</td>
+      </tr>
+      <tr>
+         <td class="cell1">09</td>
+         <td class="cell2">
+            Consequuntur nemo quas quos provident.
+         </td>
+         <td class="cell3">
+            In.
+         </td>
+         <td class="cell4">2022-05-09</td>
+         <td class="cell5">09</td>
+      </tr>
+      <tr>
+         <td class="cell1">10</td>
+         <td class="cell2">
+            Itaque est dolor quia harum?
+         </td>
+         <td class="cell3">
+            Repellat.
+         </td>
+         <td class="cell4">2022-05-10</td>
+         <td class="cell5">10</td>
+      </tr>
+      <tr>
+         <td class="cell1">11</td>
+         <td class="cell2">
+            Voluptate quidem numquam placeat assumenda.
+         </td>
+         <td class="cell3">
+            Perspiciatis!
+         </td>
+         <td class="cell4">2022-05-11</td>
+         <td class="cell5">11</td>
+      </tr>
+      <tr>
+         <td class="cell1">12</td>
+         <td class="cell2">
+            Perspiciatis eaque quia tempora itaque.
+         </td>
+         <td class="cell3">
+            Explicabo!
+         </td>
+         <td class="cell4">2022-05-12</td>
+         <td class="cell5">12</td>
+      </tr>
+      <tr>
+         <td class="cell1">13</td>
+         <td class="cell2">
+            Illo enim voluptatibus aliquid nam?
+         </td>
+         <td class="cell3">
+            Corporis!
+         </td>
+         <td class="cell4">2022-05-13</td>
+         <td class="cell5">13</td>
+      </tr>
+      <tr>
+         <td class="cell1">14</td>
+         <td class="cell2">
+            Exercitationem dolore reprehenderit incidunt aliquam!
+         </td>
+         <td class="cell3">
+            Suscipit.
+         </td>
+         <td class="cell4">2022-05-14</td>
+         <td class="cell5">14</td>
+      </tr>
+      <tr>
+         <td class="cell1">15</td>
+         <td class="cell2">
+            Eveniet a sint minus voluptatem.
+         </td>
+         <td class="cell3">
+            Perspiciatis.
+         </td>
+         <td class="cell4">2022-05-15</td>
+         <td class="cell5">15</td>
+      </tr>
+      <tr>
+         <td class="cell1">16</td>
+         <td class="cell2">
+            Dolorem esse deserunt quidem deleniti?
+         </td>
+         <td class="cell3">
+            Vitae.
+         </td>
+         <td class="cell4">2022-05-16</td>
+         <td class="cell5">16</td>
+      </tr>
+      <tr>
+         <td class="cell1">17</td>
+         <td class="cell2">
+            Obcaecati harum doloremque accusamus vero!
+         </td>
+         <td class="cell3">
+            Asperiores.
+         </td>
+         <td class="cell4">2022-05-17</td>
+         <td class="cell5">17</td>
+      </tr>
+      <tr>
+         <td class="cell1">18</td>
+         <td class="cell2">
+            Excepturi at temporibus quasi deserunt?
+         </td>
+         <td class="cell3">
+            Nam?
+         </td>
+         <td class="cell4">2022-05-18</td>
+         <td class="cell5">18</td>
+      </tr>
+      <tr>
+         <td class="cell1">19</td>
+         <td class="cell2">
+            Asperiores id veniam esse illo.
+         </td>
+         <td class="cell3">
+            Impedit.
+         </td>
+         <td class="cell4">2022-05-19</td>
+         <td class="cell5">19</td>
+      </tr>
+      <tr>
+         <td class="cell1">20</td>
+         <td class="cell2">
+            Cum, excepturi totam! Quibusdam, illo.
+         </td>
+         <td class="cell3">
+            Quos!
+         </td>
+         <td class="cell4">2022-05-20</td>
+         <td class="cell5">20</td>
+      </tr>
+
+   </table>
+
+</body>
+</html>

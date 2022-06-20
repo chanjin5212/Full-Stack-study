@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <from name="form1">
+        <h1>고양이</h1>
+        <div>
+            <img src="/ClientTest/src/main/webapp/javascript/images/catty01.png" name="cat1">
+            <img src="/ClientTest/src/main/webapp/javascript/images/catty02.png" name="cat2">
+            <img src="/ClientTest/src/main/webapp/javascript/images/catty03.png" name="cat3">
+            <img src="/ClientTest/src/main/webapp/javascript/images/catty04.png" name="cat4">
+            <img src="/ClientTest/src/main/webapp/javascript/images/catty05.png" name="cat5">
+        </div>
+    </from>
+
+    <script>
+
+        document.images["cat1"].onmouseover = m1;
+        document.images["cat2"].onmouseover = m2;
+        document.images["cat3"].onmouseover = m3;
+        document.images["cat4"].onmouseover = m4;
+        document.images["cat5"].onmouseover = m5;
+
+        function m1() {
+            document.images["cat1"].width += 5;
+        }
+        function m2() {
+            document.images["cat2"].width += 5;
+        }
+        function m3() {
+            document.images["cat3"].width += 5;
+        }
+        function m4() {
+            document.images["cat4"].width += 5;
+        }
+        function m5() {
+            document.images["cat5"].width += 5;
+        }
+
+        document.images["cat1"].onclick = m6;
+        document.images["cat2"].onclick = m7;
+        document.images["cat3"].onclick = m8;
+        document.images["cat4"].onclick = m9;
+        document.images["cat5"].onclick = m10;
+
+        function m6() {
+            document.images["cat1"].width = 128;
+        }
+        function m7() {
+            document.images["cat2"].width = 128;
+        }
+        function m8() {
+            document.images["cat3"].width = 128;
+        }
+        function m9() {
+            document.images["cat4"].width = 128;
+        }
+        function m10() {
+            document.images["cat5"].width = 128;
+        }
+
+
+    </script>
+</body>
+</html>

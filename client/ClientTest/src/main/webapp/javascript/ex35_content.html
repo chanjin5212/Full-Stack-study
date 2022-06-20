@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #sample {
+            border: 1px solid black;
+            background-color: #EEE;
+            padding: 20px;
+            width: 800px;
+        }   
+        #sample img {
+            width: 150px;
+            border-radius: 10px;
+            opacity: .3;
+        }
+        #sample img:hover {
+            opacity: .7;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- ex35_content.html -->
+
+    <div id="sample">
+        <img src="images/cat01.jpg" class="pic">
+        <img src="images/cat02.jpg" class="pic">
+        <img src="images/cat03.jpg" class="pic">
+        <img src="images/cat04.jpg" class="pic">
+        <img src="images/cat05.jpg" class="pic">
+        <img src="images/dog01.jpg" class="pic">
+        <img src="images/dog02.jpg" class="pic">
+        <img src="images/dog03.jpg" class="pic">
+        <img src="images/dog04.jpg" class="pic">
+        <img src="images/dog05.jpg" class="pic">
+    </div>
+    <hr>
+    <input type="button" value="전체 삭제" id="btnclear">
+    <hr>
+    <div id="output"></div>
+
+    <script>
+
+        var pic = document.getElementsByClassName('pic');
+
+        for (var i=0; i<pic.length; i++) {
+            pic[i].onclick = m1;
+        }
+
+        function m1(event) {
+            //클릭한 썸네일이 누군지?
+            //alert(event.target.src);
+            var filename = getFileName(event.target.src);
+            //alert(filename);
+
+            document.getElementById('output').innerHTML 
+                    = '<img src="images/' + filename + '">'
+                        + document.getElementById('output').innerHTML;
+
+        }
+
+        function getFileName(path) {
+
+            //http://127.0.0.1:5504/javascript/images/cat01.jpg
+            var index = path.lastIndexOf('/');
+            return path.substr(index + 1);
+        }
+
+
+        document.getElementById('btnclear').onclick = m2;
+
+        function m2() {
+
+            if (document.getElementById('output').innerHTML != '') {
+
+                if (confirm('정말 삭제하시겠습니까?')) {
+                    document.getElementById('output').innerHTML = '';
+                }
+
+            } else {
+                alert('비어있습니다.');
+            }
+
+        }
+
+
+    </script>
+
+</body>
+</html>

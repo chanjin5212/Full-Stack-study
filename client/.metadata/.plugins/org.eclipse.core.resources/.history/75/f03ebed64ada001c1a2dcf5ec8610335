@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- ex02_whitespace.html -->
+	<!-- 
+		공백 문자, Whitespace
+		- 엔터, 탭, 스페이스
+		- 페이지 소스에 있는 공백 문자를 브라우저가 처리하는 규칙
+		-
+	 -->
+
+	하나 둘 셋 <br>
+	넷 다섯
+
+</body>
+</html>

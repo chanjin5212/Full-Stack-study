@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        .box { width: 150px; height: 150px;
+                position: absolute; left: 0; top: 0;
+                cursor: default; }
+        
+        #box1 { background-color: tomato; }
+        #box2 { background-color: gold; }
+        #box3 { background-color: cornflowerblue; }
+        #box4 { background-color: greenyellow; }
+        #box5 { background-color: plum; }
+
+    </style>
+</head>
+<body onselectstart="return false;" ondragstart="return false;">
+    <!-- ex49_css.html -->
+
+    <div id="box1" class="box">상자1</div>
+    <div id="box2" class="box">상자2</div>
+    <div id="box3" class="box">상자3</div>
+    <div id="box4" class="box">상자4</div>
+    <div id="box5" class="box">상자5</div>
+
+    <script>
+
+        const box1 = document.getElementById('box1');
+        const list = document.getElementsByClassName('box');
+        let index = 0;
+        let zindex = 1;
+
+        window.onmousedown = function(event) {
+            
+            //alert();
+            //alert(`${event.clientX}:${event.clientY}`);
+
+            //box1.style.left = event.clientX + 'px';
+            //box1.style.top = event.clientY + 'px';
+
+
+            list[index].style.left = event.clientX - 75 + 'px';
+            list[index].style.top = event.clientY - 75 + 'px';
+            list[index].style.zIndex = zindex;
+            
+            index++;
+            zindex++;
+
+            if (index >= list.length) index = 0;
+
+        };
+
+    </script>
+
+</body>
+</html>

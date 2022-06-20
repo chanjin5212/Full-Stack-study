@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-1.12.4.js"></script>
+    <style>
+
+        #box {
+            border: 20px solid cornflowerblue;
+            width: 200px;
+            height: 200px;
+            padding: 30px;
+            margin: 50px;
+            background-color: orange;
+            /* box-sizing: border-box; */
+        }
+
+    </style>
+</head>
+<body>
+    <!-- ex68_jquery_box.html -->
+
+    <h1>jQuery + Box Model</h1>
+
+    <input type="button" value="버튼1" id="btn1">
+
+    <hr>
+
+    <div id="box">상자</div>
+
+    <script>
+
+        //1. CSS 속성
+        console.log('width', $('#box').css('width'));
+        console.log('height', $('#box').css('height'));
+
+        //2.
+        console.log('width()', $('#box').width());
+        console.log('height()', $('#box').height());
+
+        //3. width/height + padding = orange 영역
+        console.log('innerWidth()', $('#box').innerWidth());
+        console.log('innerHeight()', $('#box').innerHeight());
+
+        //4. width/height + padding + border = orange 영역 + 파란색 테두리 > 실제 사각형
+        console.log('outerWidth()', $('#box').outerWidth());
+        console.log('outerHeight()', $('#box').outerHeight());
+
+        //5. width/height + padding + border + margin > 사각형 차지하는 실제 영혁
+        console.log('outerWidth(true)', $('#box').outerWidth(true));
+        console.log('outerHeight(true)', $('#box').outerHeight(true));
+
+    </script>
+
+</body>
+</html>

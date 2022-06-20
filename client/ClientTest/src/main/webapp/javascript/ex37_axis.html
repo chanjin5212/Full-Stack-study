@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        .table td {
+            padding: 30px;
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body oncontextmenu="return false;" onselectstart="return false;">
+    <!-- ex37_axis.html -->
+
+    <h1>테이블</h1>
+
+    <table class="table" id="tbl1">
+        <tr>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+    </table>
+
+    <h1>또 다른 테이블</h1>
+    <table class="table">
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+    </table>
+
+
+    <script>
+
+        //tb1 > td(25개) > 이벤트
+
+        //alert(document.getElementsByTagName('td').length);
+
+        var tbl1 = document.getElementById('tbl1');
+
+        //alert(tbl1.children.length);
+
+        //tbl1.children[0] > <tbody>
+        //tbl1.firstElementChild > <tbody>
+
+        //alert(tbl1.firstElementChild.children.length); //<tr>
+
+
+        var tr = tbl1.firstElementChild.children;
+
+        for (var i=0; i<tr.length; i++) { //5행
+
+            var td = tr[i].children;
+
+            for (var j=0; j<td.length; j++) { //5열
+
+                //td[j].bgColor = 'gold';
+                //td[j].textContent = i + ',' + j;
+                td[j].onmouseover = m1;
+                td[j].onmouseout = m2;
+                td[j].onmousedown = m3;
+
+            }
+
+        }
+
+        function m1(event) {
+            //event.target.bgColor = 'gold';
+        }
+
+        function m2(event) {
+            //event.target.bgColor = 'transparent';
+        }
+
+        function m3(event) {
+
+            var n = parseInt(event.target.textContent);
+
+            if (event.buttons == 1) {
+                n++;
+            } else if (event.buttons == 2) {
+                n--;
+
+                if (n == 0) {
+                    event.target.onmousedown = null;
+                    event.target.bgColor = '#DDD';
+                }
+            }
+
+            event.target.textContent = n;
+
+        }
+
+
+    </script>
+
+</body>
+</html>

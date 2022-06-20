@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #tbl1 {
+            border: 1px solid gray;
+            border-collapse: collapse;
+        }
+        #tbl1 td {
+            border: 1px solid gray;
+            width: 126px;
+            height: 126px;
+        }
+        #tbl1 td img {
+            display: block;
+        }
+    </style>
+</head>
+<body oncontextmenu="return false;">
+    <!-- ex34_content.html -->
+
+    <table id="tbl1">
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+    <script>
+
+        //<td> x 25 검색 > 클릭이벤트 추가 > 이미지 동적 추가
+        
+        var list = document.getElementsByTagName('td');
+
+        //alert(list.length);
+
+        for (var i=0; i<list.length; i++) {
+
+            //list[i].onclick = m1;
+            list[i].onmousedown = m1;
+
+        }
+
+        function m1(event) {
+            //클릭한 <td>?
+            //event.target.bgColor = 'gold';
+
+            if (event.buttons == 1) {
+                //왼쪽 버튼
+                event.target.innerHTML = '<img src="images/rect_icon10.png">';
+            } else if (event.buttons == 2) { 
+                //오른쪽 버튼
+                event.target.innerHTML = '<img src="images/rect_icon12.png">';
+            } else if (event.buttons == 4) { 
+                //가운테 버튼
+                event.target.innerHTML = '<img src="images/rect_icon15.png">';
+            }
+        }
+
+
+    </script>
+
+</body>
+</html>

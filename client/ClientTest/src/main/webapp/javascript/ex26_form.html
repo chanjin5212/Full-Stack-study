@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex26_form.html -->
+    <form name="form1" action="ex26_ok.jsp">
+
+        <fieldset>
+            <input type="text" name="txt1">
+            <hr>
+            <input type="button" value="버튼1" name="btn1">
+        </fieldset>
+
+        <h1>회원 가입</h1>
+
+        <table border>
+            <tr>
+                <th>이름</th>
+                <td><input type="text" name="txtname"></td>
+            </tr>
+            <tr>
+                <th>나이</th>
+                <td><input type="number" name="txtage" min="19" max="60"></td>
+            </tr>
+            <tr>
+                <th>아이디</th>
+                <td><input type="text" name="txtid"></td>
+            </tr>
+            <tr>
+                <th>암호</th>
+                <td><input type="password" name="txtpw"></td>
+            </tr>
+            <tr>
+                <th>암호확인</th>
+                <td><input type="password" name="txtpwc"></td>
+            </tr>
+        </table>
+        <hr>
+        <input type="button" value="가입하기" name="btn2">
+
+    </form>
+
+    <script>
+
+        document.form1.btn1.onclick = m1;
+
+        function m1() {
+            
+            var txt1 = document.form1.txt1;
+            //txt1.size = 50;
+
+            //숫자만 입력
+            //alert(txt1.value);
+
+            for (var i=0; i<txt1.value.length; i++) {
+
+                //txt1.value.charCodeAt(i); //문자코드 반환
+                //txt1.value.charAt(i); //문자 반환
+
+                var c = txt1.value.charAt(i);
+
+                //문자 코드값 비교
+                if (c < '0' || c > '9') {
+                    alert('에러!!!');
+                    return;
+                }
+
+            }
+
+            alert('성공!!!');
+
+        }
+
+
+
+
+        //가입하기 버튼
+        document.form1.btn2.onclick = m2;
+
+        function m2() {
+
+            var txtname = document.form1.txtname;
+            var txtage = document.form1.txtage;
+            var txtid = document.form1.txtid;
+            var txtpw = document.form1.txtpw;
+            var txtpwc = document.form1.txtpwc;
+
+            //유효성 검사 > 잘못된 값을 찾기!!
+
+            //이름
+            //- 필수값
+            //- 2~5자 이내
+            //- 한글만
+
+            if (txtname.value.trim() == '') {
+                alert('이름을 입력하세요.');
+                txtname.focus();
+                return;
+            }
+
+            if (txtname.value.length < 2 || txtname.value.length > 5) {
+                alert('2~5자 이내');
+                //txtname.value = ''; //텍스트 박스 초기화
+                //txtname.focus();
+                txtname.select();
+                return;
+            }
+
+            for (var i=0; i<txtname.value.length; i++) {
+                var c = txtname.value.charAt(i);
+                if (c < '가' || c > '힣') {
+                    alert('한글만 입력하시오.');
+                    txtname.select();
+                    return;
+                }
+            }
+
+
+
+
+            //나이
+            //1. 필수값
+            //2. 숫자만
+            //3. 범위 검사(19이상 60미만)
+            if (txtage.value.trim() == '') {
+                alert('나이를 입력하세요.');
+                txtage.focus();
+                return;
+            }
+
+            if (txtage.value < 19 || txtage.value >= 60) {
+                alert('19이상 60미만');
+                txtage.select();
+                return;
+            }
+
+
+
+
+
+            //아이디
+            //1. 필수값
+            //2. 4~12자 이내
+            //3. 영어 + 숫자 + _
+            //4. 숫자로 시작 불가
+
+            if (txtid.value.trim() == '') {
+                alert('아이디를 입력하세요.');
+                txtid.focus();
+                return;
+            }
+
+            if (txtid.value.length < 4 || txtid.value.length > 12) {
+                alert('4~12자 이내');
+                txtid.select();
+                return;
+            }
+
+            for (var i=0; i<txtid.value.length; i++) {
+                var c = txtid.value.charAt(i);
+                if ((c < 'A' || c > 'Z') && (c < 'a' || c > 'z')
+                        && (c < '0' || c > '9') && c != '_') {
+                    alert('영어와 숫자 그리고 언더바(_)만 입력하세요.');
+                    txtid.select();                    
+                    return;
+                }
+            }
+
+            if (!isNaN(txtid.value.charAt(0))) {
+                alert('숫자로 시작할 수 없습니다.');
+                txtid.select();
+                return;
+            }
+
+
+
+            //암호와 암호확인이 일치하는지
+            if (txtpw.value != txtpwc.value) {
+                alert('암호가 일치하지 않습니다.');
+                txtpw.focus();
+                return;
+            }
+
+
+
+
+            //폼 전송
+            //- submit 버튼 클릭한것도 동일하게 폼을 전송한다.
+            document.form1.submit();
+
+        }
+
+    </script>
+
+</body>
+</html>

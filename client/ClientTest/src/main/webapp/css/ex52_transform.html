@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <style>
+      body { margin-bottom: 200px; }
+
+      .box {
+         border: 1px solid black;
+         width: 200px;
+         height: 200px;
+         margin: 20px;
+         margin-left: 200px;
+      }
+
+      #box2 {
+         background-color: gold;
+      }
+
+      body:hover #box2 {
+         /* background-color: cornflowerblue; */
+         
+         /* transform: rotate(45deg); */
+         /* transform: scale(2, 2); */
+
+         /* 변화 중심축(기본 center center, 50% 50%) */
+         transform-origin: 0 0;
+      }
+
+
+      #box4 {
+         overflow: hidden;
+      }
+
+      #box4 img {
+         width: 200px;
+         height: 200px;
+         transition: 1s all;
+         transform: translate(200px, 200px);
+      }
+
+      #box4:hover img {
+         transform: translate(0px, 0px);
+         /* transform: rotate(45deg); */
+      }
+
+   </style>
+</head>
+<body>
+   <!-- ex52_transform.html -->
+   <div id="box1" class="box">상자1</div>
+   <div id="box2" class="box">상자2</div>
+   <div id="box3" class="box">상자3</div>
+
+   <div id="box4" class="box">
+      <img src="images/cat01.jpg">
+   </div>
+
+</body>
+</html>

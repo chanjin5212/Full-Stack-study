@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <!--  
+
+        *.css : 개발용, 파일 크기 크다. 개발자 기능 추가(디버그용 기능)
+        *.min.css : 배포용(운영용), 파일 크기 작다.(압축), 필요한 기능만 포함
+
+        *.js : 개발용, 파일 크기 크다. 개발자 기능 추가(디버그용 기능)
+        *.min.js : 배포용(운영용), 파일 크기 작다.(압축), 필요한 기능만 포함
+
+    -->
+
+    <!-- 부트스트랩 -->
+    <!-- 직접 설치 -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+    <!-- CDN 설치 -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script> -->
+
+    <style>
+
+    </style>
+</head>
+<body>
+    <!-- ex60_bootstrap.html -->
+
+    <!--  
+
+        CSS Design Framework
+        - CSS 기반 > 웹 페이지 디자인 > 틀(도구)
+        - Bootstrap(트위터), Pure CSS, Pico CSS
+
+        부트스트랩 기능
+        1. 조작X > 기본 적용
+        2. 조작O > class 제공 > 적용
+        3. 조작O > 풍부한 기능 > 복잡
+
+    -->
+    
+    <div class="container">
+
+        <h1>제목입니다.</h1>
+        <p>문단입니다.</p>
+        <p>
+            자바에서 변수를 선언하는 문장입니다. 
+            <code>int a = 10;</code> 
+            정수형 변수를 선언합니다.
+        </p>
+
+        <pre>
+            Preformatted Text > 개행 문자가 그대로 인식된다.
+            이곳에                텍스트를 작성합니다.
+            하나
+            둘
+            셋
+        </pre>
+        
+        <pre><code>
+    public class Hello {
+
+        public static void main(String[] args) {
+                
+            System.out.println("Hello World!!");
+        
+        }
+        
+    }</code></pre>
+
+        <p>페이지 실행은 <kbd>Ctrl + F11</kbd> 을 누르시오.</p>
+
+        <hr>
+
+        <h1>테이블</h1>
+
+        <table class="table table-bordered table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th>번호</th>
+                    <th>이름</th>
+                    <th>나이</th>
+                    <th>성별</th>
+                    <th>주소</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>5</td>
+                    <td>홍길동</td>
+                    <td>25</td>
+                    <td>남자</td>
+                    <td>서울시 강남구 역삼동</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>홍길동</td>
+                    <td>25</td>
+                    <td>남자</td>
+                    <td>서울시 강남구 역삼동</td>
+                </tr>
+                <tr class="table-success">
+                    <td>5</td>
+                    <td>홍길동</td>
+                    <td>25</td>
+                    <td>남자</td>
+                    <td>서울시 강남구 역삼동</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>홍길동</td>
+                    <td>25</td>
+                    <td>남자</td>
+                    <td>서울시 강남구 역삼동</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>홍길동</td>
+                    <td>25</td>
+                    <td>남자</td>
+                    <td>서울시 강남구 역삼동</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>홍길동</td>
+                    <td>25</td>
+                    <td>남자</td>
+                    <td>서울시 강남구 역삼동</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>홍길동</td>
+                    <td>25</td>
+                    <td>남자</td>
+                    <td>서울시 강남구 역삼동</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>홍길동</td>
+                    <td>25</td>
+                    <td>남자</td>
+                    <td>서울시 강남구 역삼동</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>홍길동</td>
+                    <td>25</td>
+                    <td>남자</td>
+                    <td>서울시 강남구 역삼동</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <hr>
+
+        <div class="alert alert-primary">Lorem ipsum dolor sit amet.</div>
+        <div class="alert alert-secondary">Lorem ipsum dolor sit amet.</div>
+        <div class="alert alert-danger">Lorem ipsum dolor sit amet.</div>
+        <div class="alert alert-success">Lorem ipsum dolor sit amet.</div>
+        <div class="alert alert-warning">Lorem ipsum dolor sit amet.</div>
+        <div class="alert alert-info">Lorem ipsum dolor sit amet.</div>
+        <div class="alert alert-dark">Lorem ipsum dolor sit amet.</div>
+        <div class="alert alert-light">Lorem ipsum dolor sit amet.</div>
+
+        <hr>
+
+        <h1>안녕하세요. 홍길동입니다. <span class="badge badge-primary">new</span></h1>
+        <p>게시판 글쓰기입니다. <span class="badge badge-danger">new</span></p>
+
+        <button class="btn btn-danger">
+            Delete <span class="badge badge-light">5</span>
+        </button>
+
+        <button class="btn btn-danger">
+            Delete <span class="badge badge-light badge-pill">5</span>
+        </button>
+
+        <button class="btn btn-warning">
+            Button
+        </button>
+
+        <button class="btn btn-outline-warning">
+            Button
+        </button>
+
+        <button class="btn btn-primary">
+            Button
+        </button>
+
+        <button class="btn btn-primary btn-lg">
+            Button
+        </button>
+
+        <button class="btn btn-primary btn-sm">
+            Button
+        </button>
+
+        <button class="btn btn-primary btn-block">
+            Button
+        </button>
+
+        <hr>
+
+        <button class="btn btn-secondary">One</button>
+        <button class="btn btn-secondary">Two</button>
+        <button class="btn btn-secondary">Three</button>
+        
+        <hr>
+
+        <div class="btn-group" role="group">
+            <button class="btn btn-secondary">One</button>
+            <button class="btn btn-secondary">Two</button>
+            <button class="btn btn-secondary">Three</button>
+        </div>
+
+        <hr>
+
+        <ul class="list-group">
+            <li class="list-group-item">AAA</li>
+            <li class="list-group-item">AAA</li>
+            <li class="list-group-item active">AAA</li>
+            <li class="list-group-item list-group-item-danger">AAA</li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">AAA <span class="badge badge-primary badge-pill">5</span></li>
+        </ul>
+
+
+        <hr>
+
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#register">
+            회원 가입
+        </button>
+
+        <div class="modal fade" id="register" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5>Register</h5>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <input type="text" class="form-control" placeholder="아이디">
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary">가입</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">취소</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+            Launch demo modal
+          </button>
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  ...
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+              </div>
+            </div>
+          </div> -->
+
+    </div>
+    <br><br><br><br><br><br><br><br><br><br>
+
+</body>
+</html>

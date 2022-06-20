@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        #list {
+			border: 1px solid black;
+			width: 1400px;
+			height: 750px;
+			position: relative;
+			left: 0px;
+			top: 0px;
+		}
+		#list .line {
+			height: 149px;
+			border-bottom: 1px solid black;
+		}
+		#list .line:last-child {
+			border-bottom: 0px;
+		}
+		#list .ball {
+			border: 1px solid black;
+			border-radius: 50%;
+			width: 100px;
+			height: 100px;
+			position: absolute;
+			text-align: center;
+			font-size: 4.4em;
+			font-weight: bold;
+			transition: all 5s;
+		}
+		#list .ball:nth-child(1) {
+			background-color: tomato;
+			left: 0px;
+			top: 47px;
+			transition-duration: 7s;
+		}
+		#list .ball:nth-child(2) {
+			background-color: gold;
+			left: 0px;
+			top: 197px;
+			transition-duration: 4s;			
+		}
+		#list .ball:nth-child(3) {
+			background-color: orange;
+			left: 0px;
+			top: 347px;
+		}
+		#list .ball:nth-child(4) {
+			background-color: greenyellow;
+			left: 0px;
+			top: 497px;
+			transition-duration: 8s;
+		}
+		#list .ball:nth-child(5) {
+			background-color: cornflowerblue;
+			left: 0px;
+			top: 647px;
+			transition-duration: 4.5s;
+		}
+
+		#list:hover > .ball {
+			left: 1298px;
+			transform: rotate(3600deg);
+		}
+	
+    </style>
+</head>
+<body>
+    <div style="width: 1400x; margin: 20px auto;">
+        <div id="list">
+            <div class="ball">A</div>
+            <div class="ball">B</div>
+            <div class="ball">C</div>
+            <div class="ball">D</div>
+            <div class="ball">E</div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </div>
+</body>
+</html>

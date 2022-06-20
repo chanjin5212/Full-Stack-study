@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- ex09_style.html -->
+	
+	<!-- 
+	
+		HTML > 골격 구성 + 데이터 표현 + 서식 기능(사용 안함)
+		CSS > HTML 보조 목적 > HTML의 서식 기능을 보강하기 위해서
+		
+		HTML + CSS > HTML(골격 구성 + 데이터 표현 + 서식 기능) + CSS(서식 기능)
+		
+	 -->
+	 
+	 <h1>스타일 태그</h1>
+	 
+	 <h2>물리적인 모양을 지정하는 태그(의미가 중요하지 않는다.)</h2>
+	 
+	 
+	 <h2>(데이터의 가치)의미 자체를 중시하는 태그(모양이 중요하지 않는다.)</h2>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

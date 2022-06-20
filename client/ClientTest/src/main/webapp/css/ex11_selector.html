@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        /* 
+        
+            1. 선택자 충돌
+            2. 속성 충돌
+            3. 선택자 우선순위
+                - 속성 충돌이 발생하면 선택자간의 우선 순위에 따라 속성이 적용된다.
+                - 점수 계산 > 높은 점수의 선택자가 적용
+            
+            선택자 점수 계산
+            a. 태그 선택자   > 1점   > "사람"
+            b. 클래스 선택자 > 10점  > "남자"
+            c. 아이디 선택자 > 100점 > "홍길동"
+
+        */
+
+        /* 
+        div { 
+            color: red; 
+            font-style: italic; 
+        } 
+        */
+
+        /* 특정 태그를 찾는 선택자가 N개 이상 선언할 수 있다. */
+        /* div { color: red; } */
+        /* div { font-style: italic; } */
+
+
+        /* 동일한 태그를 선택한 식별자가 동일한 속성을 지정하면 > 충돌 발생 > 작성 순서에 따라 마지막에 작성된 속성이 적용(덮어쓰기) */
+        /* div { color: red; } */
+        /* div { color: blue; } */
+
+
+        
+        /* #box1 { color: orange; } */
+        /* .box { color: blue; } */
+        /* div { color: red; } */
+
+
+
+        div#box1.box { color: red; }
+
+        body > div > .box { color: blue; }
+
+
+        .t1 { color: blue; }
+
+        div > div > div > div > div > div > div > div > div > div > div > div {
+            color: red;
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- ex11_selector.html -->
+    <div id="box1" class="box">상자</div>
+
+    <div>
+        <div class="box">상자2</div>
+    </div>
+
+    <div>
+        <div>
+            <div>
+                <div>
+                    <div>
+                        <div>
+                            <div>
+                                <div>
+                                    <div>
+                                        <div>
+                                            <div>
+                                                <div class="t1">Box</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    
+
+</body>
+</html>

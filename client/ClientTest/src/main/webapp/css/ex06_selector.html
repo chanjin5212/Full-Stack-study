@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        /* 
+        
+            선택자
+            1. 전체 선택자: * {}
+            2. 태그 선택자: tag {}
+            3. ID 선택자: #id {}
+            4. Class 선택자: .class {}
+            5. 그룹 선택자: sel1, sel2, sel3 {}
+            6. 자식 선택자: parent > child {}
+            7. 자손 선택자: parent child {}
+
+            
+            자식 선택자, Child Selector
+            - 부모선택자 > 자식선택자 {}
+            - 정밀도 높음 + 범위 좁음
+
+            자손 선택자, Descendant Selector
+            - 부모선택자 자식선택자 {}
+            - 정밀도 낮음 + 범위 넓음
+
+        */
+
+
+        /* li { color: blue; } */
+
+        /* .item { color: red; } */
+        
+
+        /* ol > li { color: orange; } */
+
+        /* ul > li { color: blue; } */
+
+        /* ol > li > span { color: red; } */
+
+        /* ol span { font-style: italic; } */
+
+
+        /* html > body > ol > li > span > b { color: red; } */
+
+        /* ol > li > span > b { color: red; } */
+
+        /* ol b { color: yellow; } */
+
+    </style>
+</head>
+<body>
+    <!-- ex06_selector.html -->
+    <!--  
+
+        아무 기능이 없는 태그
+        <div> : block
+        <span> : inline
+
+    -->
+
+    <h1>커리큘럼</h1>
+
+    <ol>
+        <li>Java <span>Programming</span></li>
+        <li>Oracle Database</li>
+        <li>JDBC <span>Programming</span></li>
+        <li>Client <span>Programming(<b>HTML</b>)</span></li>
+        <li>Client <span>Programming(<b>CSS</b>)</span></li>
+        <li>Client <span>Programming(<b>JavaScript</b>)</span></li>
+    </ol>
+
+
+    <h2>공지 사항</h2>
+
+    <ul>
+        <li>구글 드라이브에 <span>백업본</span>을 다운로드 받으세요.</li>
+        <li>과제는 <span>금요일</span>까지 제출하세요.</li>
+        <li>VS Code 설정을 백업하세요.</li>
+    </ul>
+    
+    <b>test</b>
+    
+
+    <!-- 
+    <ol>
+        <li class="item">Java <span class="word">Programming</span></li>
+        <li class="item">Oracle Database</li>
+        <li class="item">JDBC <span class="word">Programming</span></li>
+        <li class="item">Client <span class="word">Programming(HTML)</span></li>
+        <li class="item">Client <span class="word">Programming(CSS)</span></li>
+        <li class="item">Client <span class="word">Programming(JavaScript)</span></li>
+    </ol> 
+    -->
+
+</body>
+</html>

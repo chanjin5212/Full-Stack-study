@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #tbl, #tbl td {
+         border: 1px solid black;
+         border-collapse: collapse;
+     }
+     #tbl td {
+         width: 100px;
+         height: 100px;
+         text-align: center;
+     }
+ </style>
+</head>
+<body>
+    <table id="tbl" class="table">
+		<tbody id="tbody1"><tr><td>1</td></tr></tbody>
+	</table>
+
+    <script>
+        let tbody1 = document.getElementById("tbody1");
+        let row = 2;
+        let column = 2;
+        let no = 0;
+
+        window.onkeydown = function() {
+            no = 1;
+
+            if (event.keyCode == 39) {
+                column++;
+                generate();
+            } else if (event.keyCode == 37) {
+                column--;
+                if (column < 1) {
+                    column = 1;
+                }
+                generate();
+            } else if (event.keyCode == 40) {
+                row++;
+                generate();
+            } else if (event.keyCode == 38) {
+                row--;
+                if (row < 1) {
+                    row = 1;
+                }
+                generate();
+            }
+        }
+
+        function generate() {
+            tbody1.innerHTML = "";
+            let temp = "";
+
+            for (let i=0; i<row; i++) {
+                temp = "<tr>";
+                for (let j=0; j<column; j++) {
+                    temp += "<td>";
+                    temp += no;
+                    temp += "</td>";
+                    no++;
+                }
+                temp += "</tr>";
+                tbody1.innerHTML += temp;
+            }
+        }
+    </script>
+</body>
+</html>

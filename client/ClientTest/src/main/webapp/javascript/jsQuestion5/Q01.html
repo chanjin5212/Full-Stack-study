@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .item {
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+
+    <script>
+
+        let item;
+        window.onmousedown = function (event) {
+            
+            let img = document.createElement("img");
+            
+            img.setAttribute("class", "item");
+            img.setAttribute("src", "/ClientTest/src/main/webapp/javascript/images/face03.png");
+            
+            img.style.left = (event.clientX - 64) + "px";
+            img.style.top = (event.clientY - 64) + "px";
+            
+            document.body.appendChild(img);
+            
+        }
+
+        
+    </script>
+</body>
+</html>

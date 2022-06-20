@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        #menu {
+            /* border: 1px solid black; */
+            display: flex;
+            width: 630px;
+
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+
+            margin: 0 auto;
+
+            transform: translate(0px, -100px);
+        }
+
+        #menu img {
+            transition: .5s all;
+        }
+
+        main {
+            width: 1000px;
+            margin: 100px auto;
+        }
+
+
+    </style>
+
+    <script>
+
+        // const item = document.getElementById('menu').children;
+        // alert(item);
+
+
+        // <body onload="">
+        //- <body> 태그가 브라우저에 의해서 실행되고 난 직후
+        function init() {
+            const item = document.getElementById('menu').children;
+            alert(item);
+        }
+
+        // window.onload = function() {};
+        // window.document.onload = function() {};
+        // window.document.body.onload = function() {};
+
+        let olditem = null;
+
+        window.onload = function() {
+
+            const item = document.getElementById('menu').children;
+            
+            for (let i=0; i<item.length; i++) {
+
+                item[i].onclick = function(event) {
+
+                    if (olditem != null) { //누군가 열려있다면?
+                        olditem.style.transform = 'translate(0px, 0px)';
+                    }
+                    
+                    if (event.target != olditem) {
+                        event.target.style.transform = 'translate(0px, 90px)';
+                        olditem = event.target;
+                    } else {
+                        event.target.style.transform = 'translate(0px, 0px)';
+                        olditem = null;
+                    }
+                    
+
+                };
+
+            }
+        };
+
+    </script>
+
+</head>
+<body>
+    <!-- ex56_css.html -->
+
+    <nav id="menu">
+        <img src="images/rect_icon01.png">
+        <img src="images/rect_icon02.png">
+        <img src="images/rect_icon03.png">
+        <img src="images/rect_icon04.png">
+        <img src="images/rect_icon05.png">
+    </nav>
+
+    <main>
+        <h1>Title</h1>
+        <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam beatae eum porro perspiciatis ex debitis, fugiat ullam quae quibusdam enim, quis provident nostrum repellat iusto repudiandae. Veritatis numquam debitis repellat.
+        </p>
+        <p>
+            Eum error ab cupiditate consectetur at perferendis dolorum, molestiae unde quasi, voluptatum distinctio laborum eius in quis tempora, fuga dolores. Reprehenderit recusandae rerum quidem ex consequuntur libero cumque fuga cum!
+        </p>
+        <p>
+            Impedit aliquam consectetur maiores ducimus dignissimos nemo possimus vitae provident ex ad ipsum rerum, officiis harum delectus corrupti iste accusamus! Eius, praesentium accusamus. Blanditiis, nulla doloremque. Possimus ex ut iure.
+        </p>
+        <p>
+            Laboriosam, delectus molestias doloribus velit quos omnis, expedita esse labore, quia dicta nulla eius illo! Veritatis minima ipsa repellendus magni veniam neque eius esse dicta eaque beatae, fuga nesciunt tempora!
+        </p>
+        <p>
+            Hic delectus quam natus, fugiat officia repudiandae ab ducimus explicabo vero? Eaque eveniet est laborum id voluptatem quis, veniam nesciunt at quia quod non, officia officiis vitae exercitationem ut debitis?
+        </p>
+        <p>
+            Officia eveniet dignissimos, cupiditate magni inventore doloremque eaque reiciendis excepturi, aliquid error quos! Laborum, voluptas! Deserunt magnam eveniet nesciunt aliquam dolores est dignissimos. Officiis, ex fugit? Aut temporibus mollitia at.
+        </p>
+        <p>
+            Officiis aspernatur eligendi molestias accusantium! Nesciunt vel ipsa ea sit! Natus distinctio minima adipisci voluptatibus excepturi et, odit, voluptas sed, fugit praesentium alias dignissimos. Ipsum natus repudiandae eum! Itaque, accusantium.
+        </p>
+        <p>
+            Quidem veritatis quae quaerat accusantium. Est dolorem sint corrupti veniam sunt iusto ipsam doloribus eveniet provident? Adipisci quibusdam veniam omnis accusamus aliquid illo nihil, quaerat suscipit ad error et tempore.
+        </p>
+        <p>
+            Sunt odio unde dicta quas impedit dolorum necessitatibus alias voluptate consequuntur dolorem exercitationem, quod tempora mollitia sint eligendi minima nobis vel enim sapiente distinctio veritatis? Omnis atque voluptates mollitia tempora?
+        </p>
+        <p>
+            A omnis eveniet ducimus voluptates harum nam repellendus, beatae, repudiandae ab est accusamus quae vel saepe. Cumque nihil, praesentium ipsa iure dolorum cupiditate, dolore sequi in, voluptas excepturi repellendus iste?
+        </p>
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <style>
+
+      .box { width: 200px; height: 100px; }
+
+      /*  
+      
+         border: 객체 영역에 포함O
+         outline: 객체 영역에 포함X
+      
+      */
+
+      #box1 { 
+         /* border: 10px solid red; */
+         outline: 10px solid red;
+      }
+
+      #box2 { 
+         /* border: 50px solid orange; */
+         outline: 10px solid orange;
+      }
+
+      #box3 { 
+         /* border: 10px solid blue; */
+         outline: 10px solid blue;
+      }
+
+      .txt {
+         border: 1px solid black;
+         padding: 3px;
+         margin-bottom: 3px;
+         outline: none;
+      }
+
+      .txt:focus {
+         /* background-color: yellow; */
+         /* outline: 3px solid red; */
+      }
+
+   </style>
+</head>
+<body>
+   <!-- ex42_outline.html -->
+   <div id="box1" class="box"></div>
+   <div id="box2" class="box"></div>
+   <div id="box3" class="box"></div>
+
+   <hr>
+
+   <input type="text" class="txt">
+   <input type="text" class="txt">
+   <input type="text" class="txt">
+   <input type="text" class="txt">
+   <input type="text" class="txt">
+   <input type="text" class="txt">
+   <input type="text" class="txt">
+   <input type="text" class="txt">
+   <input type="text" class="txt">
+   <input type="text" class="txt">
+
+</body>
+</html>

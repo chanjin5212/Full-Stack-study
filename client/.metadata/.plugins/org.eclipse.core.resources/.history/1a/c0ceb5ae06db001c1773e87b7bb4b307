@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- ex11_link.html -->
+	
+	<!-- 
+		
+		링크, Link
+		- <a>, anchor(닻), link
+		
+		링크 속성
+		- a.href: 클릭하면 이동할 URL 지정, reference a hyperlink
+		
+	 -->
+	 
+	 <h1>외부 링크</h1>
+	 
+	 <a href="http://naver.com">네이버로 이동합니다.</a><br>
+	 <a href="naver.com">네이버로 이동합니다.</a>
+	 
+	 <h1>내부 링크</h1>
+	 <a href="ex10_list.html">첫번째 예제</a>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

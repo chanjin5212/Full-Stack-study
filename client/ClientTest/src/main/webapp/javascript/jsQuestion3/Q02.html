@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+		body {
+			margin: 30px;
+		}
+		#main {
+			border: 1px solid #ccc;
+			width: 900px;
+			padding: 20px;
+		}
+		#main #txt1, #main #txt2 {
+			width: 100%;
+			height: 250px;
+			outline: none;
+		}
+	
+    </style>
+</head>
+<body>
+    <div id="main">
+		<textarea name="txt1" id="txt1" readonly=""></textarea>
+		<hr>
+		<textarea name="txt2" id="txt2">네, 낮동안에도 찬바람이 강하게 불고있습니다.
+때문에 체감상 느껴지는 온도는 현재기온보다 2~3도가량 낮게 나타나고 있는데요.
+남부해안지역과 제주도를 중심으로는 강풍주의보도 이어지고 있기 때문에 시설물 피해 없도록 주의하셔야겠습니다.
+쌀쌀했던 어제보다도 기온이 더 오르지 못하고있습니다.
+현재기온 서울 7.3도, 대전 9.3도, 부산 6.8도로 이맘때 평년수준을 밑돌고있고요. 
+찬바람이 더해지면서 체감상 느껴지는 날씨는 더 쌀쌀합니다.
+꽃샘추위는 내일 절정을 보이겠습니다. 
+		</textarea>
+		<input type="button" value="시작" name="btn1" id="btn1">
+		<input type="button" value="정지" name="btn2" id="btn2">
+	</div>
+
+    <script>
+
+        var timer = 0;
+        var length = 0;
+
+        document.all.btn1.onclick = m1;
+        document.all.btn2.onclick = m2;
+
+        function m1() {
+            if (timer == 0) {
+                timer = setInterval(function() {
+
+                    document.all.txt1.value = document.all.txt2.value.substr(0, length);
+                    length++;
+                    if (length == document.all.txt2.value.length) {
+                        clearInterval(timer);
+                    }
+                }, 100);
+            }
+        }
+
+        function m2() {
+            clearInterval(timer);
+            timer = 0;
+        }
+
+    </script>
+</body>
+</html>

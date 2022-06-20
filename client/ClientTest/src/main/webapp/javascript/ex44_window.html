@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex44_window.html -->
+
+    <script>
+
+        //JavaScript > 객체에 프로퍼티를 추가하려면 그냥 추가하면 된다.
+
+        const now = new Date();
+
+        now.color = 'yellow'; //프로퍼티 추가
+        now.check = function() {
+            console.log('check');
+        }; // 프로퍼티 추가
+
+        console.log(now.color);
+
+        now.check();
+
+
+        const hong = {
+            name: '홍길동'
+        };
+
+
+        console.log(typeof now);  //Date 객체       > object
+        console.log(typeof hong); //사용자 정의 객체 > object
+        console.clear();
+
+
+
+
+
+
+        //window 객체   > BOM의 최상위 객체
+        //document 객체 > DOM의 최상위 객체
+
+
+        //window 객체 멤버
+
+        // window.alert(100);
+        // window.setTimeout(function() {}, 100);
+
+
+
+
+        //*** var 선언한 전역 변수와 전역 함수는 개발자가 의지와 상관없이 무조건 window 객체의 프로퍼티로 등록이 된다.
+
+        function f1() {
+            alert();
+        }
+
+        window.f1 = function() {
+
+        };
+
+        f1();
+
+
+        var num = 100; //전역 변수 > window의 프로퍼티
+
+        window.num = 100;
+
+        console.log(num);
+        console.log(window.num);
+
+
+
+        let name = '아무개';
+        console.log(name);
+        console.log(window.name);
+
+        const age = 20;
+        console.log(window.age);
+        console.clear();
+
+
+        const box = {
+            width: 200,
+            height: 100
+        };
+
+        //향상된 for문(X) > 프로퍼티 탐색 도구(O)
+        // for (let p in box) {
+        //     console.log(p);
+        // }
+
+        for (let p in window) {
+            console.log(p);
+        }
+
+
+
+
+    </script>
+
+</body>
+</html>

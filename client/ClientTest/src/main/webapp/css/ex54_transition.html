@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <style>
+
+      #list {
+         border: 1px solid black;
+         width: 800px;
+      }
+
+      #list .box {
+         width: 100px;
+         height: 50px;
+         margin: 15px 0;
+         transition-property: all;
+         transition-duration: 5s;
+
+         /* transition-delay: 1s; */
+         /* transition-timing-function: ease-in-out; */
+         
+      }
+
+      #box1 { 
+         background-color: tomato; 
+         /* transition-delay: 0s; */
+         transition-timing-function: linear;
+      }
+      #box2 { 
+         background-color: gold; 
+         /* transition-delay: .5s; */
+         transition-timing-function: ease;
+      }  
+      #box3 { 
+         background-color: orange; 
+         /* transition-delay: 1s; */
+         transition-timing-function: ease-in;
+      }
+      #box4 { 
+         background-color: cornflowerblue; 
+         /* transition-delay: 1.5s; */
+         transition-timing-function: ease-out;
+      }
+      #box5 { 
+         background-color: greenyellow; 
+         /* transition-delay: 2s; */
+         transition-timing-function: ease-in-out;
+      }
+
+      #list:hover .box {
+         /* width: 800px; */
+         margin-left: 700px;
+      }
+
+      #box6 {
+         width: 200px;
+         height: 200px;
+         background-color: coral;
+         transition: 3s all cubic-bezier(0, 0.76, 0.01, 1.04);
+      }
+
+      body:hover #box6 {
+         margin-left: 1000px;
+      }
+
+   </style>
+</head>
+<body>
+   <!-- ex54_transition.html -->
+   <div id="list">
+      <div id="box1" class="box">linear</div>
+      <div id="box2" class="box">ease(default)</div>
+      <div id="box3" class="box">ease-in</div>
+      <div id="box4" class="box">ease-out</div>
+      <div id="box5" class="box">ease-in-out</div>
+   </div>
+
+   <hr>
+
+   <div id="box6"></div>
+
+</body>
+</html>

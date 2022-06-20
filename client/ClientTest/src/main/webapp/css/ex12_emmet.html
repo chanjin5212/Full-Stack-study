@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex12_emmet.html -->
+
+    <!--  
+
+        Emmet, Zen-Coding
+        - CSS 선택자 문법을 사용해서 HTML/CSS 코드를 손쉽게 작성하는 기능
+        - 생산성 도구
+        - https://emmet.io
+
+    -->
+
+    <h1>태그 선택자</h1>
+
+    div {}
+
+    <div></div>
+
+    <div></div>
+
+    p
+    <p></p>
+
+    a
+    <a href="URL">PCDATA</a>
+    <a href="URL">PCDATA</a>
+
+    img
+    <img src="URL" alt="텍스트">
+
+    input
+    <input type="text">
+
+
+
+
+    <h1>ID 선택자</h1>
+
+    <div id="box"></div>
+
+    div#box {}
+    <div id="box"></div>
+
+    h1#title
+    <h1 id="title"></h1>
+
+
+
+    <h1>Class 선택자</h1>
+
+    <div class="box"></div>
+
+    div.box {}
+
+    <div class="box"></div>
+
+    a.link
+    <a href="URL" class="link">Text</a>
+
+    img.cat
+    <img src="고양이.jpg" alt="고양이" class="cat">
+
+
+    div.one.two.three {} 
+    <div class="one two three"></div>
+
+    <div class="one two three"></div>
+
+
+    div#box1.box
+    <div id="box1" class="box"></div>
+
+    img#cat1.pic.animal
+    <img src="" alt="" id="cat1" class="pic animal">
+
+
+    <h1>속성 선택자</h1>
+
+    div[title] {}
+    <div title=""></div>
+
+    div[title]
+    <div title=""></div>
+
+
+    <div title="상자"></div>
+    div[title=상자]
+    <div title="상자"></div>
+
+    img[width height]
+    <img src="a" alt="b" width="c" height="d">
+
+    img[width=250 height=200]
+    <img src="" alt="" width="250" height="200">
+
+    img[src=images/dog01.jpg alt=강아지 width=250 height=200]
+    <img src="images/dog01.jpg" alt="강아지" width="250" height="200">
+
+    img#dog01.dog[width=200]
+    <img src="" alt="" id="dog01" class="dog" width="200">
+
+
+
+    <h1>PCDATA</h1>
+
+    div {}
+    <div>상자</div>
+
+
+    div{상자}
+    <div>상자</div>
+
+
+    div#box1.box[title=상자]{상자입니다.}
+    <div id="box1" class="box" title="상자">상자입니다.</div>
+
+
+    --------------------------------------------------------
+
+
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+
+
+    div*5
+    <div>lkjljklkj</div>
+    <div>ㅈㄱㅇㅈㄱㅇ</div>
+    <div>ㅈㄱㅇㅈㄱㅇ</div>
+    <div>ㅈㄱㅇㅈㄱㅇㅈㄱㅇ</div>
+    <div>ㅈㄱㅇㅈㄱㅇ</div> 
+
+    
+    div.item*5
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+
+    div.item[title]{아이템}*5
+    <div class="item" title="lkj">아이템</div>
+    <div class="item" title="lkj">아이템</div>
+    <div class="item" title="lkj">아이템</div>
+    <div class="item" title=";lkjk">아이템</div>
+    <div class="item" title="l;kj">아이템</div>
+
+
+    div#box1{상자}*5
+    <div id="box1">상자</div>
+    <div id="box1">상자</div>
+    <div id="box1">상자</div>
+    <div id="box1">상자</div>
+    <div id="box1">상자</div>
+
+    div#box${상자}*5
+    div#box$${상자}*5
+    div#box$$${상자}*5
+    div#box${상자$}*5
+    <div id="box1">상자1</div>
+    <div id="box2">상자2</div>
+    <div id="box3">상자3</div>
+    <div id="box4">상자4</div>
+    <div id="box5">상자5</div>
+
+    h$*6
+
+
+    <h1>형제 선택자</h1>
+
+    a + b : 바로 위의 형제 > 지원O
+    a ~ b : 위의 형제 > 지원X
+
+    div+p
+    <div></div>
+    <p></p>
+
+    div~p
+
+    <div></div>
+    <p></p>
+
+    <div></div>
+    <a></a>
+    <p></p>
+
+    <div></div>
+    <i></i>
+    <b></b>
+    <p></p>
+
+    
+    h1+p+p+p
+    <h1></h1>
+    <p></p>
+    <p></p>
+    <p></p>
+
+    h1+p*3
+    <h1></h1>
+    <p></p>
+    <p></p>
+    <p></p>
+
+    (h1+p)*3
+    <h1></h1>
+    <p></p>
+    <h1></h1>
+    <p></p>
+    <h1></h1>
+    <p></p>
+
+
+    h1#title1.title{제목입니다.}+p.content{설명입니다.}*3
+    <h1 id="title1" class="title">제목입니다.</h1>
+    <p class="content">설명입니다.</p>
+    <p class="content">설명입니다.</p>
+    <p class="content">설명입니다.</p>
+
+
+    cat01.jpg ~ cat06.jpg
+
+    <img src="images/cat01.jpg" alt="고양이1" title="고양이1" width="250"><br>
+    <img src="images/cat01.jpg" alt="고양이1" title="고양이1" width="250"><br>
+    <img src="images/cat01.jpg" alt="고양이1" title="고양이1" width="250"><br>
+
+    (img[src=images/cat0$.jpg alt=고양이$ title=고양이$ width=250]+br)*6
+    <img src="images/cat01.jpg" alt="고양이1" title="고양이1" width="250"><br>
+    <img src="images/cat02.jpg" alt="고양이2" title="고양이2" width="250"><br>
+    <img src="images/cat03.jpg" alt="고양이3" title="고양이3" width="250"><br>
+    <img src="images/cat04.jpg" alt="고양이4" title="고양이4" width="250"><br>
+    <img src="images/cat05.jpg" alt="고양이5" title="고양이5" width="250"><br>
+    <img src="images/cat06.jpg" alt="고양이6" title="고양이6" width="250"><br>
+
+    
+    <h1>자식 선택자</h1>
+    a > b : 자식
+    a   b : 자손
+
+    div>a
+    <div><a href=""></a></div>
+
+    div a
+
+
+    ul>li*5
+    ul>li.item*5
+    ul#list>li.item*5
+    ul#list>li.item{항목$}*5
+    h1{오늘의 할일}+ul#list>li.item{항목$}*5
+    
+    
+    table>tr>td
+    table>tr*10>td*5
+    table#tbl1>tr*10>td.cell${항목$}*5
+    
+
+
+    <h1>제목입니다.</h1>
+
+    <p>어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 </p>
+    <p>어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 </p>
+    <p>어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 </p>
+
+
+    Lorem Ipsum
+
+    lorem
+    lorem5
+    lorem1
+    lorem100
+
+    h1{제목입니다.}
+    h1{lorem5}
+    h1>lorem5
+    <h1>Lorem ipsum dolor sit amet.</h1>
+
+
+    h1>lorem8+p>lorem50*3
+    (h1>lorem8)+(p>lorem50)*3
+    
+    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi architecto rem error pariatur reiciendis sapiente soluta, tempora sit dolor cum qui iure obcaecati voluptas natus veniam consequuntur. Vero corrupti laudantium doloremque excepturi, dolorem ullam vitae quibusdam quasi eligendi illo, omnis nulla ea minima veniam optio reprehenderit sit ducimus officia blanditiis!</p>
+
+    <p>Suscipit fuga beatae placeat sed aspernatur laboriosam voluptatum reiciendis maiores quasi minima. Sint commodi deleniti magnam sunt, voluptates corporis neque ea. Natus magni neque blanditiis quam sint animi nostrum ex, nobis vitae labore maiores aut consectetur delectus eius adipisci quia fuga maxime commodi necessitatibus at iste! Non laudantium nemo exercitationem!</p>
+
+    <p>Enim accusantium qui iste porro facere perferendis reprehenderit aliquam, aspernatur, fugiat natus corrupti atque sequi error illo consequatur necessitatibus inventore dolore deserunt autem! Excepturi minus deleniti voluptatum provident aut. Minus asperiores perferendis quae repellendus impedit error hic recusandae nostrum odio nemo, amet voluptas, corporis perspiciatis atque aspernatur reprehenderit, id veritatis.</p>
+
+
+    
+
+
+</body>
+</html>

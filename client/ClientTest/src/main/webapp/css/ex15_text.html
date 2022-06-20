@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+
+        @font-face {
+            font-family: 'SANJUGotgam';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2112@1.0/SANJUGotgam.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        .txt {
+            /* background-color: yellow; */
+
+
+            /* 텍스트 색상, 전경색(Fore Color) */
+            /* color: red; */
+            /* color: #444444;  #333333 ~ #555555 */
+
+            /* #44AAFF */
+            /* color: #4AF; */
+
+            color: #444;
+            
+
+            /* 텍스트 정렬(수평 정렬) */
+            text-align: left;
+
+
+            /* 텍스트 크기 */
+            /* 10pt ~ 11pt */
+            /* 12px ~ 16px */
+            font-size: 1rem; 
+
+            /*  
+            
+            HTML 수치 표현법
+            1. 숫자(px, 문자수, 셀병합)
+            2. 백분율(%)
+
+            CSS 수치 표현법
+            - 수치 데이터는 반드시 단위 표기를 해야 한다.(단위 생략 불가능)
+            1. pt: 포인트(글꼴), 절대값, 1/72인치
+            2. px: 픽셀(크기, 여백, 위치, 글꼴 등), 절대값
+            3. em: 기본 글꼴 크기를 기준으로 하는 상대 크기(%), 상대값, 알파벳 대문자 M의 높이를 100%으로 기준하는 상대 크기. 상속을 받음
+            4. rem: em과 동일. 상속을 안 받음
+            10. %: 백분율(크기, 여백, 위치, 정렬 등..). 상대값
+            ------------------------------------------------------------
+            5. ex: 알파벳 소문자 x의 높이를 100%으로 기준하는 상대 크기
+            6. mm: 밀리미터
+            7. cm: 센티미터
+            8. in: 인치
+            9. pc: 파이카(12pt)            
+            11. 기타 등등..
+            
+            */
+
+            /* 
+                줄간격 
+                - %, em(rem)
+                - px
+                - 1.4em ~ 1.8em
+            */
+            line-height: 1.5em;
+
+
+            /* 스타일(normal, italic) */
+            font-style: normal;
+
+            /* 두께(normal, bold) */
+            font-weight: normal;
+
+            /* 단어 간격(스페이스 크기) */
+            word-spacing: 0em;
+
+            /* 자간(문자 간격) */
+            letter-spacing: -1px;
+
+            /* 꾸밈 */
+            text-decoration: none;
+
+            /* 
+                글꼴 
+                - 페이지의 폰트는 서버측 폰트를 사용하는 것이 아니라, 브라우저가 동작 중인 컴퓨터의 폰트를 사용한다.
+
+
+                폰트 예약어
+                - 폰트의 종류를 나타내는 용어
+                1. serif: 획끝에 장식이 있는 폰트(궁서체, 바탕체)
+                2. sans-serif: 획끝에 장식이 없는 폰트(돋움체, 고딕체)
+                3. monospace: 문자폭이 균일(궁서, 궁서체(O))
+                4. cursive: 장식체
+                5. fantasy: 장식체
+
+
+                웹폰트
+                - 폰트를 서버로부터 다운로드 받아서 사용하는 기술
+                - 사용 기간은 일시적 > 서핑 중에 해당 페이지에서만 적용
+                - 자체 제작(*.eof ..)
+                - 서비스 업체를 사용
+
+            */
+            font-family: 'SANJUGotgam', 'Nanum Pen Script', '맑은 고딕', monospace;
+
+
+
+        }
+
+        p {
+            /* 들여쓰기 */
+            text-indent: 1em;            
+        }
+
+    </style>
+</head>
+<body>
+    <!-- ex15_text.html -->
+    <h1>텍스트 관련 속성</h1>
+
+    <p>김용우: "연세대에서 경영학을 전공하고 미국 버클리대에서 경영학 석사(MBA)를 마쳤어요. 고교 시절부터 취미로 프로그래밍을 배워 개발을 했죠. 군대도 네오클릭이라는 IT업체에서 병역 특례 개발자로 대신했어요. 지금도 오픈타운 개발에 직접 참여합니다. 병역이 끝난 뒤 반려동물 용품을 다루는 쇼핑몰 '캣츠 앤 독스'를 차렸죠. 이 회사를 매각하고 미국 컨설팅업체 맥킨지앤컴퍼니를 거쳐 LG전자 북미법인에서 3년간 근무하면서 MBA 과정을 밟았죠. 2013년 소설 창작 앱 '스토리팝'도 만들어 운영했어요. 스타트업이 좋아 맥킨지 근무 시절에 만난 김진욱 공동대표와 마인드로직을 창업했어요. 2018년 AI 바람이 불 때 AI가 사람처럼 말하는 세상이 곧 올 것이라는 생각을 했어요. 그래서 AI 기술을 개발해 사업하자는 의견을 냈죠." 김진욱: "1999년 연세대 경영학과를 나와 KT에 합병된 이동통신업체 KTF에 들어갔어요. 자금관리, 기업전략, 신규사업 등 6년간 다양한 일을 하다가 그만두고 미국 스탠퍼드대에서 MBA를 했죠. 이후 맥킨지앤컴퍼니에서 6년간 근무하고 네이버의 자회사 라인에서 3년간 미국과 중남미, 일본 사업을 진행했어요."</p>
+
+    <p class="txt">김용우: "연세대에서 경영학을 전공하고 미국 버클리대에서 경영학 석사(MBA)를 마쳤어요. 고교 시절부터 취미로 프로그래밍을 배워 개발을 했죠. 군대도 네오클릭이라는 IT업체에서 병역 특례 개발자로 대신했어요. 지금도 오픈타운 개발에 직접 참여합니다. 병역이 끝난 뒤 반려동물 용품을 다루는 쇼핑몰 '캣츠 앤 독스'를 차렸죠. 이 회사를 매각하고 미국 컨설팅업체 맥킨지앤컴퍼니를 거쳐 LG전자 북미법인에서 3년간 근무하면서 MBA 과정을 밟았죠. 2013년 소설 창작 앱 '스토리팝'도 만들어 운영했어요. 스타트업이 좋아 맥킨지 근무 시절에 만난 김진욱 공동대표와 마인드로직을 창업했어요. 2018년 AI 바람이 불 때 AI가 사람처럼 말하는 세상이 곧 올 것이라는 생각을 했어요. 그래서 AI 기술을 개발해 사업하자는 의견을 냈죠." 김진욱: "1999년 연세대 경영학과를 나와 KT에 합병된 이동통신업체 KTF에 들어갔어요. 자금관리, 기업전략, 신규사업 등 6년간 다양한 일을 하다가 그만두고 미국 스탠퍼드대에서 MBA를 했죠. 이후 맥킨지앤컴퍼니에서 6년간 근무하고 네이버의 자회사 라인에서 3년간 미국과 중남미, 일본 사업을 진행했어요."</p>
+
+    <p>김용우: "연세대에서 경영학을 전공하고 미국 버클리대에서 경영학 석사(MBA)를 마쳤어요. 고교 시절부터 취미로 프로그래밍을 배워 개발을 했죠. 군대도 네오클릭이라는 IT업체에서 병역 특례 개발자로 대신했어요. 지금도 오픈타운 개발에 직접 참여합니다. 병역이 끝난 뒤 반려동물 용품을 다루는 쇼핑몰 '캣츠 앤 독스'를 차렸죠. 이 회사를 매각하고 미국 컨설팅업체 맥킨지앤컴퍼니를 거쳐 LG전자 북미법인에서 3년간 근무하면서 MBA 과정을 밟았죠. 2013년 소설 창작 앱 '스토리팝'도 만들어 운영했어요. 스타트업이 좋아 맥킨지 근무 시절에 만난 김진욱 공동대표와 마인드로직을 창업했어요. 2018년 AI 바람이 불 때 AI가 사람처럼 말하는 세상이 곧 올 것이라는 생각을 했어요. 그래서 AI 기술을 개발해 사업하자는 의견을 냈죠." 김진욱: "1999년 연세대 경영학과를 나와 KT에 합병된 이동통신업체 KTF에 들어갔어요. 자금관리, 기업전략, 신규사업 등 6년간 다양한 일을 하다가 그만두고 미국 스탠퍼드대에서 MBA를 했죠. 이후 맥킨지앤컴퍼니에서 6년간 근무하고 네이버의 자회사 라인에서 3년간 미국과 중남미, 일본 사업을 진행했어요."</p>
+
+    <hr>
+
+    <!-- p>lorem100 -->
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Necessitatibus id eum placeat nihil ea aliquam fugit aspernatur nobis officiis sequi, neque illo atque aut quas esse quam, dolorum eius voluptatibus soluta ad quasi! Iusto illo atque tenetur impedit consequatur veniam eveniet iure assumenda est voluptatibus quae at consequuntur quisquam saepe laudantium, a sed, aliquam quasi. Officia quod quasi cupiditate ut a quisquam suscipit minima consequuntur, nemo tenetur adipisci iste! Est ratione nam aut minima doloremque quasi modi consequuntur, quia ex alias beatae possimus dicta nihil eum quam? Ratione quis eum esse nobis voluptatem voluptates fuga! Sed doloribus a eum sequi.</p>
+
+    <p class="txt">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Necessitatibus id eum placeat nihil ea aliquam fugit aspernatur nobis officiis sequi, neque illo atque aut quas esse quam, dolorum eius voluptatibus soluta ad quasi! Iusto illo atque tenetur impedit consequatur veniam eveniet iure assumenda est voluptatibus quae at consequuntur quisquam saepe laudantium, a sed, aliquam quasi. Officia quod quasi cupiditate ut a quisquam suscipit minima consequuntur, nemo tenetur adipisci iste! Est ratione nam aut minima doloremque quasi modi consequuntur, quia ex alias beatae possimus dicta nihil eum quam? Ratione quis eum esse nobis voluptatem voluptates fuga! Sed doloribus a eum sequi.</p>
+
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Necessitatibus id eum placeat nihil ea aliquam fugit aspernatur nobis officiis sequi, neque illo atque aut quas esse quam, dolorum eius voluptatibus soluta ad quasi! Iusto illo atque tenetur impedit consequatur veniam eveniet iure assumenda est voluptatibus quae at consequuntur quisquam saepe laudantium, a sed, aliquam quasi. Officia quod quasi cupiditate ut a quisquam suscipit minima consequuntur, nemo tenetur adipisci iste! Est ratione nam aut minima doloremque quasi modi consequuntur, quia ex alias beatae possimus dicta nihil eum quam? Ratione quis eum esse nobis voluptatem voluptates fuga! Sed doloribus a eum sequi.</p>
+
+
+</body>
+</html>
+</html>

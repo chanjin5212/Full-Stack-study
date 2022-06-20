@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <style>
+      /* 
+      
+         background
+         1. background-color
+         2. background-image
+         3. background-repeat
+         4. background-position
+         5. background-attachment
+         6. background-size
+      
+      */
+
+      #box1, #box2 {
+         border: 1px solid black;
+         width: 400px;
+         height: 400px;
+         margin: 50px;
+         background-repeat: no-repeat;
+         background-position: center center;
+      }
+
+      #box1 {
+         
+         background-image: url(images/cat05.jpg);
+         /* background-size: auto 400px; */
+         background-size: cover;
+      }
+
+      #box2 {
+         background-image: url(images/wall01.jpg);
+         /* background-size: 400px auto; */
+         background-size: contain;
+      }
+
+   </style>
+</head>
+<body>
+   <!-- ex43_background.html -->
+
+   <div id="box1"></div>
+   <hr>
+   <div id="box2"></div>
+
+</body>
+</html>

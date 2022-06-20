@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex42_object.html -->
+
+    <script>
+
+        /*
+        
+            객체, Object
+            - JavaScript에는 클래스가 없다. 하지만 내장 객체를 제공한다.
+
+            1. 내장 객체
+                - Array, Date, Math, Object 등..
+                - new Array()
+                - new Date()
+                - Math.메소드()
+            
+            2. BOM 객체
+                - window, document, form, text, button 등..
+                - BOM 트리 구성 요소들..
+
+            3. DOM 객체
+                - element, attribute, text, comment 등..
+
+            4. 사용자 정의 객체
+                - JavaScript에는 클래스가 없다. > 원하는 객체 생성 불가능 > 원하는 형태(구조)의 객체를 만들 수 있다.
+                - ES6에서 클래스 문법이 만들어짐 > 진짜 class가 아니라 class처럼 보이는 요소를 도입
+
+
+
+            사용자 정의 객체 만드는 방법
+            1. Object 클래스 사용
+            2. {} > 객체 리터럴 표기법 사용
+
+
+
+            class User {
+                public String name;
+                public int  age;
+                public String address;
+            }
+
+            User hong = new User();
+
+            hong.name = "홍길동";
+            hong.age = 20;
+            hong.address = "서울시 강남구";
+
+            hong = new User(); //새로운 객체 생성
+
+        */
+
+        //var hong = new Object();
+        //let hong = new Object();
+        const hong = new Object();
+
+        //Java의 HashMap같은 성질
+        //JavaScript의 객체는 프로퍼티(Property)를 자유롭게 생성할 수 있다.
+        hong.name = '홍길동'; //hong 객체에 name 프로퍼티를 정의(추가)
+        hong.age = 20;
+        hong.address = '서울시 강남구';         //작성이 편하고, 가독성 높음.
+        hong['address'] = '서울시 동대문구';    //작성이 조금 불편하고, 조작성 높음
+        //hong.home-tel = '010-1234-5678';
+        hong['home-tel'] = '010-1234-5678';
+
+        console.log(hong);
+
+
+
+        const lee = new Object();
+
+        lee.name = '이순신';
+        lee.adress = '서울시 강서구';
+
+        console.log(lee);
+
+
+        //주소 수집
+        console.log(hong.address); //서울시 동대문구
+        console.log(lee.address);  //undefined
+
+
+
+
+
+        //const park = new Object();
+        //const park = { name: '박세리', age: 20, address: '서울시 강남구' }; //객체 리터럴
+        const park = { 
+            name: '박세리', 
+            age: 20, 
+            address: '서울시 강남구' 
+        };
+
+        console.log(park);
+
+
+        const you = {
+            name: '유재석',
+            age: 30
+        }; //초기화할 때 사용 가능
+ 
+        you.address = '서울시'; //나중에 추가/삭제 가능
+
+        console.log(you);
+
+
+        console.clear();
+
+
+
+
+        // const jung = {
+        //     name: '정형돈',
+        //     age: 30,
+        //     address: '서울시 강동구 천호동'
+        // };
+
+
+        // const jung = {
+        //     name: '정형돈',
+        //     age: 30,
+        //     sido: '서울시',
+        //     gugun: '강동구',
+        //     dong: '천호동'
+        // };
+
+        
+        //객체 > 객체
+        const jung = {
+            name: '정형돈',
+            age: 30,
+            address: {
+                sido: '서울시',
+                gugun: '강동구',
+                dong: '천호동'
+            }
+        };
+
+        console.log(jung.name);
+        console.log(jung.age);
+        console.log(jung.address);
+        console.log(jung.address.sido);
+
+
+        const yang = {
+            name: '양세찬',
+            age: 25,
+            hello: function() {
+                console.log('안녕하세요. ' + this.name + '입니다.');
+            }
+        };
+
+
+        console.log(yang.name); //프로퍼티
+        console.log(yang.age);
+
+        yang.hello(); //프로퍼티 > 함수, 메소드
+        
+
+    </script>
+
+
+
+</body>
+</html>

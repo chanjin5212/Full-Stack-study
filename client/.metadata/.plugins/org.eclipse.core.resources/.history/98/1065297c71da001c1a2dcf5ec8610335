@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- ex06_p.html -->
+	
+	<!-- 
+		
+		*** 태그는 용도에 맞게 적합한 태그를 사용한다.
+		
+		<p>, paragraph
+		- 문단 태그
+		- 텍스트 집합
+		- 쌍태그
+		- 혼합형
+		
+		
+		p.align 속성
+		- horizontal alignment: 수평 정렬
+		- 내용물의 수평 정렬
+		- 열거형 > left|center|right|justify
+		
+	 -->
+	
+	<p align="justify">첫번째 문단입니다.</p>
+	<p>두번째 문단입니다.</p>
+	<p>세번째 문단입니다.</p>
+	
+	<!-- 
+	첫번째 문단입니다.<br><br>
+	두번째 문단입니다.<br><br>
+	세번째 문단입니다.
+	-->
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <script src="js/jquery-1.12.4.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <style>
+        #box {
+            width: 200px;
+            height: 200px;
+            background-color: gold;
+        }
+        .box2 {
+            width: 200px;
+            height: 200px;
+            background-color: cornflowerblue;
+            margin-top: 20px;
+        }
+        .helper {
+            border: 1px dotted #333;
+        }
+    </style>
+</head>
+<body>
+    <!-- ex77_jqueryui.html -->
+
+    <h1>Interactions <small>Resizable</small></h1>
+
+    <div id="box"></div>
+    <div class="box2"></div>
+    <div class="box2"></div>
+    <div class="box2"></div>
+    <div class="box2"></div>
+
+    <hr>
+    <img src="images/cat01.jpg" id="cat">
+
+    <script>
+
+        $('#box').resizable({
+            //helper: 'helper',
+            //animate: true
+            //grid: [100, 200]
+            maxWidth: 500,
+            maxHeight: 500,
+            minWidth: 100,
+            minHeight: 100,
+            alsoResize: '.box2'
+        });
+
+        $('#box2').resizable({
+            alsoResize: '#box'
+        });
+
+        $('#cat').resizable({
+            aspectRatio: true
+        });
+
+    </script>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- ex19.html -->
+	
+	<h1>HTML5</h1>
+	
+	<form method="POST" action="ex19.jsp">
+	
+		<input type="submit" value="전송하기">
+		<hr>
+		
+		
+		<marquee>뉴스 속보입니다. 현재 어쩌구 저쩌구 현장에 나가있는 김기자를 연결합니다.</marquee>
+		
+		<hr>
+		
+		
+		<!-- 폼 컨트롤을 그룹으로 나누기 위한 컨테이너 -->
+		<fieldset>
+			<legend>로그인</legend>
+			아이디: <input type="text">
+		</fieldset>
+		
+		
+		<hr>
+		
+		
+		<!--  
+		
+			HTML5 새로운 태그 > 일부 > 맘에 안든다;;
+			
+			정통성!!
+			1. 서드파티 라이브러리 > 달력 컨트롤 > 실행 환경 표준화(X)
+			2. HTML5(<input type="date">) > 달력 컨트롤 > 모든 환경에서 비슷한 품질 동작
+		
+		-->
+		
+		
+		<details>
+			<summary>자바?</summary>
+			<p>어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구ㅈㅇㄴㅣㅏㅈㅇㄴㅏㅣㅈㄱㄴㅣ 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 </p>
+		</details>
+		
+		
+		<hr>
+		
+		
+		
+		<meter value="0"></meter><br>
+		<meter value="0.5"></meter><br>
+		<meter value="1"></meter><br>
+		
+		<meter value="60" min="-100" max="100"></meter><br>
+		
+		<hr>
+		
+		<progress value="0"></progress><br>
+		<progress value="0.2"></progress><br>
+		<progress value="0.4"></progress><br>
+		<progress value="0.6"></progress><br>
+		<progress value="0.8"></progress><br>
+		<progress value="1"></progress><br>
+		
+		<progress value="60" max="100"></progress><br>
+		
+		
+		
+		<hr>
+		
+		날짜 시간:
+		<input type="date">
+		<br>
+		<input type="month">
+		<br>
+		<input type="week">
+		<br>
+		<input type="time">
+		<br>
+		<input type="datetime">
+		<br>
+		<input type="datetime-local">
+		
+		
+		<hr>
+		
+		
+		색상: <input type="color"
+				onchange="document.body.bgColor = this.value;">
+		
+		
+		<hr>
+		
+		범위: <input type="range"
+				onchange="document.getElementById('txt1').value=this.value;"
+				min="10" max="120" step="20">
+		<br>
+		<input type="text" id="txt1" size="10">
+		
+		
+		<hr>
+		
+		
+		나이: <input type="number" 
+				min="0" max="100"
+				step="10">
+		
+		<hr>
+		
+		
+		전화번호: <input type="tel">
+		
+		<hr>
+		
+		URL: <input type="url">
+		
+		<hr>
+		
+		이메일: <input type="email">
+				
+		<hr>
+		
+		
+		
+		<h3>로그인(필수입력값)</h3>
+		아이디: <input type="text" required value="aaa"><br>
+		암호: <input type="password" required value="111"><br>
+		<input type="submit" value="로그인">	
+		
+		
+	
+		<hr>
+		
+		<label for="txt1">이름:</label> <input type="text" id="txt1">
+		
+		<hr>
+		
+		<input type="text" value="이름을 입력하시오." 
+				onfocus="this.value='';">
+				
+		<hr>
+		
+		<input type="text" 
+				placeholder="이름을 입력하시오.">
+		<br>
+		<input type="password" placeholder="암호 입력">
+		<br>
+		<textarea cols="40" rows="5" placeholder="자기 소개"></textarea>
+		
+		
+	
+	</form>
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
