@@ -1,0 +1,30 @@
+package com.test.servlet;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class Ex02 extends HttpServlet{
+	
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+		PrintWriter writer = response.getWriter();
+		
+		writer.println("<html>");
+		writer.println("<head>");
+		writer.println("<meta charset='UTF-8>");
+		writer.println("</head>");
+		writer.println("<body>");
+		writer.println("<h1>서블릿</h1>");
+		writer.println("<p>서블릿으로 만든 동적 웹페이지입니다.</p>");
+		writer.println("</body>");
+		writer.println("</html>");
+		
+		writer.close();
+		
+	}
+
+}

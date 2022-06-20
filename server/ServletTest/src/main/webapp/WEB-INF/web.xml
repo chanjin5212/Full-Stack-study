@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	version="3.1">
+	<display-name>ServletTest</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+	
+	
+	
+	
+	<servlet>
+		<servlet-name>ex02</servlet-name>
+		<servlet-class>com.test.servlet.Ex02</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>ex02</servlet-name>
+		<url-pattern>/ex02.do</url-pattern>
+	</servlet-mapping>
+	
+	
+	
+	
+	
+	<servlet>
+		<servlet-name>ex03</servlet-name>
+		<servlet-class>com.test.servlet.Ex03</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>ex03</servlet-name>
+		<url-pattern>/ex03.do</url-pattern>
+	</servlet-mapping>
+	
+	
+	
+	
+	
+	
+	
+	
+	<servlet>
+		<servlet-name>ex04send</servlet-name>
+		<servlet-class>com.test.servlet.Ex04_Send</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>ex04send</servlet-name>
+		<url-pattern>/ex04send.do</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>ex04receive</servlet-name>
+		<servlet-class>com.test.servlet.Ex04_Receive</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>ex04receive</servlet-name>
+		<url-pattern>/ex04receive.do</url-pattern>
+	</servlet-mapping>
+	
+	
+	
+</web-app>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

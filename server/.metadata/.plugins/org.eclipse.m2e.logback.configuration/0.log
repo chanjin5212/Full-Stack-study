@@ -1,0 +1,14 @@
+2022-06-20 09:11:58,284 [Worker-6: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2022-06-20 10:43:07,097 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @5501356ms to org.eclipse.jetty.util.log.Slf4jLog
+2022-06-20 10:43:07,199 [main] INFO  org.eclipse.jetty.server.Server - jetty-9.4.37.v20210219; built: 2021-02-23T06:49:41.320Z; git: 27afab2bd37780d179836e313e0fe11bc4fa0ce9; jvm 11.0.2+9
+2022-06-20 10:43:07,225 [main] INFO  org.eclipse.jetty.server.session - DefaultSessionIdManager workerName=node0
+2022-06-20 10:43:07,226 [main] INFO  org.eclipse.jetty.server.session - No SessionScavenger set, using defaults
+2022-06-20 10:43:07,227 [main] INFO  org.eclipse.jetty.server.session - node0 Scavenging every 660000ms
+2022-06-20 10:43:07,249 [main] INFO  o.e.j.server.handler.ContextHandler - Started o.e.j.s.ServletContextHandler@217ce431{/wse,null,AVAILABLE}
+2022-06-20 10:43:07,260 [main] INFO  o.e.jetty.server.AbstractConnector - Started ServerConnector@47404f14{HTTP/1.1, (http/1.1)}{0.0.0.0:57858}
+2022-06-20 10:43:07,260 [main] INFO  org.eclipse.jetty.server.Server - Started @5501519ms
+2022-06-20 10:43:07,260 [main] INFO  org.eclipse.jetty.server.session - node0 Scavenging every 726000ms
+2022-06-20 17:42:48,859 [Framework stop - Equinox Container: d83fac8f-cfa5-4544-a5b4-d3bb17d19f97] INFO  o.e.jetty.server.AbstractConnector - Stopped ServerConnector@47404f14{HTTP/1.1, (http/1.1)}{0.0.0.0:0}
+2022-06-20 17:42:48,860 [Framework stop - Equinox Container: d83fac8f-cfa5-4544-a5b4-d3bb17d19f97] INFO  org.eclipse.jetty.server.session - node0 Stopped scavenging
+2022-06-20 17:42:48,893 [Framework stop - Equinox Container: d83fac8f-cfa5-4544-a5b4-d3bb17d19f97] INFO  o.e.j.server.handler.ContextHandler - Stopped o.e.j.s.ServletContextHandler@217ce431{/wse,null,STOPPED}
+2022-06-20 17:43:19,935 [Worker-5: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.

@@ -1,0 +1,47 @@
+package com.test.servlet;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class Ex04_Receive extends HttpServlet{
+	
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+		
+		String name = req.getParameter("name");
+		
+		String age = req.getParameter("age");
+		
+		System.out.println(name);
+		System.out.println(age);
+		
+		resp.setCharacterEncoding("UTF-8");
+		
+		PrintWriter writer = resp.getWriter();
+		
+		writer.println("<html>");
+		writer.println("<head>");
+		writer.println("<meta charset='UTF-8'");
+		writer.println("</head>");
+		writer.println("<body>");
+		writer.println("<h1>데이터 입력 + 서버 전송</h1>");
+		writer.println("<h1>수신한 데이터</h1>");
+		writer.println("<p>이름: " + name + "</p>");
+		writer.println("<p>나이: " + age + "</p>");
+		writer.println("</body>");
+		writer.println("</html>");
+		
+		
+		
+		writer.close();
+	
+	}
+	
+
+}

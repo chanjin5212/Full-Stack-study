@@ -1,0 +1,47 @@
+1. C:\class\server 폴더 생성(워크 스페이스)
+
+2. 이클립스 실행
+
+3. 설정
+	a. 폰트
+	b. 인코딩(UTF-8) > "encoding"
+		- General > Workspace >  Text file encoding
+		- Web > CSS Files > Encoding
+		- Web > HTML Files > Encoding
+		- Web > JSP Files > Encoding
+
+4. 아파치 톰캣 설치 확인
+	- C:\class\apache-tomcat-8.5.XX
+
+5. 이클립스 + 톰캣 연동하기
+	- Preferences > "server" > Runtime Environments > Add > Apache Tomcat > 8.5 > Next > Browse... > 선택 > "C:\class\apache-tomcat-8.5.XX" > Finish > Apply and Close
+
+6. 이클립스 + 톰캣 인스턴스 생성하기
+	- Servers > 링크 클릭 > Apache Tomcat > 8.5 > Next > Finish
+	- 톰캣 인스턴스 제어 > 실제 톰캣 제어
+	- Start(Restart)(녹색화살표) or Stop(빨간색사각형)
+	- 8080 포트 충돌 에러 > 포트 번호 수정 > 톰캣 인스턴스 더블 클릭 > Ports > Modify the server ports > HTTP/1.1 > 8000번대 이후(8090) > Ctrl+s > INFO: Server startup in 413 ms
+
+-----------------------------------------------------------------------------------
+
+7. 새 프로젝트 생성 > New > Other > Web > Dynamic Web Project > Next > "ServletTest" > Target runtime(Apache Tomcat 8.5), Dynamic web module version(3.1) > Next > Next > Context root("ServetTest" > "servlet"), Content directory, Generate web.xml(체크 O) > Finish
+
+8. 프로젝트 구조
+	- src/main/java > 자바 소스 폴더
+	- src/main/webapp > 콘텐츠 폴더(HTML, CSS, JavaScript, 이미지 등..)
+	- src/main/webapp/WEB-INF > 서버 관련 설정 파일
+	- src/main/webapp/WEB-INF/lib > *.jar 관리 폴더
+	- src/main/webapp/WEB-INF/web.xml > 사이트 설정 파일
+
+
+	
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,129 @@
+
+- 새 프로젝트 생성 > New > Other > Web > Dynamic Web Project > Next > "JSPTest" > Target runtime(Apache Tomcat 8.5), Dynamic web module version(3.1) > Next > Next > Context root, Content directory, Generate web.xml(체크 O) > Finish
+
+
+JSP, Java Server Pages
+- 서블릿의 다음 버전
+
+
+서블릿
+1. 장점 > 자바 기반. 자바 구문을 사용할 수 있다. > 웹 페이지를 만드는데 사용 가능하다.
+2. 단점 > 자바 기반. > 클라이언트 코드 작성이 불편한다. + 가상 주소 매핑(web.xml)
+
+
+JSP
+1. 장점 > HTML 문서 기반 > 클라이언트 코드 작성이 쉽다. + 가상 주소 매핑 불필요(web.xml) > 브라우저가 JSP를 직접 호출 가능(HTML 문서 기반)
+2. 단점 > HTML 문서 기반 > 자바 구문 작성이 불편하다.
+
+
+
+
+
+
+JSP 요소
+
+1. JSP 지시자, JSP Directive
+	- <%@ %>
+	- page 지시자
+	- include 지시자
+	- taglib 지시자
+
+2. 스크립트 요소, Scripting Elements
+	- <% %>
+	- 스크립틀릿
+	- 익스프레션
+	- 선언부
+
+3. 액션 태그, Action Tags
+	- <jsp:XXX>, <c:XXX>..
+	- 기본 액션 태그
+	- 확장 액션 태그
+	- 사용자 정의 액션 태그
+
+
+
+
+
+	
+
+
+page 지시자
+- <%@ page 속성="값" 속성="값" 속성="값" %>
+- JSP 페이지에 항상 존재하는 지시자
+- 1개 이상 작성할 수 있다.
+- JSP 컨테이너(아파치 톰캣)에게 해당 페이지의 정보을 알려준다.
+- <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+	
+	a. language="java"
+	- JSP 페이지에서 사용할 서버 프로그래밍 언어 지정
+	
+	b. contentType="text/html; charset=UTF-8"
+	- JSP 페이지 콘텐츠에 대한 기술
+	- text/html: MIME 타입 > HTML 문서
+	- charset=UTF-8: 인코딩 > 톰캣이 JSP를 읽을 때 사용할 인코딩
+	- contentType="text/html; charset=ISO-8859-1" > 기본값
+	
+	c. pageEncoding="UTF-8"
+	- 브라우저에게 돌려주는 페이지의 인코딩
+	- resp.setCharaterEncoding("UTF-8"); //서블릿
+	
+	d. import="java.util.Random"
+	- 패키지/클래스 참조
+	- 자바 > import java.util.Random;
+
+	e. errorPage
+	
+
+
+
+
+include 지시자
+- <%@ include file="URL" %>
+- 특정 JSP 페이지(HTML, 텍스트파일 등)을 현재 JSP 페이지의 일부 영역으로 삽입하는 기능
+- 조각 페이지
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

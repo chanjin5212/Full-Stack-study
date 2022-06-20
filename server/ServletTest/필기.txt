@@ -1,0 +1,238 @@
+1. C:\class\server 폴더 생성(워크 스페이스)
+
+2. 이클립스 실행
+
+3. 설정
+   a. 폰트
+   b. 인코딩(UTF-8) > "encoding"
+      - General > Workspace >  Text file encoding
+      - Web > CSS Files > Encoding
+      - Web > HTML Files > Encoding
+      - Web > JSP Files > Encoding
+
+4. 아파치 톰캣 설치 확인
+   - C:\class\apache-tomcat-8.5.XX
+
+5. 이클립스 + 톰캣 연동하기
+   - Preferences > "server" > Runtime Environments > Add > Apache Tomcat > 8.5 > Next > Browse... > 선택 > "C:\class\apache-tomcat-8.5.XX" > Finish > Apply and Close
+
+6. 이클립스 + 톰캣 인스턴스 생성하기
+   - Servers > 링크 클릭 > Apache Tomcat > 8.5 > Next > Finish
+   - 톰캣 인스턴스 제어 > 실제 톰캣 제어
+   - Start(Restart)(녹색화살표) or Stop(빨간색사각형)
+   - 8080 포트 충돌 에러 > 포트 번호 수정 > 톰캣 인스턴스 더블 클릭 > Ports > Modify the server ports > HTTP/1.1 > 8000번대 이후(8090) > Ctrl+s > INFO: Server startup in 413 ms
+
+-------------------------------------------------------------------------------------
+
+7. 새 프로젝트 생성 > New > Other > Web > Dynamic Web Project > Next > "ServletTest" > Target runtime(Apache Tomcat 8.5), Dynamic web module version(3.1) > Next > Next > Context root("ServetTest" > "servlet"), Content directory, Generate web.xml(체크 O) > Finish
+
+8. 프로젝트 구조
+   - src/main/java > 자바 소스 폴더
+   - src/main/webapp > 콘텐츠 폴더(HTML, CSS, JavaScript, 이미지 등..)
+   - src/main/webapp/WEB-INF > 서버 관련 설정 파일
+   - src/main/webapp/WEB-INF/lib > *.jar 관리 폴더
+   - src/main/webapp/WEB-INF/web.xml > 사이트 설정 파일
+
+
+
+Servlet, 서블릿
+- 웹서버측(사이트)에서 자바를 사용한 프로그램을 동작시키는 기술(환경)
+- 자바 진영의 첫번째 웹 기술
+- 자바 프로그램 > 웹 페이지를 생산 > 동적 웹페이지
+- 서버측에서 동작하는 웹 페이지 생산(제작) 프로그램을 만드는 기술
+- 알바생
+- 자바로 만든다.
+
+
+
+Servlet Class
+- 자바 프로그램
+- 알바생
+
+
+Servlet Class 작성 규칙
+
+1. 서블릿 클래스 선언
+	a. javax.servlet.Servlet 인터페이스를 구현한다. > 고비용, 복잡함
+	a. javax.servlet.http.HttpServlet 클래스를 상속받는다. > 저비용, 간편함 > 선택
+
+2. doGet/doPost 메소드 선언
+	- 둘 중 하나 선언 or 둘 다 선언
+	- 클라이언트(브라우저)의 요청이 들어오면 자동으로 호출되는 메소드
+	- 커피 만드는 메소드 > 동적으로 HTML 페이지를 만드는 역할
+	- 메소드 작성 규칙
+		a. 매개변수 작성
+			1. java.servlet.http.HttpServletRequest
+			2. java.servlet.http.HttpServletResponse
+		b. 예외 미루기
+			1. java.io.IOException
+			2. java.servlet.ServletException
+
+3. 동적 HTML 페이지 작성 구현
+	- doGet/doPost 내부에서 문서를 작성하기 위한 코드를 작성한다.
+	- HttpServletResponse 객체의 getWriter() 메소드 호출 > PrintWriter 객체
+	- PrintWriter 객체의 printXXX("태그") 메소드를 사용해서 동적으로 클라이언트 코드를 작성한다.(= BufferedWriter 역할)
+	- 페이지 완성 > 브라우저에게 서비스(반환)
+	
+4. 브라우저가 자바 파일(서블릿, 알바생)을 호출한다.
+	- 자바는 웹 기술이 아니다. > 웹 상에서는 자바 프로그램을 호출할 수 없다.
+	- 브라우저가 웹상에서 자바 파일을 호출할 수 있도록 조치 > 가상 주소 생성 + 서블릿에게 매핑
+	- webapp > WEB-INF > web.xml
+	
+
+
+
+서블릿, Servlet
+- 앱 애플리케이션을 만드는 기술
+- CGI, PHP, ASP, JSP, ASP.NET, Spring..
+
+
+CGI, Common Gateway Interface
+- 브라우저와 웹서버간의 정보(데이터,페이지)를 주고 받는 규약
+- 이걸 기반으로 여러 프로그래밍 언어를 사용해서 기술들을 구현함
+
+
+PHP, Personal HyperText Preprocessor
+- C 기반 스크립트 언어
+- 개인 사이트 제작용 > 기업용으로도 많이 사용
+
+
+ASP, Active Server Page
+- MS 스크립트 언어(VB Script)
+
+
+ASP.NET
+- C# 사용
+- VB.NET
+- MS
+
+
+JSP, Java Server Page
+- MS ASP의 자바 버전
+
+
+Node.js
+- 웹서버 + 자바스크립트
+
+
+Pythone
+- Django
+
+
+Spring
+- Servlet + JSP + 확장
+
+
+
+
+			
+
+
+	
+
+서블릿 처리 동작 순서
+- 서블릿 생성 ~ 클라이언트 요청 ~ 클라이언트 응답 ~ 서블릿 소멸
+- 알바생의 시작~끝
+- 서블릿의 관리 > 서블릿 컨테이너(톰캣)가 생성부터 소멸까지 관리/운영한다.
+
+1. 소스 작성 > Ex01.java
+
+2. 서버 시작 > 아파치 톰캣 실행
+
+-------------------------- 사이트 시작(웹 애플리케이션 실행)
+
+3. 브라우저(사용자) > URL 요청(가상 주소)
+	- http://localhost:8090/ServletTest/ex03.do
+
+4. HTTP Request 발생
+
+5. 4번 요청이 아파치 톰캣에게 전달
+
+6. 아파치 톰캣은 해당 요청을 서버측에서 추가 처리 판단?
+	- 서버 추가 O > 담당자에게 넘김(서블릿) > 서버 코드, 서버 프로그래밍
+	- 서버 추가 X > 클라이언트에게 반환(HTML, CSS, JavScript 등) > 클라이언트 코드
+
+7. 서블릿 컨테이너(아파치 톰캣)이 web.xml에 적혀있는 서블릿 클래스를 접근
+	- Ex03.java
+	
+8. 컴파일
+	- Ex03.class
+	
+9. 실행 > 메모리 인스턴스(= 서블릿)
+		
+10. 서블릿의 doGet/doPost 메소드 호출(약속)
+
+11. doGet/doPost > PrintWriter > 돌려줄 HTML 페이지 작성
+
+12. 임시 HTML 페이지 > 서블릿 컨테이너(아파치 톰캣) > 브라우저에게 반환
+	- HTTP Response 발생
+	
+13. 브라우저측 > 캐시 저장(임시 페이지)
+
+14. 임시 페이지 > 브라우저 로딩 > 화면 출력
+
+
+
+
+
+데이터 전송 > 데이터 수신
+
+- Ex04_Send.java > 전송 페이지
+- Ex04_Receive.java > 수신 페이지
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

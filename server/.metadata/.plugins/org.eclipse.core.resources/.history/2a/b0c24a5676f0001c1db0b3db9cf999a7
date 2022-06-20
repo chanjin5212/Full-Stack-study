@@ -1,0 +1,31 @@
+<%@page import="java.util.Random"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" errorPage="error.jsp" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- ex02_page_directive.jsp -->
+	
+	<h1>페이지 지시자</h1>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus quaerat minus itaque ad eaque officia quidem repellendus ducimus maiores similique corporis tempora dolorem sint natus quasi ratione fugiat! Saepe ullam!</p>
+	<%
+		
+		//Random rnd = new Random();
+		//System.out.println(rnd.nextInt()); //NullPointerException
+		
+	%>
+	
+	
+	<div>
+		<hr>
+		&copy;Copyright 2022 test.com All rights reserved.
+	</div>
+	
+	
+	
+</body>
+</html>

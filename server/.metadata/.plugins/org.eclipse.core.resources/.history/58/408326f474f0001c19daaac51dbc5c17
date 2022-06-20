@@ -1,0 +1,17 @@
+
+- 새 프로젝트 생성 > New > Other > Web > Dynamic Web Project > Next > "JSPTest" > Target runtime(Apache Tomcat 8.5), Dynamic web module version(3.1) > Next > Next > Context root("ServetTest" > "servlet"), Content directory, Generate web.xml(체크 O) > Finish
+
+
+JSP, Java Server Pages
+- 서블릿의 다음 버전
+
+
+서블릿
+1. 장점 > 자바 기반. 자바 구문을 사용할 수 있다. > 웹 페이지를 만드는데 사용 가능하다.
+2. 단점 > 자바 기반. > 클라이언트 코드 작성이 불편하다. + 가상 주소 매핑(web.xml) 
+
+
+JSP
+1. 장점 > HTML 문서 기반 > 클라이언트 코드 작성이 쉽다. + 가상 주소 매핑 불필요(web.xml) > 브라우저가 JSP를 직접 호출 가능(HTML 문서 기반)
+2. 단점 > HTML 문서 기반 > 자바 구문 작성이 불편하다.
+
