@@ -34,6 +34,8 @@ JSP 요소
 	- 익스프레션
 	- 선언부
 
+2.5 내장 객체
+
 3. 액션 태그, Action Tags
 	- <jsp:XXX>, <c:XXX>..
 	- 기본 액션 태그
@@ -85,6 +87,160 @@ include 지시자
 
 
 
+스트립틀릿, Scriptlet
+- <% %>
+- Script + Applet
+- HTML 영역에서 Java를 사용 가능한 역영을 제공
+- *.java와 동일한 성질
+- 사용 빈도 높음 > 비즈니스 코드 작성
+- 데이터(JDBC), 동적(HTML,CSS,JavaScript)조작
+
+
+
+표현식, Expression
+- <%= 값 %>
+- 값: 상수, 변수, 메소드 반환값 등..
+- 해당 위치에 자바 값을 출력하는 용도
+
+
+
+선언부, Declaration
+- <%! %>
+- 해당 JSP 페이지에서 사용할 클래스 멤버 변수와 메소드를 선언하는 영역
+- JSP 선언부에서 선언된 메소드의 최대 영역은 해당 JSP 페이지이다. > 사용 제한
+- 대신, 일반 자바 클래스를 만들어서 참조 > 사용 권한
+
+
+
+
+
+
+JSP 내장 객체, JSP Implicit Object
+- 개발자가 직접 생성하지 않아도 JSP(톰캣)가 미리 만들어서 제공하는 객체
+- 예약어로 제공
+- request, response, session, pageContext
+- out, application
+- config, page, exception
+
+- request, session, pageContext, application 
+	- 객체 내부에 사용자 데이터를 저장할 수 있는 컬렉션을 가지고 있다.(***************************)
+	- void setAttribute(String key, Object value)
+	- Object getAttribute(String key)
+
+
+
+request
+- HttpServletRequest
+
+1. 클라이언트에서 서버로 전송한 데이터를 가져오기
+	- ex09_form.jsp : 사용자 입력 데이터 받는 역할 + 서버로 전송하기
+	- ex09_ok.jsp	: 전송된 데이터 수신하기 + 처리 + 완료
+	- ex10_form.jsp
+	- ex10_ok.jsp
+	- ex11_form.jsp
+	- ex11_ok.jsp
+	
+2. 클라이언트에서 서버로 전송한 데이터의 인코딩 처리
+
+
+3. 클라이언트에서 서버로 전송할때의 관련 정보를 가져오기
+	- ex12_request.jsp
+	
+
+
+response
+- HttpServletResponse
+
+1. 돌려줄 HTML 페이지 제작
+	- response.getWriter() > PrintWriter > HTML 제작
+	- 서블릿 > 명시적
+	- JSP > 암시적
+
+2. 돌려줄 페이지의 인코딩 설정
+	- response.setCharacterEncoding("UTF-8")
+	- 서블릿 > 명시적
+	- JSP > 명시적 > <%@ page pageEncoding="UTF-8" %>
+
+3. 돌려줄 페이지의 MIME 설정
+	- 파일 업로드 수업 때
+
+4. 페이지 이동하기
+	- ex13_response_1.jsp
+	- ex13_response_2.jsp
+
+
+
+
+
+
+pageContext
+- 페이지 실행에 필요한 컨텍스트 정보를 저장하거나, 다른 내장 객체를 접근하거나, 페이지를 이동하는 역할
+	- ex14_pagecontext_1.jsp
+	- ex14_pagecontext_2.jsp
+
+
+
+ 
+
+out
+- 응답 페이지 작성을 위한 출력 스트림 객체
+- 서블릿의 PrintWriter와 동일한 역할
+- ex15_out.jsp
+
+
+
+
+
+
+
+session, application
+- 세션 변수 + 애플리케이션 변수 = 전역 변수(사이트 내의 모든 페이지에서 접근 가능)
+
+application
+- 애플리케이션 정보를 저장한 객체
+- 서버와 관련된 정보 제공
+
+session
+- 클라이언트의 세션 정보를 저장한 객체
+- 방문한 사용자 정보를 관리하는 객체
+- ex16_session.jsp
+
+- ex17_session.jsp
+- ex17_set.jsp
+- ex17_del.jsp
+- ex17_interval.jsp
+- ex17_reset.jsp
+
+
+
+
+파일 업로드
+- 업로드: 클라이언트측 자원 > 서버 전송 (= 파일 복사)
+- 다운로드: 서버측 자원 > 클라이언트 전송 (= 파일 복사)
+- 브라우저와 웹서버간의 파일 복사
+
+
+파일 업로드 라이브러리
+- cos libaray > cos.jar
+- http://www.servlets.com > COS File Upload Library > cos-22.05.zip
+- webapp > WEB-INF > lib > cos.jar 복사
+- webapp > example > "files" 폴더 생성
+
+
+파일 업로드
+- ex18_file_form.jsp
+- ex18_file_ok.jsp
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -108,22 +264,5 @@ include 지시자
 
 
  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
