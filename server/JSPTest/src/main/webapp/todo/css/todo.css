@@ -1,0 +1,68 @@
+
+
+main {
+	width: 450px;
+	margin: 50px auto;
+}
+
+.table.list {
+	
+}
+
+.table.list th:nth-child(1) {
+	width: 30px;
+}
+.table.list th:nth-child(2) {
+	width: auto;
+}
+.table.list th:nth-child(3) {
+	width: 140px;
+}
+.table.list th, .table td {
+	text-align: center;
+}
+.table.list tr:first-child {
+	background-color: #CCC;
+	border-bottom: 2px solid #777;
+}
+.table.list td:nth-child(1) {
+	
+}
+.table.list td:nth-child(2) {
+	cursor: pointer;
+}
+.table.list td:nth-child(3) {
+	font-size: 12px;
+	color: #777;
+}
+.table.list tr.complete td {
+	text-decoration: line-through;
+	background-color: #EEE;
+	color: #AAA;
+}
+
+.table.add th:nth-child(1) {
+	width: 100px;
+	text-align: center;
+	vertical-align: middle !important;
+	background-color: #CCC !important;	
+}
+
+.table.add select {
+	width: 60px;
+}
+
+.table.add th {
+	border-right: 2px solid #777;
+}
+
+
+
+
+
+
+
+
+
+
+

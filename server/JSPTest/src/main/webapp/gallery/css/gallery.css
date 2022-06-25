@@ -1,0 +1,5 @@
+
+.container > h1 {
+	border-bottom: 1px solid #AAA;
+	padding-bottom: 5px;
+}

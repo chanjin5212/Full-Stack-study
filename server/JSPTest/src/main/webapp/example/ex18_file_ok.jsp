@@ -24,7 +24,7 @@
 	//String path = "D:\\class\\server\\JSPTest\\src\\main\\webapp\\example\\files";
 	String path = application.getRealPath("/example/files");
 	
-	//D:\class\server\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\JSPTest\example\files
+	//C:\class\server\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\JSPTest\example\files
 	
 	//아파치 톰캣이 실제 서버를 운영하기 위해서 원본 소스를 복사해놓은 실제 운영 디렉토리(***)
 	
