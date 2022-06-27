@@ -347,6 +347,141 @@ DB
 
 
 
+인증, Authentication
+- 로그인, 로그아웃
+- 현재 접속자가 해당 사이트의 구성원인지를 확인하는 작업
+- 해당 접속자가 구성원인지 확인 작업(아이디, 암호) > 인증 티켓 발급(인증 과정을 거쳐야지만 가지게 되는 정보) > 사이트내에서 이동이 가능(페이지간에 전달 과정없이도 유지 가능) + 보안 안전(타인이 열람할 수 없도록) > 세션 or 쿠키 
+
+
+허가, Authorization
+- 특정 행위를 할 때 권한이 있는지 확인하는 작업
+
+
+webapp > "auth" 폴더 생성
+		- index.jsp		> 시작 페이지
+		- login.jsp		> 로그인 폼 페이지
+		- loginok.jsp	> 로그인 처리 페이지(인증 작업)
+		- logout.jsp	> 로그아웃 페이지
+		- member.jsp	> 회원 전용 페이지(허가 작업)
+		- admin.jsp		> 관리자 전용 페이지(허가 작업)
+		
+webapp > css, fonts, inc, js 폴더 복사
+		- css > auth.css
+		- inc > asset.jsp 수정
+
+
+
+
+
+Servlet
+- Java > O
+- HTML > X
+
+JSP
+- HTML > O
+- Java > X
+
+Servlet + JSP = 융합(X) > 협력(O)
+- Servlet + JSP
+
+
+
+
+JSP Model 1의 처리 방식 > 공통점
+1. 상단에서 주로 자바 작업을 한다.(JDBC) > Servlet 담당
+2. 하단에서 주로 자바의 결과물을 가지고 화면에 출력 작업(HTML,CSS,JavaScript)을 한다. > JSP 담당
+
+JSP Model 2의 처리방식(****************************)
+- 고객 요청 > Servlet 시작~끝 > (업무 위임 + 데이터 전달) > JSP 시작~끝 > 페이지 완성
+
+
+
+
+
+
+
+
+
+JSP Model 1 > JSP Model 2
+
+JSP Model 1
+- JSP 페이지만을 사용
+- HTML,CSS,JavaScript > JSP 페이지 작성
+- Java > JSP 페이지 작성
+
+
+JSP Model 2
+- Servlet + JSP
+- 디자인 패턴 > MVC 기반으로 만들어짐 >
+	- Model + View + Controller
+	- Model > Data 계층 > DTO(DAO)
+	- View > 출력 계층 > JSP(뷰 페이지)
+	- Controller > 제어 계층 > 서블릿
+	
+
+- JSP MVC (정식 표현X)
+
+- "com.test.mvc" 패키지 생성
+	- "Hello.java" 서블릿 생성
+- webapp > "mvc" 폴더 생성
+	- "hello.jsp" 페이지 생성
+
+
+
+
+
+주소록, 갤러리, 할일
+
+
+메모장
+- JSP Model 2 (MVC)
+- Oracle 11g
+- Bootstrap, jQuery
+
+기능
+1. 메모 쓰기
+2. 메모 읽기(목록)
+3. 메모 수정
+4. 메모 삭제
+
+- "com.test.memo"
+	- DBUtil.java 					> 복사
+	- "List.java" 					> 메모 읽기
+	- "Add.java", "AddOk.java"		> 메모 쓰기
+	- "Edit.java", "EditOk.java"	> 메모 수정
+	- "Del.java", "DelOk.java"		> 메모 삭제
+	- "Template.java"
+	- "DAO.java", "DTO.java"		> 서블릿(X) > 일반 클래스
+	
+- webapp > WEB-INF > "views" > "memo"
+								- "list.jsp"				> 메모 읽기
+								- "add.jsp", "addok.jsp"	> 메모 쓰기
+								- "edit.jsp", "editok.jsp"	> 메모 수정
+								- "del.jsp", "delok.jsp"	> 메모 수정
+								- "template.jsp"
+
+- webapp > WEB-INF > views > memo > "inc"
+								- header.jsp	> 조각 페이지
+								- asset.jsp		> 조각 페이지
+								
+- webapp > "asset"
+			- css, js, fonts 복사
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
  
 
