@@ -1,0 +1,187 @@
+토이 프로젝트
+- New > Dynamic Web Project > "ToyProject" > 톰캣 8.5, Module 3.1 > Context root ("toy") > 체크박스 체크O(web.xml)
+
+
+요구사항
+1. 게시판
+2. 회원(인증)
+3. JSP Model 2
+4. Oracle 11g
+5. Bootstrap + jQuery
+6. 부가 기능(차트, 맵 등..)
+
+
+DB 설계
+- 점차적..
+
+
+패키지 구조
+- "com.test.toy" 			> 메인
+- "com.test.toy.board" 		> 게시판
+- "com.test.toy.member"		> 회원
+- "com.test.toy.etc"		> 부가 기능x`
+
+
+폴더 구조
+- webapp > WEB-INF > "views"				> 뷰 루트(toy 패키지 대응)
+						> "board"			> 게시판
+						> "member"			> 회원
+						> "etc"				> 부가 기능
+						> "inc"				> 조각 페이지
+
+
+라이브러리 설치
+- webapp > WEB-INF > lib
+						> ojdbc6.jar		> 오라클
+						> jstl-1.2.jar		> JSTL
+						> lombok.jar		> Lombok
+						> cos.jar			> 파일업로드
+- webapp > "asset"
+				> "css"
+				> "js"
+				> "fonts"
+				> "images"
+				> 파일업로드 폴더
+
+
+
+기본 템플릿 페이지
+- com.test.toy > "Template.java"
+- views > "template.jsp"
+
+- webapp > asset > css > "toy.css"
+				 > js  > "toy.js"
+
+- webapp > WEB-INF > inc > "header.jsp"
+
+
+
+
+
+시작 페이지
+- com.test.toy > "Index.java"
+- views > "index.jsp"
+
+
+회원 가입
+- com.test.toy.member > "Register.java"
+                      > "RegisterOk.java"
+- views > member > "register.jsp"
+                   "registerok.jsp"
+- webapp > "pic"
+
+- com.test.toy > DBUtil.java
+- com.test.toy.member > "MemberDAO.java"
+					  > "MemberDTO.java" <- tblUser 담당
+					            
+                                         
+
+
+로그인/로그아웃
+- com.test.toy.member > "Login.java"
+					  > "LoginOk.java"
+					  > "Logout.java"
+- views > member > "login.jsp"
+			     > "loginok.jsp"
+			     > "logout.jsp"
+			     
+			     					  
+
+회원 정보
+- com.test.toy.member > "Info.java"
+- views > member > "info.jsp"
+- webapp > pic > pic.png
+
+
+
+
+
+회원 탈퇴
+- com.test.toy.member > "Unregister.java"
+					  > "UnregisterOk.java"
+- views > member > "unregister.jsp"
+			     > "unregisterok.jsp"
+
+
+
+
+게시판
+- com.test.toy.board > "BoardDAO.java"
+                     > "BoardDTO.java"
+                     > "List.java"
+                     > "Add.java"
+                     > "AddOk.java"
+                     > "View.java"
+                     > "Edit.java"
+                     > "EditOk.java"
+                     > "Del.java"
+                     > "DelOk.java"
+- views > board > "list.jsp"
+			    > "add.jsp"
+			    > "addok.jsp"
+			    > "view.jsp"
+			    > "edit.jsp"
+			    > "editok.jsp"
+			    > "del.jsp"
+			    > "delok.jsp"
+
+			    
+                    
+-------------------------------------------------- CRUD
+
+
+
+검색
+
+댓글쓰기
+
+- com.test.toy.board > "AddCommentOk.java"
+			         > "CommentDTO.java"
+
+
+
+
+
+페이징
+
+답변쓰기
+
+파일업로드
+
+태그(#)
+
+싫어요/좋아요
+
+
+
+
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
