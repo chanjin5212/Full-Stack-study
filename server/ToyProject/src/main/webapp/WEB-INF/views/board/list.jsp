@@ -22,7 +22,7 @@
 			
 			<c:if test="${map.isSearch == 'y'}">
 			<div style="text-align:center; margin-bottom: 10px; color: cornflowerblue;">
-				'${map.word}'으로 검색한 결과 총 ${list.size()}개의 게시물이 발견되었습니다.
+				'${map.word}'으로 검색한 결과 총 ${totalCount}개의 게시물이 발견되었습니다.
 			</div>
 			</c:if>
 			
@@ -38,7 +38,28 @@
 				<tr>
 					<td>${dto.seq}</td>
 					<td>
+						
+						<c:if test="${dto.depth > 0}">
+						<i class="fa-solid fa-right-long" style="margin-left: ${dto.depth * 20}px;"></i>
+						</c:if>
+						
 						<a href="/toy/board/view.do?seq=${dto.seq}&isSearch=${map.isSearch}&column=${map.column}&word=${map.word}">${dto.subject}</a>
+						
+						<c:if test="${not empty dto.filename}">
+						<i class="fa-solid fa-floppy-disk"></i>
+						</c:if>
+						
+						<c:if test="${dto.commentcount > 0}">
+						<span class="badge badge-primary">${dto.commentcount}</span>
+						</c:if>
+						
+						<c:if test="${(dto.isnew * 24) < 3}">
+						<span style="color: tomato;">new</span>
+						</c:if>
+						
+						
+						
+						
 					</td>
 					<td>${dto.name}</td>
 					<td>${dto.regdate}</td>
@@ -52,6 +73,18 @@
 				</c:if>
 			</table>
 			
+			
+			<div style="text-align: center;">
+				<%--
+				<select id="pagebar">
+					<c:forEach var="i" begin="1" end="${totalPage}">
+					<option value="${i}">${i}페이지</option>
+					</c:forEach>
+				</select> 
+				--%>
+				${pagebar}
+				
+			</div>
 
 					
 			<div>
@@ -108,6 +141,15 @@
 		$('select[name=column]').val('${map.column}');
 		$('input[name=word]').val('${map.word}');
 		</c:if>
+		
+		
+		$("#pagebar").change(function() {
+			
+			location.href = '/toy/board/list.do?page=' + $(this).val() + "&column=${map.column}&word=${map.word}";
+			
+		});
+		
+		$('#pagebar').val(${nowPage});
 	
 	</script>
 

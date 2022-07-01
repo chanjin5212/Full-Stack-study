@@ -26,7 +26,7 @@
 						
 			<div class="btns">
 				<input type="button" value="돌아가기" class="btn btn-secondary"
-					onclick="location.href='/toy/board/view.do?seq=${seq}';">
+					onclick="history.back();">
 				<button class="btn btn-primary">
 					<i class="fas fa-pen"></i>
 					삭제하기

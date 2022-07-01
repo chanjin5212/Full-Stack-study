@@ -30,8 +30,9 @@
 		<c:if test="${result == 0}">
 		alert('failed');
 		history.back();
-		</c:if>
-	
+		</c:if> 
+		
+		
 	</script>
 
 </body>

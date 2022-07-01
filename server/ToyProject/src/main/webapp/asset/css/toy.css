@@ -162,7 +162,8 @@ a:hover {
 
 .tblAddComment textarea {
 	resize: none;
-	height: 100px;
+	height: 70px;
+	width: 520px;
 }
 
 .tblAddComment .btn {
@@ -180,22 +181,36 @@ a:hover {
 	padding: 10px;
 }
 
-.table.comment td > div:nth-child(2) > span:nth-child(1) {
+.table.comment td > div:nth-child(2) > span {
 	color: #999;
 	font-size: 12px;	
 	float: right;
 	margin-left: 10px;
 }
 
-.table.comment td > div:nth-child(2) > span:nth-child(2) {
-	color: #999;
-	font-size: 12px;
-	float: right;
+.table.comment td > div:nth-child(2) > span:nth-child(3),
+.table.comment td > div:nth-child(2) > span:nth-child(4) {
+	display: none;
+	cursor: pointer;
 }
 
 
 
+.tblEditComment {
+	width: 570px;
+	margin: 10px auto;	
+}
 
+.tblEditComment textarea {
+	resize: none;
+	height: 70px;
+	width: 480px;
+	margin-right: 10px;
+}
+
+.tblEditComment button {
+	margin: 2px;
+}
 
 
 

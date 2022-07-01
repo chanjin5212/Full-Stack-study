@@ -2,6 +2,7 @@ package com.test.toy.board;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.net.URLEncoder;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -66,7 +67,7 @@ public class AddCommentOk extends HttpServlet {
 		
 //		if (result == 1) {
 //			
-//			resp.sendRedirect(String.format("/toy/board/view.do?seq=%s&isSearch=%s&column=%s&word=%s", pseq, isSearch, column, word));
+//			resp.sendRedirect(String.format("/toy/board/view.do?seq=%s&isSearch=%s&column=%s&word=%s", pseq, isSearch, column, URLEncoder.encode(word, "UTF-8")));
 //			
 //		} else {
 //			
