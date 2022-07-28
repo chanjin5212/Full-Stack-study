@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns:aop="http://www.springframework.org/schema/aop"
+   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+      http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd">
+        
+	<!-- Spring AOP -->
+	
+	<!-- 주 업무 객체 -->
+	<bean id="memo" class="com.test.spring.aop.MemoImpl" />
+	
+	<!-- 보조 업무 객체 -->
+	<bean id="logger" class="com.test.spring.aop.Logger" />
+	
+	
+	
+	
+	
+	
+	<!-- 주 업무 객체 + 보조 업무 객체 -->
+	<!-- Spring AOP 설정 -->
+	<aop:config>
+	
+		<!-- 보조 업무를 담당할 객체를 지정 : 역할(Role) -->
+		<aop:aspect id="loggerAdvice" ref="logger">
+			
+			<!-- 주 업무 객체를 지정 > 메소드 찾기 > 포인트컷 지정하기 -->
+			<!-- Point Cut : 주 업무 객체의 특정 메소드 -->
+			<!-- Point Cut 지정 방법 > Aspectj 표현식을 사용한다. -->
+					
+			<!-- 포인트컷 지정(= 주 업무 지정) -->		
+			
+			<!--  
+			
+				AspectJ 표현식
+				- execution([수식어] 반환형 [클래스].메소드(인자))
+				- execution(public void com.test.spring.aop.MemoImpl.add(String))
+				
+				- 접근 지정자 > 생략 가능(public만 가능)
+				- 반환형 > 생략 불가능
+				- 클래스 > 반드시 전체 경로 표현. 생략 가능
+				- 메소드 > 메소드명. 생략 불가능
+				- 인자 > 인자리스트. 생략 불가능
+				
+				- 와일드 카드
+					1. * : 반환형, 패키지, 클래스, 메소드명
+					2. .. : 인자 리스트
+					
+					
+				
+				
+			
+			-->
+			<!-- <aop:pointcut expression="execution(public void com.test.spring.aop.MemoImpl.add(String))" id="p1"/> -->
+			
+			<aop:pointcut expression="execution(public String com.test.spring.aop.MemoImpl.read(int))" id="p1"/>
+			
+			<aop:pointcut expression="execution(public boolean com.test.spring.aop.MemoImpl.edit(int,String))" id="p2"/>
+			
+			<aop:pointcut expression="execution(public * com.test.spring.aop.MemoImpl.*(..))" id="p3"/>
+			
+			<aop:pointcut expression="execution(public * com.test.spring.aop.MemoImpl.*(int))" id="p4"/>
+			
+			<aop:pointcut expression="execution(public boolean com.test.spring.aop.MemoImpl.*(..))" id="p5"/>
+			
+			<aop:pointcut expression="execution(* *(..))" id="p6"/>
+			
+			<aop:pointcut expression="execution(public * com.test.spring.aop.MemoImpl.*(int,..))" id="p7"/>
+			
+			<aop:pointcut expression="execution(public * com.test.spring.aop.MemoImpl.add*(..))" id="p8"/>
+			
+			<aop:pointcut expression="execution(public * com.test.spring.aop.MemoImpl.*a*(..))" id="p9"/>
+			
+			<aop:pointcut expression="execution(public * com.test.spring.aop.MemoImpl.add(..))" id="p10"/>
+			
+			<aop:pointcut expression="execution(public String com.test.spring.aop.MemoImpl.read(int))" id="p11"/>
+					
+			<!-- 위빙(Weaving) > 포인트컷과 보조업무 결합 x 5가지 방법 -->
+			<!--  
+				After Advice
+				- 주 업무 실행 > 보조 업무 실행
+			-->
+			<!-- 
+			<aop:after method="log" pointcut-ref="p1"/>
+			<aop:after method="log" pointcut-ref="p2"/>
+			 -->
+			<!-- <aop:after method="log" pointcut-ref="p10"/> -->
+			<!-- <aop:before method="log" pointcut-ref="p10"/> -->
+			
+			<aop:around method="time" pointcut-ref="p2"/>
+			
+			 
+		</aop:aspect>
+	
+	</aop:config>
+	
+	
+        
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

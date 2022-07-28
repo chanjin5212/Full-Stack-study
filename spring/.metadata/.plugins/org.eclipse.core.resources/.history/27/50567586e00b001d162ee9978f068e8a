@@ -1,0 +1,25 @@
+package com.test.spring.aop;
+
+public class MemoImpl implements Memo {
+
+	@Override
+	public void add(String memo) {
+		System.out.println("메모 쓰기: " + memo);
+	}
+
+	@Override
+	public String read(int seq) {
+		return null;
+	}
+
+	@Override
+	public boolean edit(int seq, String memo) {
+		return false;
+	}
+
+	@Override
+	public boolean del(int seq) {
+		return false;
+	}
+
+}

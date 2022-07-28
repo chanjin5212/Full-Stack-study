@@ -1,0 +1,14 @@
+package com.test.spring;
+
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class Ex05Controller {
+	
+	public String add() {
+	
+		return "add";
+		
+	}
+	
+}

@@ -1,0 +1,13 @@
+package com.test.spring.aop;
+
+public class Main {
+	
+	public static void main(String[] args) {
+		
+		//Main > 컨트롤러(주업무 통제하는 역할)
+		
+		Memo memo = new MemoImpl();
+		
+	}
+
+}

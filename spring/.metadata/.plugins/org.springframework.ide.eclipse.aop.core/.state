@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="SpringWeb"/>
+<aop-project name="SpringMyBatis"/>
+<aop-project name="SpringBegin"/>
+<aop-project name="SpringFile"/>
+</aop-reference-model>

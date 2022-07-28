@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="test">
+
+	<!-- Query 작성 -->
+   <!-- 
+   <select id=""></select>
+   <insert id=""></insert>
+   <update id=""></update>
+   <delete id=""></delete>
+    -->
+    
+    <insert id="m1">
+    	insert into tblMyBatis (seq, item, price, regdate) values (seqMyBatis.nextVal, '본체', 500000, default)
+    </insert>
+    
+    <update id="m2" parameterType="String">
+    	update tblMyBatis set
+    		price = price * 1.2
+    			where seq = #{seq}
+    </update>
+    
+    <delete id="m3" parameterType="String">
+    	delete from tblMyBatis where seq = #{seq}
+    </delete>
+    
+    <insert id="m4" parameterType="com.test.spring.MyBatisDTO">
+    	insert into tblMyBatis (seq, item, price, regdate) values (seqMyBatis.nextVal, #{item}, #{price}, default)
+    </insert>
+    
+    <select id="m5" parameterType="String" resultType="Integer">
+    	select price from tblMyBatis where seq = #{seq}
+    </select>
+    
+    <select id="m6" parameterType="String" resultType="com.test.spring.MyBatisDTO">
+    	select * from tblMyBatis where seq = #{seq}
+    </select>
+   
+</mapper>
+
+
+
+
+
+
+
+

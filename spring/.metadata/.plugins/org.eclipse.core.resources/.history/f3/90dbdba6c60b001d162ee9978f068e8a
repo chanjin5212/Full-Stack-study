@@ -1,0 +1,15 @@
+package com.test.spring.di01;
+
+public class Lee {
+	
+	private Brush brush;
+	
+	public void run() {
+		
+		
+//		Brush brush = new Brush();
+		brush.draw();
+		
+	}
+
+}

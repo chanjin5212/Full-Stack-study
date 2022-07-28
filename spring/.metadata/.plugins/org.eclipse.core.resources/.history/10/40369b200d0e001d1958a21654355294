@@ -1,0 +1,67 @@
+package com.test.spring;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+
+@Controller
+public class FileController {
+	
+	@GetMapping(value="/add")
+	public String add() {
+		
+		return "add";
+	}
+	
+	@PostMapping(value="/addok")
+	public String addok(String data) {
+		
+		//1. 데이터 가져오기
+		//- 텍스트 데이터
+		//- 파일 데이터
+		
+		System.out.println(data);
+		
+		
+		return "addok";
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

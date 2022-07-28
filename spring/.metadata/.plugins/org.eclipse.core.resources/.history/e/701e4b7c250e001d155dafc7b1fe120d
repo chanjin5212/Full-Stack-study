@@ -1,0 +1,151 @@
+package com.test.spring;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
+
+@Controller
+public class BoardController {
+	
+	private BoardService service;
+	
+	@Autowired
+	public BoardController(BoardService service) {
+		this.service = service;
+	}
+	
+	
+	
+	//목록보기
+	@GetMapping(value="/list")
+	public String list(Model model) {
+		
+		return "list";
+	}
+	
+	//쓰기
+	@GetMapping(value="/write")
+	public String write() {
+		
+		return "write";
+	}
+	
+	@PostMapping(value="/writeok")
+	public String writeok(HttpServletRequest req, Model model, String title) {
+		
+		MultipartHttpServletRequest multi = (MultipartHttpServletRequest)req;
+		
+//		MultipartFile file= multi.getFile("attachlist");
+//		System.out.println(file.getOriginalFilename());
+		
+		List<MultipartFile> files = multi.getFiles("attachlist");
+		String path = req.getRealPath("resources/files");
+		
+		List<FileDTO> flist = new ArrayList<FileDTO>();
+		
+		for (MultipartFile file : files) {
+			
+			
+			//System.out.println(file.getOriginalFilename());
+			
+			String filename = getFileName(path, file.getOriginalFilename());
+			
+			File tempfile = new File(path + "\\" + filename);
+			
+			try {
+				file.transferTo(tempfile);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			
+			
+			FileDTO fdto = new FileDTO();
+			
+			fdto.setFilename(filename);
+			fdto.setFilesize(file.getSize() + "");
+			fdto.setMimetype(file.getContentType());
+			
+			flist.add(fdto);
+			
+		}
+		
+		return "writeok";
+	}
+	
+	private String getFileName(String path, String filename) {
+
+		//저장 폴더의 파일명을 중복되지 않게 만들기
+		//path = "resources/files/"
+		//fileanme = "MyBatis.png"
+		
+		int n = 1; //인덱싱 숫자
+		int index = filename.lastIndexOf(".");
+		
+		String tempName = filename.substring(0, index);
+		String tempExt = filename.substring(index);
+		
+		
+		while(true) {
+			
+			File file = new File(path + "\\" + filename); //files\MyBatis.png
+			
+			if (file.exists()) {
+				//있다. > 중복 > 파일 변경
+				filename = tempName + "_" + n + tempExt;
+				n++;
+			} else {
+				
+				return filename;
+			}
+			
+		}
+		
+		
+	}
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

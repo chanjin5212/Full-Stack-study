@@ -1,0 +1,75 @@
+package com.test.spring;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class BoardController {
+	
+	private BoardService service;
+	
+	@Autowired
+	public BoardController(BoardService service) {
+		this.service = service;
+	}
+	
+	
+	
+	//목록보기
+	@GetMapping(value="/list")
+	public String list(Model model) {
+		
+		return "list";
+	}
+	
+	//쓰기
+	@GetMapping(value="/write")
+	public String write() {
+		
+		return "write";
+	}
+	
+	@GetMapping(value="/writeok")
+	public String writeok() {
+		
+		return "writeok";
+	}
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

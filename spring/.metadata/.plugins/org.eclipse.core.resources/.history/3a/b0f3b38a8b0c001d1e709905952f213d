@@ -1,0 +1,19 @@
+package com.test.spring;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+//컨트롤러 구현
+//1. Controller 인터페이스 구현
+//2. 어노테이션 사용
+
+@Controller
+public class Ex03Controller {
+	
+	//요청 메소드 > 맘대로
+	@RequestMapping
+	public String test() {
+		
+	}
+	
+}

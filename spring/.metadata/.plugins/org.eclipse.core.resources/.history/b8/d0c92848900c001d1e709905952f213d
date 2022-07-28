@@ -1,0 +1,13 @@
+package com.test.spring;
+
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class Ex04Controller {
+	
+	public String test() {
+		
+		return "ex04"
+	}
+	
+}

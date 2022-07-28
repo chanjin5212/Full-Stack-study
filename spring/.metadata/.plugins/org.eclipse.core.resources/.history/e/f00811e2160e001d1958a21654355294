@@ -1,0 +1,75 @@
+
+
+스프링 파일 업로드
+
+1. pom.xml
+	- 스프링 버전, 자바 버전
+	- fole upload > 추가
+
+2. web.xml
+	- 인코딩 필터
+
+3. root-context.xml
+	- 파일 업로드 설정
+	
+4. 파일 생성하기
+	- com.test.spring > "FileController.java"
+	- views > "add.jsp"
+			> "addok.jsp"
+	- webapp > resources > "files"	
+	
+	
+
+자료실
+- 첨부 파일 게시판
+- 쓰기 + 읽기		
+
+
+
+1. pom.xml
+	- MyBatis 설정
+
+2. root-context.xml
+	- MyBatis 설정
+
+3. WEB-INF > lib > ojdbc6.jar	
+
+4. 파일 생성하기
+	- com.test.spring > "BoardController.java"
+					  > "BoardService.java" (I)
+					  > "BoardServiceImpl.java"
+					  > "BoardDAO.java" (I)
+					  > "BoardDAOImpl.java"
+					  > "BoardDTO.java"
+				
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			

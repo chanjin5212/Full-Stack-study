@@ -1,0 +1,43 @@
+package com.test.spring;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+@Controller
+@RequestMapping("/board")
+public class Ex04Controller {
+	
+	@RequestMapping(value="/ex04.do")
+	public String test() {
+		
+		return "ex04";
+	}
+	
+	@RequestMapping(value="/ex04_1.do")
+	public String test2() {
+		
+		return "ex03";
+	}
+	
+	
+	
+	@RequestMapping(value="/list.do")
+	public String list() {
+		
+		return "list"; //list.jsp
+	}
+	
+	@RequestMapping(value="/add.do")
+	public String add() {
+		
+		return "add"; //add.jsp
+	}
+	
+	@RequestMapping(value="/addok.do", method = RequestMethod.POST)
+	public String addok() {
+		
+		return "addok"; //addok.jsp
+	}
+	
+}

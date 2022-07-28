@@ -1,0 +1,11 @@
+package com.test.spring;
+
+public interface MyBatisService {
+	
+	void test();
+
+	void m1();
+
+	int m2(String seq);
+	
+}

@@ -1,0 +1,67 @@
+package com.test.spring;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
+
+@Service
+public class BoardServiceImpl implements BoardService {
+	
+	private BoardDAO dao;
+	
+	@Autowired
+	public BoardServiceImpl(BoardDAO dao) {
+		this.dao = dao;
+	}
+	
+	@Override
+	public int write(HttpServletRequest req, String title) {
+
+		MultipartHttpServletRequest multi = (MultipartHttpServletRequest)req;
+		
+//		MultipartFile file= multi.getFile("attachlist");
+//		System.out.println(file.getOriginalFilename());
+		
+		List<MultipartFile> files = multi.getFiles("attachlist");
+		String path = req.getRealPath("resources/files");
+		
+		List<FileDTO> flist = new ArrayList<FileDTO>();
+		
+		for (MultipartFile file : files) {
+			
+			
+			//System.out.println(file.getOriginalFilename());
+			
+			String filename = getFileName(path, file.getOriginalFilename());
+			
+			File tempfile = new File(path + "\\" + filename);
+			
+			try {
+				file.transferTo(tempfile);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			
+			
+			FileDTO fdto = new FileDTO();
+			
+			fdto.setFilename(filename);
+			fdto.setFilesize(file.getSize() + "");
+			fdto.setMimetype(file.getContentType());
+			
+			flist.add(fdto);
+			
+		}
+		
+		return 0;
+	}
+	
+}

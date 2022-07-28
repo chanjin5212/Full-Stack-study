@@ -1,0 +1,99 @@
+package com.test.spring;
+
+import java.io.File;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
+
+@Controller
+public class FileController {
+	
+	@GetMapping(value="/add")
+	public String add() {
+		
+		return "add";
+	}
+	
+	@PostMapping(value="/addok")
+	public String addok(String data, HttpServletRequest req) {
+		
+		//1. 데이터 가져오기
+		//- 텍스트 데이터
+		//- 파일 데이터
+		
+		//<form> 기본 > HttpServletRequest 전달
+		//<form> 파일 > MultipartHttpServletRequest 전달
+		
+		MultipartHttpServletRequest multi = (MultipartHttpServletRequest)req;
+		MultipartFile file = multi.getFile("attach");
+		
+		System.out.println(file.getName());
+		System.out.println(file.getOriginalFilename());
+		System.out.println(file.getContentType());
+		System.out.println(file.getSize());
+		
+		//파일 업로드 완료 > 파일이 어디 있는지?? > 임시 폴더에 저장 > 우리가 원하는 곳으로 이동
+		String filename = file.getOriginalFilename();
+		String path = req.getRealPath("resources/files");
+		
+		System.out.println(path);
+		
+		//파일 이동하기
+		File file2 = new File(path + "\\" + filename); //희망 경로
+		
+		try {
+			
+			//file.renameTo(file2)
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+		return "addok";
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

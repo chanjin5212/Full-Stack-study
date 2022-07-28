@@ -1,0 +1,13 @@
+package com.test.spring;
+
+import lombok.Data;
+
+@Data
+public class MyBatisDTO {
+	
+	private String seq;
+	private String item;
+	private String pice;
+	private String regdate;
+
+}

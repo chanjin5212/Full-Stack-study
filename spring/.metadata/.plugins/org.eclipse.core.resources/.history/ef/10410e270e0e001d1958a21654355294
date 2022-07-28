@@ -1,0 +1,80 @@
+package com.test.spring;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
+
+@Controller
+public class FileController {
+	
+	@GetMapping(value="/add")
+	public String add() {
+		
+		return "add";
+	}
+	
+	@PostMapping(value="/addok")
+	public String addok(String data, HttpServletRequest req) {
+		
+		//1. 데이터 가져오기
+		//- 텍스트 데이터
+		//- 파일 데이터
+		
+		//<form> 기본 > HttpServletRequest 전달
+		//<form> 파일 > MultipartHttpServletRequest 전달
+		
+		MultipartHttpServletRequest multi = (MultipartHttpServletRequest)req;
+		MultipartFile file = multi.getFile("attach");
+		
+		System.out.println(file.getName());
+		System.out.println(file.getOriginalFilename());
+		System.out.println(file.getContentType());
+		System.out.println(file.getSize());
+
+		
+		return "addok";
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

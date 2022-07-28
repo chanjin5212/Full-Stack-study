@@ -1,0 +1,58 @@
+프로젝트 구조
+1. src/main/java
+	- 여태까지 사용하는 Java 소스 폴더
+	
+2. src/main/resources
+	- Java 소스 이외의 자원 폴더
+	- 설정
+	
+3. src/test/java
+	- 테스트용 폴더
+	
+	
+4. src/test/resources
+	- 테스트용 폴더
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

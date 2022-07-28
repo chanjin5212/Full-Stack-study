@@ -1,0 +1,89 @@
+
+/* memo.css */
+
+main {
+	width: 600px;
+	margin: 0 auto;	
+}
+
+
+header h1 {
+	border-bottom: 1px solid #999;
+}
+
+section {
+	margin-top: 30px;	
+}
+
+.add {
+		
+}
+
+.table.add th {
+	width: 120px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.table.add textarea {
+	height: 200px;
+	resize: none;
+}
+
+
+
+
+.table.item {
+	
+}
+
+.table.item th {
+	text-align: center;
+	vertical-align: middle;
+}
+
+.table.item th:nth-child(1), 
+.table.item th:nth-child(3),
+.table.item th:nth-child(5) 
+{ width: 80px; }
+
+.table.item td:nth-child(2),
+.table.item td:nth-child(4) {
+	width: 105px;
+}
+
+.table.item td:nth-child(6) {
+	width: 150px;
+} 
+
+.table.item tr:nth-child(3) td:nth-child(2) {
+	height: 100px;
+	vertical-align: middle;
+}
+
+.table.item {
+	margin-bottom: 10px;	
+}
+
+.btns {
+	margin-bottom: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

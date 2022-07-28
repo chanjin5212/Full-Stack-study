@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.test.spring.Ex01&apos; to &apos;Ex01Controller&apos;&#x0D;&#x0A;- Original project: &apos;SpringWeb&apos;&#x0D;&#x0A;- Original element: &apos;com.test.spring.Ex01&apos;&#x0D;&#x0A;- Renamed element: &apos;com.test.spring.Ex01Controller&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Ex01&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.test.spring{Ex01.java[Ex01" matchStrategy="1" name="Ex01Controller" qualified="false" references="true" similarDeclarations="false" stamp="1658798622460" textual="false" version="1.0"/>
+</session>

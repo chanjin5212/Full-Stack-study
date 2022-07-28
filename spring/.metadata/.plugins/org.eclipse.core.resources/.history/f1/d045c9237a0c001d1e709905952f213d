@@ -1,0 +1,213 @@
+"STS"
+- https://spring.io
+- https://spring.io › tools
+
+
+Version: 2021-03 (4.19.0)
+
+STS > 편집기, 개발 도구 > 이클립스 + Spring 개발환경
+
+"Spring Tool Suite 3.9.18" > "full distribution on Eclipse 4.19"
+
+D:\class\server
+D:\class\spring
+
+1. encoding
+ 	- Workspace
+ 	- CSS
+	- HTML
+	- JSP
+
+2. Tomcat
+	- "server" or "runtime"
+
+3. Emmet
+	- https://emmet.io
+
+4. Tern 이클립스
+
+
+Spring		> JavaScript
+Spring Boot	> jQuery
+
+
+Spring Legacy Project > "SpringBegin" > "com.test.spring"
+
+http://localhost:8090/spring/
+
+
+
+프로젝트 구조
+
+1. src/main/java
+	- 여태까지 사용하는 Java 소스 폴더
+
+2. src/main/resources
+	- Java 소스 이외의 자원 폴더
+	- 설정
+	
+3. src/test/java
+	- 테스트용 폴더
+
+4. src/test/resources
+	- 테스트용 폴더
+	
+5. JRE System Library
+	- JRE jar
+		
+6. Maven Dependencies
+	- 메이븐(빌드 도구 + 라이브러 관리 도구 등)
+	- 프로젝트 생성 & 유지 관리 & 배포를 도와주는 프로그램
+	- 수업용 > jar 파일들 관리 용도로 사용
+	- Spring = Maven or Gradle
+	 
+7. src
+	- 1~4 까지의 물리적 표현			
+	- 소스의 루트 폴더
+	
+	7.1 webapp
+		- 웹 루트 폴더
+		
+	7.2 webapp > resources
+		- CSS, JavaScript, Images 등을 저장하는 폴더
+	
+	7.3 wewbapp > WEB-INF(******************************)
+	
+		7.3.1 classes
+			- 컴파일된 클래스 파일 저장폴더
+			- 개발자 관여(X)
+		
+		7.3.2 spring
+			- 이 폴더 이하에서 모든 스프링 설정을 한다.(***********)
+			
+			7.3.2.1 appServlet
+				7.3.2.1.1 servlet-context.xml
+					- 웹 요청과 관련된 환경 설정
+			
+			7.3.2.2 root-context.xml
+				- 스프링 전체 환경 설정
+		
+		7.3.3 views
+			- 뷰 페이지 폴더
+		
+		7.3.4 web.xml
+			- 아파치 톰캣 서버 설정
+
+
+
+
+스프링 프레임워크, Spring Framework
+
+- https://spring.io
+- Spring 3.XX ~ 5.XX
+- 스프링 프레임워크는 자바 플랫폼을 위한 오픈 소스 애플리케이션 프레임워크이다.
+- 전자 정부 표준 프레임워크로 채택 > https://www.egovframe.go.kr/
+- 세팅된 개발 환경 제공 + 생산성  + 개발 편의성 + 유지/보수성 + 협업 > 대형 프로젝트..
+
+
+스프링 프레임워크 구성 요소
+
+1. 의존성 주입 지원(DI)
+2. 관점 지향 프로그래밍 지원(AOP)
+3. Spring MVC 지원
+4. 레이아웃 지원(Tiles)
+5. 데이터베이스 연동 지원
+	- JDBC
+	- Spring JDBC
+	- ORM(JPA)
+	- MyBatis
+	
+	
+
+
+
+Spring DI
+- Dependency Injection
+- 의존(성) 주입
+- 스프링에서 아주 중요한 개념 중 하나
+- 스프링 전반에 걸쳐서 DI가 적용되어 있음
+- DI > 잘 알려진 디자인 패턴 중 하나 > 스프링에서 도입 + 구현 + 적용 > Spring DI
+- 프로그래밍에서 구성 요소간의 의존 관계가 소스 내부가 아닌 외부 환경에 의해서 정의되게 하는 디자인 패턴
+- IoC(Inversion of Control) 디자인 패턴 > 역제어 > 객체를 생성하는 순서가 뒤집힌다.
+
+
+
+- "com.test.spring.di01" 패키지 생성
+- com.test.spring.di01 > "Ex01.java"
+					   > "Pen.java"
+					   > "Brush.java"
+					   > "Hong.java"
+					   > "Lee.java"
+					   
+					   
+
+- "com.test.spring.di02" 패키지 생성
+- com.test.spring.di02 > "Ex02.java"
+					   > "Pen.java"
+					   > "Brush.java"
+					   > "Hong.java"
+					   > "Lee.java"
+					   > "di02.xml"
+
+
+
+- "com.test.spring.aop" 패키지 생성
+-                      
+					   > "Main.java" 			//메인 클래스
+					   > "Memo.java" 인터페이스  //메인 업무
+					   > "MemoImpl.java"        //메인업무
+					   
+					   > "Note.java" 인터페이스
+					   > "NoteImpl.java"
+					   
+					   > "Logger.java"			//보조업무
+					   
+					   > "memo.xml"				//스프링 설정
+					   
+					   
+
+Spring AOP, Aspect Oriented Programming
+
+- 관점 지향 프로그래밍
+- 주업무와 보조업무를 분리시켜 각각의 업무를 관리하는 기술
+- 생산성 + 유지 보수성 향상
+- [주요 관심사(Core Concern)]로부터 [횡단 관심사(Cross-cutting Concern)]의 [분리]를 허용함으로써 모듈성을 증가시키는 것이 목적
+
+
+Spring AOP
+
+1. Core Concern
+	- 주업무
+
+2. Cross-cutting Concern
+	- 보조업무
+
+3. Advice
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

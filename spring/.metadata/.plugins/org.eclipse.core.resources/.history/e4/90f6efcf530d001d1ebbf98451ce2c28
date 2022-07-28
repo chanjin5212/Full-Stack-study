@@ -1,0 +1,9 @@
+package com.test.spring;
+
+public interface MyBatisDAO {
+	
+	void test();
+
+	void m1();
+
+}

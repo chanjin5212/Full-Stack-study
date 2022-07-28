@@ -1,0 +1,10 @@
+127.0.0.1 - - [25/Jul/2022:10:17:33 +0900] "GET / HTTP/1.1" 404 807
+127.0.0.1 - - [25/Jul/2022:10:17:33 +0900] "GET / HTTP/1.1" 404 807
+0:0:0:0:0:0:0:1 - - [25/Jul/2022:10:17:34 +0900] "GET /spring/WEB-INF/classes/com/test/spring/HomeController.java HTTP/1.1" 404 721
+0:0:0:0:0:0:0:1 - - [25/Jul/2022:10:17:34 +0900] "GET /favicon.ico HTTP/1.1" 404 818
+0:0:0:0:0:0:0:1 - - [25/Jul/2022:10:18:03 +0900] "GET /spring/ HTTP/1.1" 200 164
+127.0.0.1 - - [25/Jul/2022:17:02:08 +0900] "GET / HTTP/1.1" 404 807
+0:0:0:0:0:0:0:1 - - [25/Jul/2022:17:02:08 +0900] "GET /sist/WEB-INF/views/index.jsp HTTP/1.1" 404 721
+0:0:0:0:0:0:0:1 - - [25/Jul/2022:17:02:17 +0900] "GET /sist/WEB-INF/classes/kr/co/sist/aws/team2/controller/AccountsController.java HTTP/1.1" 404 721
+0:0:0:0:0:0:0:1 - - [25/Jul/2022:17:02:42 +0900] "GET /sist/WEB-INF/classes/kr/co/sist/aws/team2/controller/AccountsController.java HTTP/1.1" 404 721
+0:0:0:0:0:0:0:1 - - [25/Jul/2022:17:02:46 +0900] "GET /sist/accounts/user_sign_in.do HTTP/1.1" 405 801

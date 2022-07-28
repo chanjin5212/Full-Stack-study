@@ -1,0 +1,44 @@
+package com.test.spring;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class MyBatisController {
+	
+	
+	//MyBatisController > (의존) > MyBatisService > (의존) > MyBatisDAO
+	
+	//Spring DI 어노테이션
+	@Autowired
+	private MyBatisService service;
+	
+//	@Autowired
+//	public MyBatisController(MyBatisService service) {
+//		this.service = service;
+//	}
+	
+	
+	@GetMapping(value="/test")
+	public String test() {
+		
+//		MyBatisService service = new MyBatisServiceImpl();
+		
+		System.out.println("1. " + (this.service == null));
+		
+		service.test();
+		
+		return "result";
+		
+	}
+	
+	@GetMapping(value="/m1")
+	public String m1(Model model) {
+		
+		return "result";
+		
+	}
+	
+}

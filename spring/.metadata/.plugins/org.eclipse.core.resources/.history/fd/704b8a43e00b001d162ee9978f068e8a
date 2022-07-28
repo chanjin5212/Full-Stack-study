@@ -1,0 +1,8 @@
+package com.test.spring.aop;
+
+public interface Memo {
+	
+	//메모 쓰기
+	void add(String memo);
+
+}

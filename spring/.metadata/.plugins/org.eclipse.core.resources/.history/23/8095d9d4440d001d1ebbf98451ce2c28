@@ -1,0 +1,86 @@
+
+MyBatis
+- iBatis
+- JDBC 역할 > 응용 프로그램과 데이터베이스를 연결시켜주는 중간 계층
+
+1. pom.xml
+	- 스프링 버전, 자바 버전
+	
+2. 파일 생성하기
+	- com.test.spring > "MyBatisController.java"
+					  > "MyBatisService.java" (I)
+					  > "MyBatisServiceImpl.java"
+					  > "MyBatisDAO.java" (I)
+					  > "MyBatisDAOImpl.java"
+					  > "MyBatisDTO.java"
+	- views > "result.jsp"
+	- WEB-INF > "mybatis.xml"
+
+3. script.sql
+					  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SpringFile
+Bundle-SymbolicName: SpringFile
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Automatic-Module-Name: SpringFile
+Export-Package: com.test.spring,
+ com.test.spring.mapper

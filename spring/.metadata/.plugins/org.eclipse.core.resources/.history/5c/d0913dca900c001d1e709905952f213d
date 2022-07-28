@@ -1,0 +1,21 @@
+package com.test.spring;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class Ex04Controller {
+	
+	@RequestMapping(value="/ex04.do")
+	public String test() {
+		
+		return "ex04";
+	}
+	
+	@RequestMapping(value="/ex04_1.do")
+	public String test2() {
+		
+		return "ex04";
+	}
+	
+}

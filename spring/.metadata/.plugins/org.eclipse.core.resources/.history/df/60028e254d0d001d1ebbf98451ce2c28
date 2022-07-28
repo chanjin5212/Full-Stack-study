@@ -1,0 +1,22 @@
+package com.test.spring;
+
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Repository;
+
+@Repository
+@Qualifier("dao")
+public class MyBatisDAOImpl implements MyBatisDAO {
+	
+	@Autowired
+	private SqlSessionTemplate template;
+
+	@Override
+	public void test() {
+		
+		System.out.println("3 " + (template == null));
+		
+	}
+
+}

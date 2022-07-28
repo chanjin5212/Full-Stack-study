@@ -1,0 +1,31 @@
+package com.test.spring.di02;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class Ex02 {
+	
+	public static void main(String[] args) {
+		
+		m1();
+		
+	}
+
+	private static void m1() {
+
+		//스프링 환경 > 객체 생성 + 소멸 > 스프링 관리
+		// > 관리 XML 필요
+		
+		//Pen 객체 생성하기
+		Pen p1 = new Pen();
+		p1.write();
+		
+		
+		//XML 설정 읽기 > 인식 > 호출
+		ApplicationContext context = new ClassPathXmlApplicationContext();
+		
+	}
+	
+	
+
+}

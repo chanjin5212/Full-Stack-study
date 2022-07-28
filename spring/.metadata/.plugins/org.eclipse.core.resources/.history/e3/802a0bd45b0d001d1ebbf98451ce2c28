@@ -1,0 +1,17 @@
+package com.test.spring;
+
+public interface MyBatisService {
+	
+	void test();
+
+	void m1();
+
+	int m2(String seq);
+
+	int m3(String seq);
+
+	int m4(MyBatisDTO dto);
+
+	int m5(String seq);
+	
+}

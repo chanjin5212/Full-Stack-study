@@ -1,0 +1,17 @@
+package com.test.spring.aop;
+
+public class Main {
+	
+	public static void main(String[] args) {
+		
+		//Main > 컨트롤러(주업무 통제하는 역할)
+		
+		//주업무 객체
+		Memo memo = new MemoImpl();
+		
+		
+		memo.add("스프링 AOP 작업을 하고 있습니다.");
+		
+	}
+
+}

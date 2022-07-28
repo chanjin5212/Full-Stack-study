@@ -1,0 +1,16 @@
+package com.test.spring;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class BoardServiceImpl implements BoardService {
+	
+	private BoardDAO dao;
+	
+	@Autowired
+	public BoardServiceImpl(BoardDAO dao) {
+		this.dao = dao;
+	}
+	
+}

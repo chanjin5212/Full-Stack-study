@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- 스프링 설정 파일(XML) -->
+	
+	<!-- 
+	
+		자바 객체 생성 + 설정
+		- 자바 객체 > Bean
+		
+	-->
+	
+	<!-- m1() -->
+	<bean id="pen" name="p1 p2 p3" class="com.test.spring.di02.Pen"></bean>
+	<bean id="brush" class="com.test.spring.di02.Brush"></bean>
+	
+	<bean id="pen" name="p1" class="com.test.spring.di02.Pen"></bean>
+
+</beans>

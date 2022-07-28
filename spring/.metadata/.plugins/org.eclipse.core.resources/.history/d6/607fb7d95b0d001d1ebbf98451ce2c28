@@ -1,0 +1,57 @@
+package com.test.spring;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
+
+@Service
+public class MyBatisServiceImpl implements MyBatisService {
+
+	@Autowired
+	@Qualifier("dao")
+	private MyBatisDAO dao;
+	
+	@Override
+	public void test() {
+		
+		System.out.println("2. " + (dao == null));
+		
+		dao.test();
+	}
+
+	@Override
+	public void m1() {
+
+		dao.m1();
+		
+	}
+
+	@Override
+	public int m2(String seq) {
+
+		
+		return dao.m2(seq);
+	}
+
+	@Override
+	public int m3(String seq) {
+		
+		return dao.m3(seq);
+	}
+
+	@Override
+	public int m4(MyBatisDTO dto) {
+
+		
+		return dao.m4(dto);
+	}
+
+	@Override
+	public int m5(String seq) {
+
+		
+		return dao.m5(seq);
+	}
+
+
+}

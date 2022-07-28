@@ -1,0 +1,19 @@
+package com.test.spring.di01;
+
+public class Lee {
+	
+	private Brush brush;
+	
+	public Lee(Brush brush) {
+		this.brush = brush;
+	}
+	
+	public void run() {
+		
+		
+//		Brush brush = new Brush();
+		brush.draw();
+		
+	}
+
+}

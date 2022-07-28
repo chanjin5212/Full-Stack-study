@@ -1,0 +1,112 @@
+
+Spring Web
+- 이전에 JSP Model 2 == Spring MVC Project
+
+Ex01
+- Spring MVC 동작
+
+
+Ex02
+- Ex01 + Spring DI
+- "Ex02Controller.java"
+- "SpringDAO.java"
+- "ex02.jsp"
+
+
+Ex03
+- "Ex03Controller.java"
+- "ex03.jsp"
+
+
+Ex04
+- "Ex04Controller.java"
+- "ex04.jsp"
+
+- 서블릿/JSP > 서블릿 1개당 + 가상 주소 1개당
+- 스프링 > 컨트롤 1개당 + 가상 주소 N개당
+
+- List.java + list.jsp
+- Add.java + add.jsp
+- AddOk.java + addok.jsp
+
+- Add.java + add.jsp + addok.jsp
+
+
+
+
+코드 문제 X > 확신
+1. 톰캣 > Clean
+	- 파일업로드 자원 > 같이 사라짐
+	
+2. Maven > update Project
+
+3. 워크 스페이스 초기화
+	- .metadata //삭제
+	- Servers //톰캣
+	- 프로젝트폴더
+
+
+
+Ex05
+- "Ex05Controller.java"
+- "SpringDTO.java"
+
+
+
+
+
+
+
+
+
+
+프로젝트
+
+1. 이전 프로젝트 같은 주제 > DB 재사용
+
+2. 업무 추가
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

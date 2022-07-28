@@ -1,0 +1,22 @@
+package com.test.spring;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+
+@Controller
+public class FileController {
+	
+	@GetMapping(value="/add")
+	public String add() {
+		
+		return "add";
+	}
+	
+	@PostMapping(value="/addok")
+	public String addok() {
+		
+		return "addok";
+	}
+
+}

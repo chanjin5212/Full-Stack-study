@@ -1,0 +1,60 @@
+package com.test.spring;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+
+@Controller
+public class Ex05Controller {
+	
+	@GetMapping(value="/add")
+	public String add() {
+	
+		return "add";
+		
+	}
+	
+	@PostMapping(value="/addok")
+	public String addok(HttpServletRequest req, HttpServletResponse resp) {
+		
+		String num = req.getParameter("num");
+		
+		req.setAttribute("num", num);
+		
+		return "addok";
+	}
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
